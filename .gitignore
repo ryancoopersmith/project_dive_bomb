@@ -15,3 +15,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore coveralls
+/coverage
+.coveralls.yml
+
+# Ignore env
+.env
