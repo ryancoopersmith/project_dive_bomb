@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectDiveBomb</title>
+    <title>Ecommerce</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,24 @@
   </head>
 
   <body>
+
+    <% if flash[:notice] %>
+      <% if flash[:notice].is_a?(String) %>
+        <%= flash[:notice] %>
+      <% else %>
+        <% flash[:notice].each do |key, value| %>
+          <% if value.is_a?(Array) %>
+            <% value.each do |error| %>
+              <%= "#{key.capitalize} #{error}." %>
+            <% end %>
+          <% else %>
+            <%= "#{key.capitalize} #{value}." %>
+          <% end %>
+          <br />
+        <% end %>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
