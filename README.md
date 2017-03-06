@@ -3,3 +3,6 @@
 ![Coverage Status](https://coveralls.io/repos/<ryancoopersmith>/<project_dive_bomb>/badge.png)
 
 # Project Dive Bar
+
+# User Authentication
+  Authenticates user when they are signed in.
