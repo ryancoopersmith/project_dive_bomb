@@ -5,4 +5,5 @@
 # Project Dive Bar
 
 # User Authentication
-  Authenticates user when they are signed in.
+## Authenticates user when they are signed in.
+
