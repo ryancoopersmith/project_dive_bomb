@@ -4,4 +4,6 @@
 
 # Project Dive Bar
 
-"THis is a README test."
+# User Authentication
+## Authenticates user when they are signed in.
+
