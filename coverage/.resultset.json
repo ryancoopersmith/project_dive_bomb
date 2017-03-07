@@ -17,7 +17,7 @@
         1,
         null,
         1,
-        2,
+        0,
         null,
         null
       ],
@@ -40,7 +40,7 @@
         null,
         null,
         1,
-        2,
+        0,
         null,
         null,
         null,
@@ -81,51 +81,6 @@
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/bars_controller.rb": [
-        1,
-        1,
-        7,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        23,
-        23,
-        23,
-        null,
-        null
-      ],
-      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/bar.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/ryancoopersmith/challenges/project_dive_bomb/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -133,6 +88,39 @@
         0
       ],
       "/Users/ryancoopersmith/challenges/project_dive_bomb/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/bars_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -161,6 +149,6 @@
         0
       ]
     },
-    "timestamp": 1488913275
+    "timestamp": 1488914519
   }
 }
