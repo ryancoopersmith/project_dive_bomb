@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "bars" do
+describe Bar do
   it "is valid with valid attributes" do
     bar = FactoryGirl.create(:bar)
     expect(bar).to be_valid
