@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307193345) do
+ActiveRecord::Schema.define(version: 20170307201440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +29,15 @@ ActiveRecord::Schema.define(version: 20170307193345) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "username",      null: false
-    t.float  "drinks",        null: false
-    t.float  "food",          null: false
-    t.float  "entertainment", null: false
-    t.float  "vibe",          null: false
-    t.float  "decor",         null: false
-    t.text   "description",   null: false
+    t.string  "username",      null: false
+    t.float   "drinks",        null: false
+    t.float   "food",          null: false
+    t.float   "entertainment", null: false
+    t.float   "vibe",          null: false
+    t.float   "decor",         null: false
+    t.text    "description",   null: false
+    t.integer "bar_id"
+    t.index ["bar_id"], name: "index_reviews_on_bar_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

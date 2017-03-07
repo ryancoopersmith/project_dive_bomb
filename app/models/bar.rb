@@ -6,4 +6,6 @@ class Bar < ApplicationRecord
   validates :zip, presence: true, length: { is: 5 }
   validates :phone_number, presence: true, uniqueness: true, format: { with: /\A\(?\d{3}\)?\-?\d{3}\-?\d{4}\z/ }
   validates :rating, presence: true
+
+  has_many :reviews
 end
