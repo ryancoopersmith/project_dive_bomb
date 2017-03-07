@@ -25,7 +25,7 @@ feature 'user signs in' do
     fill_in 'Password', with: user.password
     click_button 'Sign In'
 
-    expect(page).to have_content("You've succssfully signed in!")
+    expect(page).to have_content("You've successfully signed in!")
     expect(page).to_not have_content('Sign In')
     expect(page).to_not have_content('Sign Up')
   end
@@ -39,7 +39,7 @@ feature 'user signs in' do
 
     expect(page).to have_content("Invalid Email or password.")
     expect(page).to have_content('Sign In')
-    expect(page).to_not have_content("You've succssfully signed In!")
+    expect(page).to_not have_content("You've successfully signed In!")
   end
 
   scenario 'user provides incorrect email' do
@@ -59,7 +59,7 @@ feature 'user signs in' do
     fill_in 'Email', with: user.email
     click_button 'Sign In'
 
-    expect(page).to_not have_content("You've succssfully signed In!")
+    expect(page).to_not have_content("You've successfully signed In!")
     expect(page).to have_content("Invalid Email or password.")
     expect(page).to have_content('Sign In')
   end
