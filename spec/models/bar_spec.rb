@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "bars" do
   it "is valid with valid attributes" do
-    bar = expect(FactoryGirl.create(:bar)).to be_valid
+    bar = FactoryGirl.create(:bar)
     expect(bar).to be_valid
   end
 
@@ -63,16 +63,12 @@ describe "bars" do
   it "it is not valid with a duplicate phone number" do
     bar = FactoryGirl.create(:bar)
     bar.phone_number = '610-222-9900'
-    bar2 = FactoryGirl.create(:bar)
-    bar2.phone_number = '610-222-9900'
-    expect(bar2).to_not be_valid
+    expect(FactoryGirl.build(:bar, phone_number: '610-222-9900')).to_not be_valid
   end
 
   it "it is not valid with a duplicate address" do
     bar = FactoryGirl.create(:bar)
     bar.address = '321 Peanut Drive'
-    bar2 = FactoryGirl.create(:bar)
-    bar2.phone_number = '321 Peanut Drive'
-    expect(bar2).to_not be_valid
+    expect(FactoryGirl.build(:bar, address: '321 Peanut Drive')).to_not be_valid
   end
 end
