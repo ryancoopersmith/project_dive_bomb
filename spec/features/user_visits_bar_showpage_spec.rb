@@ -16,7 +16,7 @@ feature 'visitor sees details for individual bar' do
     expect(page).to have_css("img[src*='nautilus_shell.jpg']")
   end
 
-  scenario 'clicks on link to bar\'s website' do
+  scenario 'clicks on link to bar website' do
     bar = FactoryGirl.create(:bar)
     visit bar_path(bar)
     has_link?('Website', href: 'bar.url')
