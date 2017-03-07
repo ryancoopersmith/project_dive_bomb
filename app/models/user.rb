@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :admin, inclusion: { in: [true, false] }
 
   mount_uploader :profile_photo, ProfilePhotoUploader
+
+  def admin?
+    admin == true
+  end
 end

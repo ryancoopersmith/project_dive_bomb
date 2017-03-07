@@ -73,16 +73,4 @@ feature 'user signs up' do
     expect(page).to have_content("Username can't be blank")
     expect(page).to have_content('Sign Up')
   end
-
-  scenario 'admin is created' do
-    admin = FactoryGirl.create(:user)
-    admin.admin = true
-
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Sign In'
-    expect(page).to_not have_content('Sign Up')
-    expect(page).to have_content("Admin: true")
-  end
 end

@@ -12,8 +12,13 @@
         1,
         1,
         1,
+        1,
         null,
         1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/application_record.rb": [
@@ -85,6 +90,14 @@
         1,
         0,
         null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
@@ -95,6 +108,7 @@
         1,
         null,
         1,
+        23,
         23,
         23,
         null,
@@ -133,8 +147,20 @@
         0,
         0,
         0
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/Bar.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1488912288
+    "timestamp": 1488913275
   }
 }
