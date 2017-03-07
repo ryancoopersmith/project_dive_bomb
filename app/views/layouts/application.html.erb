@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectDiveBomb</title>
+    <title>Project Dive Bomb</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,37 @@
   </head>
 
   <body>
+
+    <% if flash[:notice] %>
+      <% if flash[:notice].is_a?(String) %>
+        <%= flash[:notice] %>
+      <% else %>
+        <% flash[:notice].each do |key, value| %>
+          <% if value.is_a?(Array) %>
+            <% value.each do |error| %>
+              <%= "#{key.capitalize} #{error}." %>
+            <% end %>
+          <% else %>
+            <%= "#{key.capitalize} #{value}." %>
+          <% end %>
+          <br />
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <% end %>
+    <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+    <% end %>
+
     <%= yield %>
+
   </body>
 </html>
