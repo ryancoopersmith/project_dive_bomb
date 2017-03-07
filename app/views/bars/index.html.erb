@@ -1,1 +1,5 @@
 <h1>Bars</h1>
+
+<% if user_signed_in? %>
+  <img src="<%= current_user.profile_photo %>" />
+<% end %>

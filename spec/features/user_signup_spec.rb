@@ -30,7 +30,7 @@ feature 'user signs up' do
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
-    expect(page).to have_content("You've succssfully signed up!")
+    expect(page).to have_content("You've successfully signed up!")
     expect(page).to_not have_content('Sign Up')
     expect(page).to_not have_content('Sign In')
   end
@@ -45,7 +45,7 @@ feature 'user signs up' do
 
     expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to have_content('Sign Up')
-    expect(page).to_not have_content("You've succssfully signed up!")
+    expect(page).to_not have_content("You've successfully signed up!")
   end
 
   scenario 'user provides invalid email' do
@@ -69,7 +69,7 @@ feature 'user signs up' do
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
-    expect(page).to_not have_content("You've succssfully signed up!")
+    expect(page).to_not have_content("You've successfully signed up!")
     expect(page).to have_content("Username can't be blank")
     expect(page).to have_content('Sign Up')
   end
