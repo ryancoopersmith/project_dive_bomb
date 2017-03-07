@@ -5,5 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-Bar.create!(name: 'Oscars', address: '1524 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '2152152152', rating: 4.5)
