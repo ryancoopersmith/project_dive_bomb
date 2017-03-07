@@ -15,6 +15,18 @@ ActiveRecord::Schema.define(version: 20170307142603) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bars", force: :cascade do |t|
+    t.string "name",         null: false
+    t.string "url"
+    t.string "address",      null: false
+    t.string "city",         null: false
+    t.string "state",        null: false
+    t.string "zip",          null: false
+    t.string "phone_number", null: false
+    t.string "image_url"
+    t.float  "rating",       null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username",                            null: false
     t.string   "email",                  default: "", null: false

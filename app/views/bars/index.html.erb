@@ -1,5 +1,18 @@
 <h1>Bars</h1>
 
+<% @bars.each do |bar| %>
+  <div class="bar_card">
+    <img src="<%=bar.image_url%>">
+    <p><%= bar.rating %> </p>
+    <p><%= bar.name %> </p>
+    <p><%= bar.address %> </p>
+    <p><%= bar.city%>, <%=bar.state%> <%=bar.zip%> </p>
+    <p><%= bar.phone_number %> </p>
+    <p><%= bar.url %> </p>
+    <p>Place Holder for Link to Show Page</p>
+  </div>
+<%end%>
+
 <% if user_signed_in? %>
   <img src="<%= current_user.profile_photo %>" />
 <% end %>
