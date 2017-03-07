@@ -39,12 +39,6 @@
       <% end %>
     <% end %>
 
-    <% if user_signed_in? %>
-    <% require 'pry' %>
-    <% binding.pry %>
-      <h3>Admin: <%= current_user.admin %></h3>
-    <% end %>
-
     <%= yield %>
 
   </body>
