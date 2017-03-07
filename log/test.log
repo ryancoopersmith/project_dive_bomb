@@ -52,3 +52,322 @@ Processing by BarsController#index as HTML
   Rendered bars/index.html.erb within layouts/application (4.1ms)
 Completed 200 OK in 259ms (Views: 256.8ms | ActiveRecord: 0.5ms)
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.7ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (6.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (16.7ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.8ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (12.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 10:59:22 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 216ms (Views: 213.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (11.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:00:45 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 295ms (Views: 292.9ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (8.5ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:02:53 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 203ms (Views: 201.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.3ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (10.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:05:42 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 204ms (Views: 202.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (11.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:10:03 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 205ms (Views: 202.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.1ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (8.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:11:21 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 207ms (Views: 204.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.1ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (7.7ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "www.rayspicture.com"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:14:13 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 200ms (Views: 197.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (13.8ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "nautilus shell.jpg"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:22:25 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 248ms (Views: 244.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (7.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBar Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "nautilus shell.jpg"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:23:10 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 201ms (Views: 198.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m

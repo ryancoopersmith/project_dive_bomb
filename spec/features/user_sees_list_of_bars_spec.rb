@@ -6,19 +6,20 @@ require 'rails_helper'
 
 # [] Visiting the `/bars` path should contain a list of bars.
 # [] Visiting the root path should display a list of all bars.
-feature "visitor sees a list of bars" do
-  scenario "sees a list of bars" do
-    oscars = Bar.create(name: 'Oscars', address: '1524 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '2152152152', rating: 4.5)
-    oscars1 = Bar.create(name: 'Oscars1', address: '1523 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19137', phone_number: '2152152152', rating: 4, url: "www.oscarstavern.com", image_url: "www.imageurl.com")
+feature "visitor sees a list of bars on root directory" do
+  scenario "user visits homepage" do
+    bar = FactoryGirl.create(:bar)
 
-    visit bars_path
+    visit root_path
 
-    expect(page).to have_content oscars.name
-    expect(page).to have_content oscars.address
-    expect(page).to have_content oscars.city
-    expect(page).to have_content oscars.state
-    expect(page).to have_content oscars.zip
-    expect(page).to have_content oscars.rating
-    expect(page).to have_content oscars.phone_number
+    expect(page).to have_content bar.name
+    expect(page).to have_content bar.url
+    expect(page).to have_content bar.address
+    expect(page).to have_content bar.city
+    expect(page).to have_content bar.state
+    expect(page).to have_content bar.zip
+    expect(page).to have_content bar.rating
+    expect(page).to have_content bar.phone_number
+    expect(page).to have_css("img[src*='nautilus shell.jpg']")
   end
 end
