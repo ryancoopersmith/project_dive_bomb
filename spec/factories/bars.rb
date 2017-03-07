@@ -7,7 +7,7 @@ FactoryGirl.define do
     state 'PA'
     zip '19147'
     phone_number '215-215-2152'
-    image_url 'nautilus shell.jpg'
+    image_url 'nautilus_shell.jpg'
     rating '4'
   end
 end
