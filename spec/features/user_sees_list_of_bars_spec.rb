@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-#As an authenticated user
-#I want to view a list of bars
-#So that I can pick bars to view
+# As an authenticated user
+# I want to view a list of bars
+# So that I can pick bars to view
 
 # [] Visiting the `/bars` path should contain a list of bars.
 # [] Visiting the root path should display a list of all bars.
