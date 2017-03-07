@@ -18,10 +18,10 @@ feature "profile photo" do
     fill_in "Email", with: "jennyb2@gmail.com"
     fill_in "Password", with: "password"
     fill_in "Password Confirmation", with: "password"
-    attach_file :profile_photo, "#{Rails.root}/spec/support/images/golden_retriever_dog_animal.jpg"
-    click_button "Sign up"
+    attach_file "Profile Photo", File.join(Rails.root, 'spec', 'support', 'images', 'golden_retriever_dog_animal.jpg')
+    click_button "Sign Up"
 
     expect(page).to have_content("You've successfully signed up!")
-    expect(page).to have_css("img[src*='photo.png']")
+    expect(page).to have_css("img[src*='golden_retriever_dog_animal.jpg']")
   end
 end
