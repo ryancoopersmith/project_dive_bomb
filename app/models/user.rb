@@ -8,6 +8,11 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :email, format: { with: /\A\w+\@[a-z]+\.[a-z]{3}\z/ }
   validates :password_confirmation, presence: true
+  validates :admin, inclusion: { in: [true, false] }
 
   mount_uploader :profile_photo, ProfilePhotoUploader
+
+  def admin?
+    admin == true
+  end
 end
