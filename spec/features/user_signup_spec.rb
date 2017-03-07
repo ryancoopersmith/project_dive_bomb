@@ -12,10 +12,6 @@ feature 'user signs up' do
   # * I should see an error message if I enter an invalid email or my password
   #   and password confirmations do not match
 
-  before(:each) do
-    @user = FactoryGirl.create(:user)
-  end
-
   scenario 'user visits sign up page' do
     visit root_path
     click_link 'Sign Up'
@@ -28,10 +24,10 @@ feature 'user signs up' do
 
   scenario 'user successfully signs up' do
     visit new_user_registration_path
-    fill_in 'Username', with: @user.username
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
-    fill_in 'Password Confirmation', with: @user.password_confirmation
+    fill_in 'Username', with: 'johnnyboy1'
+    fill_in 'Email', with: 'johnnyboy1@gmail.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
     expect(page).to have_content("You've succssfully signed up!")
@@ -41,23 +37,23 @@ feature 'user signs up' do
 
   scenario 'user provides different password confirmation' do
     visit new_user_registration_path
-    fill_in 'Username', with: @user.username
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'Username', with: 'leonardo5'
+    fill_in 'Email', with: 'leonardo5@gmail.com'
+    fill_in 'Password', with: 'password'
     fill_in 'Password Confirmation', with: 'notmypassword'
     click_button 'Sign Up'
 
-    expect(page).to have_content("Password confirmation doesn't match password")
+    expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to have_content('Sign Up')
     expect(page).to_not have_content("You've succssfully signed up!")
   end
 
   scenario 'user provides invalid email' do
     visit new_user_registration_path
-    fill_in 'Username', with: @user.username
+    fill_in 'Username', with: 'fredrick13'
     fill_in 'Email', with: 'wrongemail@.com'
-    fill_in 'Password', with: @user.password
-    fill_in 'Password Confirmation', with: @user.password_confirmation
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
     expect(page).to_not have_content("You've successfully signed up!")
@@ -67,10 +63,10 @@ feature 'user signs up' do
 
   scenario 'user provides missing information' do
     visit new_user_registration_path
-    fill_in 'Username', with: " "
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
-    fill_in 'Password Confirmation', with: @user.password_confirmation
+    fill_in 'Username', with: ""
+    fill_in 'Email', with: 'missingperson1@gmail.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
     expect(page).to_not have_content("You've succssfully signed up!")
