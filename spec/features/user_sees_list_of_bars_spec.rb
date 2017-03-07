@@ -1,8 +1,11 @@
 require 'rails_helper'
 
-# [] Visiting the `/bars` path should contain a list of restaurants.
-# [] Visiting the `/bar/10` path should show the restaurant details for a restaurant with the ID of 10.
-# [] Visiting the root path should display a list of all restaurants.
+#As an authenticated user
+#I want to view a list of bars
+#So that I can pick bars to view
+
+# [] Visiting the `/bars` path should contain a list of bars.
+# [] Visiting the root path should display a list of all bars.
 feature "visitor sees a list of bars" do
   scenario "sees a list of bars" do
     oscars = Bar.create(name: 'Oscars', address: '1524 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '2152152152', rating: 4.5)
