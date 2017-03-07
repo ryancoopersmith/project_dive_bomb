@@ -1,31 +1,85 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/helpers/application_helper.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/user.rb": [
         1,
-        null
-      ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/bar.rb": [
+        null,
+        null,
+        null,
         1,
+        null,
         null,
         1,
         1,
         1,
+        null,
         1,
-        1,
+        null
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/application_record.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/uploaders/profile_photo_uploader.rb": [
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/bars_controller.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/bars_controller.rb": [
         1,
         1,
-        1,
+        7,
         null,
         null,
         1,
@@ -33,34 +87,54 @@
         null,
         null
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        23,
+        23,
+        null,
+        null
+      ],
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/models/bar.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/channels/application_cable/channel.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/channels/application_cable/connection.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/jobs/application_job.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/coreyfischer/challenges/project_dive_bomb/app/mailers/application_mailer.rb": [
+      "/Users/ryancoopersmith/challenges/project_dive_bomb/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1488904735
+    "timestamp": 1488910303
   }
 }
