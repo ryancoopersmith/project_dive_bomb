@@ -1619,3 +1619,420 @@ Migrating to AddProfilePhotoToUsers (20170307142603)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBars (20170306194004)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170306194004"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170306194415)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170306194415"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProfilePhotoToUsers (20170307142603)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_photo" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170307142603"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-07 18:47:37 UTC], ["updated_at", 2017-03-07 18:47:37 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "1524 Sansom St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-972-9938"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Oscar's Tavern"], ["url", "https://m.facebook.com/Oscars-Tavern-187176721252/"], ["address", "1524 Sansom St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19130"], ["phone_number", "215-972-9938"], ["image_url", "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775"], ["rating", 4.5]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "347 S. 13th St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-732-5010"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dirty Frank's Bar"], ["url", "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg"], ["address", "347 S. 13th St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19107"], ["phone_number", "215-732-5010"], ["rating", 4.0]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-07 13:48:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 362ms (Views: 349.9ms | ActiveRecord: 6.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "1524 Sansom St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-972-9938"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Oscar's Tavern"], ["url", "https://m.facebook.com/Oscars-Tavern-187176721252/"], ["address", "1524 Sansom St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19130"], ["phone_number", "215-972-9938"], ["image_url", "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775"], ["rating", 4.5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "347 S. 13th St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-732-5010"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Dirty Frank's Bar"], ["url", "www.dirtyfranksbar.com"], ["address", "347 S. 13th St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19107"], ["phone_number", "215-732-5010"], ["image_url", "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg"], ["rating", 4.0]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-07 13:50:52 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-03-07 13:52:36 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-07 13:55:03 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-07 13:55:11 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-07 13:55:20 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-07 13:55:39 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (45.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `Link_to' for #<#<Class:0x007f8d8dc4ba68>:0x007f8d9208f260>
+Did you mean?  link_to):
+     9:     <p><%= bar.city%>, <%=bar.state%> <%=bar.zip%> </p>
+    10:     <p><%= bar.phone_number %> </p>
+    11:     <p><a href="<%= bar.url %>">Website</a></p>
+    12:     <p><%= Link_to "View bar", bar_path(bar) %></p>
+    13:   </div>
+    14: <%end%>
+    15: 
+  
+app/views/bars/index.html.erb:12:in `block in _app_views_bars_index_html_erb__4216031680217478259_70123008589340'
+app/views/bars/index.html.erb:3:in `_app_views_bars_index_html_erb__4216031680217478259_70123008589340'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.9ms)
+Started GET "/" for ::1 at 2017-03-07 13:55:56 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars/3" for ::1 at 2017-03-07 13:55:58 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bars/3" for ::1 at 2017-03-07 13:56:34 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (76.6ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bar' for #<#<Class:0x007f8d8dc4ba68>:0x007f8d8863a818>
+Did you mean?  @bar):
+    1: <h1><%= bar.name %></h1>
+  
+app/views/bars/show.html.erb:1:in `_app_views_bars_show_html_erb__2635751871246862256_70122938884200'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.9ms)
+Started GET "/bars/3" for ::1 at 2017-03-07 13:56:43 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.3ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (67.8ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bar' for #<#<Class:0x007f8d8dc4ba68>:0x007f8d8a086c80>
+Did you mean?  @bar):
+    1: <h1><%= bar.name %></h1>
+  
+app/views/bars/show.html.erb:1:in `_app_views_bars_show_html_erb__2635751871246862256_70122941463340'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+Started GET "/bars/3" for ::1 at 2017-03-07 13:57:10 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (84.8ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bar' for #<#<Class:0x007f8d911f2928>:0x007f8d911f1780>
+Did you mean?  @bar):
+    1: <h1><%= bar.name %></h1>
+  
+app/views/bars/show.html.erb:1:in `_app_views_bars_show_html_erb__2635751871246862256_70123000928480'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.9ms)
+Started GET "/bars/3" for ::1 at 2017-03-07 13:57:23 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars/3" for ::1 at 2017-03-07 14:02:05 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (82.9ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bar' for #<#<Class:0x007f8d911f2928>:0x007f8d885e9440>
+Did you mean?  @bar):
+    1: <h1><%= @bar.name %></h1>
+    2: 
+    3: <img src="<%=bar.image_url%>">
+    4: <p><%= bar.rating %> </p>
+    5: <p><%= bar.name %> </p>
+    6: <p><%= bar.address %> </p>
+  
+app/views/bars/show.html.erb:3:in `_app_views_bars_show_html_erb__2635751871246862256_70122927509440'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.4ms)
+Started GET "/bars/3" for ::1 at 2017-03-07 14:02:32 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (143.4ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bar' for #<#<Class:0x007f8d911f2928>:0x007f8d911620a8>
+Did you mean?  @bar):
+    1: <h1><%= @bar.name %></h1>
+    2: 
+    3: <img src="<%=bar.image_url%>">
+    4: <p><%= @bar.rating %> </p>
+    5: <p><%= @bar.name %> </p>
+    6: <p><%= @bar.address %> </p>
+  
+app/views/bars/show.html.erb:3:in `_app_views_bars_show_html_erb__2635751871246862256_70123000632700'
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/arilandau/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.5ms)
+Started GET "/bars/3" for ::1 at 2017-03-07 14:02:49 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToBars (20170307190338)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToBars (20170307190338)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToBars (20170307190338)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "bars" ADD "description" text[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170307190338"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToBars (20170307190338)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "bars" DROP "description"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170307190338"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToBars (20170307190338)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bars" ADD "description" text[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170307190338"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/bars/4" for ::1 at 2017-03-07 14:07:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 13.1ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "1524 Sansom St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-972-9938"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Oscar's Tavern"], ["url", "https://m.facebook.com/Oscars-Tavern-187176721252/"], ["address", "1524 Sansom St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19130"], ["phone_number", "215-972-9938"], ["image_url", "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775"], ["rating", 4.5], ["description", "One of the most storied dives in Center City. Patrons always feel welcome and the drink menu does not disappoint. Neither does the cheeseteak and a half for $7."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "347 S. 13th St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-732-5010"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Dirty Frank's Bar"], ["url", "www.dirtyfranksbar.com"], ["address", "347 S. 13th St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19107"], ["phone_number", "215-732-5010"], ["image_url", "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg"], ["rating", 4.0]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-07 14:10:41 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-07 14:10:46 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.3ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-07 14:22:03 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20170307193345)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "username" character varying NOT NULL, "drinks" float NOT NULL, "food" float NOT NULL, "entertainment" float NOT NULL, "vibe" float NOT NULL, "decor" float NOT NULL, "description" text NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170307193345"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7302188101287995370);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20170307193345)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mDROP TABLE "reviews"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170307193345"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7302188101287995370)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

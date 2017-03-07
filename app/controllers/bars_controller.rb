@@ -4,6 +4,6 @@ class BarsController < ApplicationController
   end
 
   def show
-    @bar = Bar.find(params[:id])
+    @bar = Bar.find(params[:id])  
   end
 end
