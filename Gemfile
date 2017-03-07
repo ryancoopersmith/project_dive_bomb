@@ -30,8 +30,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test do
-  gem 'database_cleaner'
-end
-
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
