@@ -371,3 +371,49 @@ Processing by BarsController#index as HTML
 Completed 200 OK in 201ms (Views: 198.6ms | ActiveRecord: 0.5ms)
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (126.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project_dive_bomb_test"[0m
+  [1m[35m (256.6ms)[0m  [1m[35mCREATE DATABASE "project_dive_bomb_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float NOT NULL)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170306194004)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-03-07 16:38:54 UTC], ["updated_at", 2017-03-07 16:38:54 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bars" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'project_dive_bomb_test'[0m
+  [1m[35m (9.4ms)[0m  [1m[35mTRUNCATE TABLE "public"."bars", "public"."ar_internal_metadata" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "bars" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBar Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-215-2152"], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "123 Passyunk Ave"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rays Happy Birthday Bar"], ["url", "www.rayshappybirthdaybar.com"], ["address", "123 Passyunk Ave"], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19147"], ["phone_number", "215-215-2152"], ["image_url", "nautilus shell.jpg"], ["rating", 4.0]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-03-07 11:38:54 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 204ms (Views: 201.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
