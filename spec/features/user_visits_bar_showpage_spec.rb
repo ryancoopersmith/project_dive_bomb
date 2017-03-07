@@ -1,17 +1,9 @@
 require 'rails_helper'
 
-# As an authenticated user
-# I want to view a list of bars
-# So that I can pick a bar to view
-
-# [] Visiting the `/bars` path should contain a list of bars.
-# [] Visiting the root path should display a list of all bars.
-
-feature "visitor sees a list of bars on root directory" do
-  scenario "user visits homepage" do
+feature 'visitor sees details for individual bar' do
+  scenario 'sees full information for specific bar' do
     bar = FactoryGirl.create(:bar)
-
-    visit root_path
+    visit bar_path(bar)
 
     expect(page).to have_content bar.name
     expect(page).to have_content bar.address
@@ -19,6 +11,14 @@ feature "visitor sees a list of bars on root directory" do
     expect(page).to have_content bar.state
     expect(page).to have_content bar.zip
     expect(page).to have_content bar.rating
+    expect(page).to have_link "Website"
+    expect(page).to have_content bar.phone_number
     expect(page).to have_css("img[src*='nautilus_shell.jpg']")
+  end
+
+  scenario 'clicks on link to bar website' do
+    bar = FactoryGirl.create(:bar)
+    visit bar_path(bar)
+    has_link?('Website', href: 'bar.url')
   end
 end

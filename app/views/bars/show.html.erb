@@ -1,1 +1,14 @@
-This is a show page.
+<h1><%= @bar.name %></h1>
+
+<img src="<%=@bar.image_url%>">
+<p><%= @bar.rating %> </p>
+<p><%= @bar.name %> </p>
+<p><%= @bar.address %> </p>
+<p><%= @bar.city%>, <%=@bar.state%> <%=@bar.zip%></p>
+<p><%= @bar.phone_number %></p>
+
+<% if !@bar.description.blank? %>
+  <p><%= @bar.description %></p>
+<% end %>
+
+<p><a href="<%= @bar.url %>">Website</a></p>
