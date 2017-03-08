@@ -24,20 +24,21 @@ ActiveRecord::Schema.define(version: 20170307201440) do
     t.string "zip",          null: false
     t.string "phone_number", null: false
     t.string "image_url"
-    t.float  "rating",       null: false
+    t.float  "rating"
     t.text   "description"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string  "username",      null: false
-    t.float   "drinks",        null: false
-    t.float   "food",          null: false
-    t.float   "entertainment", null: false
-    t.float   "vibe",          null: false
-    t.float   "decor",         null: false
-    t.text    "description",   null: false
+    t.integer "drinks",        null: false
+    t.integer "food",          null: false
+    t.integer "entertainment", null: false
+    t.integer "vibe",          null: false
+    t.integer "setting",       null: false
+    t.text    "description"
+    t.integer "user_id"
     t.integer "bar_id"
     t.index ["bar_id"], name: "index_reviews_on_bar_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
