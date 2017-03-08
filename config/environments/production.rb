@@ -84,15 +84,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => "https://frozen-wave-13196.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
   config.active_record.smtp_settings = {
     :user_name => 'app64785020@heroku.com',
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'https://frozen-wave-13196.herokuapp.com',
     :address => 'smtp.sendgrid.net',
-    :port => 25,
+    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
