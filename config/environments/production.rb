@@ -85,11 +85,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_record.smtp_settings = {
-    :user_name => 'app64785020@heroku.com',
-    :password => ENV['SENDGRID_PASSWORD'],
+    :user_name => 'app64785020',
+    :password => 'password',
     :domain => 'https://frozen-wave-13196.herokuapp.com',
     :address => 'smtp.sendgrid.net',
-    :port => 25,
+    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
