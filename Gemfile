@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'coveralls'
 gem "carrierwave"
+gem 'dotenv-rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
