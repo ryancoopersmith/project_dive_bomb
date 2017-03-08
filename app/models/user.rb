@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :email, format: { with: /\A((\w+)|(\.))+\@[a-z]+\.[a-z]{3}\z/ }
+  validates :password, presence: true
   validates :password_confirmation, presence: true
   validates :admin, inclusion: { in: [true, false] }
 
@@ -16,4 +17,10 @@ class User < ApplicationRecord
     admin == true
   end
   has_many :reviews
+
+
+  after_create :send_email
+  def send_email
+    UserMailer.new_user(self).deliver
+  end
 end
