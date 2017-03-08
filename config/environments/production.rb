@@ -86,8 +86,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.active_record.smtp_settings = {
-    :user_name => 'app64785020@heroku.com',
-    :password => ENV['SENDGRID_PASSWORD'],
+    :user_name => 'apikey',
+    :password => ENV['SENDGRID_API_KEY'],
     :domain => 'https://frozen-wave-13196.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
