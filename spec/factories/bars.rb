@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :bar do
-    name 'Rays Happy Birthday Bar'
-    url 'www.rayshappybirthdaybar.com'
-    address '123 Passyunk Ave'
+    sequence(:name) { |n| "bar#{n}" }
+    sequence(:url) { |n| "www.#{n}.com" }
+    sequence(:address) { |n| "#{n} street" }
     city 'Philadelphia'
     state 'PA'
     zip '19147'
     phone_number '215-215-2152'
     image_url 'nautilus_shell.jpg'
-    rating '4'
+    rating rand(1..5)
   end
 end
