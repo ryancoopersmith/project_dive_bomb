@@ -10,31 +10,33 @@
 
   <body>
 
-    
+  <div class="nav_bar">
+    <%= form_tag(bars_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Search', name: nil %>
+    <% end %>
+  </div>
 
-    <% if flash[:notice] %>
-      <% if flash[:notice].is_a?(String) %>
-        <%= flash[:notice] %>
-      <% else %>
-        <% flash[:notice].each do |key, value| %>
-          <% if value.is_a?(Array) %>
-            <% value.each do |error| %>
-              <%= "#{key.capitalize} #{error}." %>
-            <% end %>
-          <% else %>
-            <%= "#{key.capitalize} #{value}." %>
+  <% if flash[:notice] %>
+    <% if flash[:notice].is_a?(String) %>
+      <%= flash[:notice] %>
+    <% else %>
+      <% flash[:notice].each do |key, value| %>
+        <% if value.is_a?(Array) %>
+          <% value.each do |error| %>
+            <%= "#{key.capitalize} #{error}." %>
           <% end %>
-          <br />
+        <% else %>
+          <%= "#{key.capitalize} #{value}." %>
         <% end %>
+        <br />
       <% end %>
     <% end %>
+  <% end %>
 
-    <% unless flash[:notice] %>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      <% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
     <% end %>
-
     <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" %>
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -45,6 +47,6 @@
     <% end %>
 
     <%= yield %>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap"></script>
+
   </body>
 </html>
