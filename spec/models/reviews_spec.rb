@@ -1,33 +1,18 @@
 require 'rails_helper'
 
 describe Review do
-  scenario 'user creates a review successfully' do
-    review = FactoryGirl.create(:review)
-    bar = FactoryGirl.create(:bar)
+    it { should validate_presence_of(:user) }
+    it { should_not allow_value("").for(:user) }
 
-    visit bar_path(bar)
+    it { should validate_presence_of(:bar) }
+    it { should_not allow_value("").for(:bar) }
 
-    expect(page).to have_content review.username
-    expect(page).to have_content review.drinks
-    expect(page).to have_content review.food
-    expect(page).to have_content review.entertainment
-    expect(page).to have_content review.decor
-    expect(page).to have_content review.vibe
-    expect(page).to have_content review.description
-  end
+    it { should validate_presence_of(:drinks) }
+    it { should validate_presence_of(:food) }
+    it { should validate_presence_of(:setting) }
+    it { should validate_presence_of(:entertainment) }
+    it { should validate_presence_of(:vibe) }
+    it { should_not allow_value(11).for(:vibe) }
+    it { should_not allow_value(-1).for(:vibe) }
 
-  scenario 'user forgets to add a username' do
-
-    expect(page).to have_content 'Username must be present'
-  end
-
-  scenario 'user puts in the wrong number for a rating category' do
-
-    expect(page).to have_content 'Decor must be between 0 and 1'
-  end
-
-  scenario 'user puts in a description less than 150 characters' do
-
-    expect(page).to have_content 'Description must be at least 150 characters'
-  end
 end

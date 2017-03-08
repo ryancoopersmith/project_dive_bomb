@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: true
-  validates :email, format: { with: /\A\w+\@[a-z]+\.[a-z]{3}\z/ }
+  validates :email, format: { with: /\A((\w+)|(\.))+\@[a-z]+\.[a-z]{3}\z/ }
   validates :password_confirmation, presence: true
   validates :admin, inclusion: { in: [true, false] }
 
@@ -15,4 +15,5 @@ class User < ApplicationRecord
   def admin?
     admin == true
   end
+  has_many :reviews
 end
