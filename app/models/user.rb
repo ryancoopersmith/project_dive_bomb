@@ -15,4 +15,9 @@ class User < ApplicationRecord
   def admin?
     admin == true
   end
+
+  after_create :send_email
+  def send_email
+    UserMailer.new_user(@user).deliver_later
+  end
 end
