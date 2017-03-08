@@ -9,8 +9,8 @@ feature "visitor sees search bar on index page" do
 end
 
 feature "visitor interacts with search bar" do
-  let bar1 = FactoryGirl.create(:bar)
-  let bar2 = FactoryGirl.create(:bar)
+  let!(:bar1) { FactoryGirl.create(:bar) }
+  let!(:bar2) { FactoryGirl.create(:bar) }
 
   scenario "visitor does not use search function" do
     visit root_path
