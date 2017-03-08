@@ -4,5 +4,8 @@
 
 # Project Dive Bar
 
-# User Authentication
-## Authenticates user when they are signed in.
+## Authors:
+Corey Fischer
+Arielle Landau
+Devin Bombay
+Ryan Coopersmith

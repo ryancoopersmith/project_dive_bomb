@@ -33,6 +33,7 @@ feature 'user signs up' do
     expect(page).to have_content("You've successfully signed up!")
     expect(page).to_not have_content('Sign Up')
     expect(page).to_not have_content('Sign In')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user provides different password confirmation' do
