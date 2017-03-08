@@ -33,8 +33,6 @@ feature 'user signs up' do
     expect(page).to have_content("You've successfully signed up!")
     expect(page).to_not have_content('Sign Up')
     expect(page).to_not have_content('Sign In')
-
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user provides different password confirmation' do
@@ -48,8 +46,6 @@ feature 'user signs up' do
     expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to have_content('Sign Up')
     expect(page).to_not have_content("You've successfully signed up!")
-
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user provides invalid email' do
@@ -63,8 +59,6 @@ feature 'user signs up' do
     expect(page).to_not have_content("You've successfully signed up!")
     expect(page).to have_content('Email is invalid')
     expect(page).to have_content('Sign Up')
-
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user provides missing information' do
@@ -78,7 +72,5 @@ feature 'user signs up' do
     expect(page).to_not have_content("You've successfully signed up!")
     expect(page).to have_content("Username can't be blank")
     expect(page).to have_content('Sign Up')
-
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end

@@ -43,6 +43,6 @@
     <% end %>
 
     <%= yield %>
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap"></script>
   </body>
 </html>
