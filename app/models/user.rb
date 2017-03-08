@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  after_create :send_email
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -11,15 +12,14 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
   validates :admin, inclusion: { in: [true, false] }
 
+  has_many :reviews
+
   mount_uploader :profile_photo, ProfilePhotoUploader
 
   def admin?
     admin == true
   end
-  has_many :reviews
 
-
-  after_create :send_email
   def send_email
     UserMailer.new_user(self).deliver
   end

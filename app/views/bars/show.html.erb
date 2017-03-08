@@ -32,12 +32,12 @@
   <h2> Your Reviews </h2>
   <% @reviews.each do |review| %>
     <% if review.user.admin == false %>
-      <ul>
-        <li> Total: <%= review.drinks  + review.food + review.entertainment + review.vibe + review.setting %> </li>
-      </ul>
-      <% if !review.description.blank? %>
-        <p><strong>Description: </strong><%= review.description %></p>
-      <% end %>
+      <div id = "review">
+        <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
+        <% if !review.description.blank? %>
+          <p><strong>Description: </strong><%= review.description %></p>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 <% end %>
