@@ -1,6 +1,6 @@
 class BarsController < ApplicationController
   def index
-    @bars = Bar.all
+    @bars = Bar.search(params[:term])
   end
 
   def show

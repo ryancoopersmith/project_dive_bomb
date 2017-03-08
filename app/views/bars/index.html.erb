@@ -2,7 +2,7 @@
 
 <% @bars.each do |bar| %>
   <div class="bar_card">
-    <img src="<%=bar.image_url%>">
+    <img src="<%=bar.image_url%>" style="max-height: 175px; max-width: 175px;" >
     <p><%= bar.rating %> </p>
     <p><%= bar.name %> </p>
     <p><%= bar.address %> </p>
