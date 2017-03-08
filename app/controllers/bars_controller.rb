@@ -14,4 +14,10 @@ class BarsController < ApplicationController
       raise ActionController::RoutingError.new("Not Found")
     end
   end
+
+  private
+
+  def bars_params
+    params.require(:bar).permit(:name, :address, :city, :state, :zip, :term)
+  end
 end
