@@ -89,4 +89,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.before(:each) do
+    ActionMailer::Base.deliveries.clear
+  end
+
 end
