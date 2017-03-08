@@ -16,7 +16,7 @@ if Rails.env.development? || Rails.env.production?
   stranger = User.create!(username: "fischeeeeeer0525", email: "fischeeeeeeeer0525@gmail.com",
    password: "admmmmmmmmin", password_confirmation: "admmmmmmmmmin")
   stranger2 = User.create!(username: "fischeeeeeer0525", email: "fischeeeeeeeer0525@gmail.com",
-   password: "admmmmmmmmin", password_confirmation: "admmmmmmmmmin")
+   password: "admmmmmmmmin", password_confirmation: "admmmmmmmmin")
 
   Review.destroy_all
   Review.create(user: devin, bar: bar, drinks: 5, food: 5, setting: 5, vibe: 5, entertainment: 5, description: "we love this bar!")
