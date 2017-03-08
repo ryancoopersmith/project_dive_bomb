@@ -6,8 +6,8 @@ FactoryGirl.define do
     city 'Philadelphia'
     state 'PA'
     zip '19147'
-    phone_number '215-215-2152'
+    sequence (:phone_number) {|n| "215-215-215#{n}"}
     image_url 'nautilus_shell.jpg'
-    rating rand(1..5)
+    rating 4
   end
 end

@@ -11,27 +11,25 @@ feature "visitor sees search bar on index page" do
 end
 
 feature "visitor interacts with search bar" do
-  bar = FactoryGirl.create(:bar)
   scenario "visitor does not use search function" do
+    bar1 = FactoryGirl.create(:bar)
+    bar2 = FactoryGirl.create(:bar)
     visit root_path
 
-    expect(page).to have_content bar.name
-    expect(page).to have_content bar.address
-    expect(page).to have_content bar.city
-    expect(page).to have_content bar.state
-    expect(page).to have_content bar.zip
-    expect(page).to have_content bar.rating
-    expect(page).to have_css("img[src*='nautilus_shell.jpg']")
+    expect(page).to have_content bar1.name
+    expect(page).to have_content bar2.name
 
   end
 
   scenario "visitor searches for bar1, and doesn't see bar2" do
     visit root_path
+    bar1 = FactoryGirl.create(:bar)
+    bar2 = FactoryGirl.create(:bar)
+    
     fill_in "term", with: bar1.name
     click_button 'Search'
 
     expect(page).to have_content(bar1.name)
-    expect(page).to have_content(bar2.name)
-
+    expect(page).to_not have_content(bar2.name)
   end
 end
