@@ -11,6 +11,7 @@ gem 'coveralls'
 gem "carrierwave"
 gem 'dotenv-rails'
 gem 'ransack'
+gem 'foundation-rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
