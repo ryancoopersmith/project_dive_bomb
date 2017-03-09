@@ -164,3 +164,372 @@ Processing by BarsController#index as HTML
 Completed 200 OK in 85ms (Views: 81.8ms | ActiveRecord: 2.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mBar Load (2.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "1524 Sansom St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-972-9938"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Oscar's Tavern"], ["url", "https://m.facebook.com/Oscars-Tavern-187176721252/"], ["address", "1524 Sansom St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19130"], ["phone_number", "215-972-9938"], ["image_url", "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775"], ["rating", 4.5], ["description", "One of the most storied dives in Center City. Patrons always feel welcome and the drink menu does not disappoint. Neither does the cheeseteak and a half for $7."]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "347 S. 13th St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-732-5010"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Dirty Frank's Bar"], ["url", "www.dirtyfranksbar.com"], ["address", "347 S. 13th St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19107"], ["phone_number", "215-732-5010"], ["image_url", "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg"], ["rating", 4.0]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "devin.bombay@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dbombay"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dbombay"], ["email", "devin.bombay@gmail.com"], ["encrypted_password", "$2a$11$dhqGmBl.mkoOdel7IeU3muZDRPdcH9WHojUvCrr6EQoH97bDlZfb."], ["created_at", 2017-03-09 14:35:11 UTC], ["updated_at", 2017-03-09 14:35:11 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (1.9ms)
+UserMailer#new_user: processed outbound mail in 197.5ms
+Sent mail to devin.bombay@gmail.com (13.1ms)
+Date: Thu, 09 Mar 2017 09:35:11 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: devin.bombay@gmail.com
+Message-ID: <58c1681f71c13_8183fc998c5e1e81788@Ryans-MacBook-Pro-2.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome dbombay!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ryancoopersmith1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ryancoopersmith1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ryancoopersmith1"], ["email", "ryancoopersmith1@gmail.com"], ["encrypted_password", "$2a$11$6cQ9CZbRq7cPugBDvyeuG.YghCism6c/bb9sgleEpilDuZ409Diya"], ["created_at", 2017-03-09 14:35:11 UTC], ["updated_at", 2017-03-09 14:35:11 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.0ms)
+UserMailer#new_user: processed outbound mail in 13.7ms
+Sent mail to ryancoopersmith1@gmail.com (2.2ms)
+Date: Thu, 09 Mar 2017 09:35:11 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: ryancoopersmith1@gmail.com
+Message-ID: <58c1681f979b5_8183fc998c5e1e8186@Ryans-MacBook-Pro-2.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome ryancoopersmith1!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ariellelandau360@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "arilandau"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "arilandau"], ["email", "ariellelandau360@gmail.com"], ["encrypted_password", "$2a$11$Xa.o3EBrNdkm9dIZp.SJE.ZWepWn7R2lHyaL7P1.02wp06cbOTtGO"], ["created_at", 2017-03-09 14:35:11 UTC], ["updated_at", 2017-03-09 14:35:11 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.0ms)
+UserMailer#new_user: processed outbound mail in 14.2ms
+Sent mail to ariellelandau360@gmail.com (2.4ms)
+Date: Thu, 09 Mar 2017 09:35:11 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: ariellelandau360@gmail.com
+Message-ID: <58c1681fbe070_8183fc998c5e1e81949@Ryans-MacBook-Pro-2.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome arilandau!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fischer0525"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "fischer0525"], ["email", "fischer0525@gmail.com"], ["encrypted_password", "$2a$11$1V0cxUeBPPxLWuY4e8yVwu3S2qwpm0b5T9TDfmxix/E0d2SgR4S6y"], ["created_at", 2017-03-09 14:35:11 UTC], ["updated_at", 2017-03-09 14:35:11 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.0ms)
+UserMailer#new_user: processed outbound mail in 16.1ms
+Sent mail to fischer0525@gmail.com (2.5ms)
+Date: Thu, 09 Mar 2017 09:35:11 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: fischer0525@gmail.com
+Message-ID: <58c1681fe3ed4_8183fc998c5e1e820fa@Ryans-MacBook-Pro-2.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome fischer0525!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-09 09:35:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 610ms (Views: 581.4ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:35:37 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.3ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 74ms (Views: 66.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:37:24 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 283ms (Views: 280.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:40:52 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.2ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 114ms (Views: 111.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:41:02 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 79ms (Views: 76.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:41:19 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.3ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 97ms (Views: 94.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:41:42 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 82ms (Views: 79.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:41:58 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:42:04 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 73.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:42:11 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.2ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 88ms (Views: 84.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:42:55 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 107ms (Views: 104.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:43:04 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 125ms (Views: 121.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:43:22 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 110ms (Views: 106.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:44:28 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 122ms (Views: 119.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:44:55 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:45:02 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 09:45:13 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 81ms (Views: 78.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 10:24:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 735ms (Views: 706.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 10:25:55 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 159ms (Views: 155.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 10:32:48 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 10:36:37 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 10:37:56 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 83ms (Views: 80.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 10:39:45 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 10:39:55 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 74.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 10:40:17 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 10:41:12 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 0.6ms)
+
+
