@@ -1,11 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bar from './components/Bar';
+import BarList from './components/BarList';
 
 $(function() {
   reactDOM.render(
-    <Bar />,
+    <BarList />,
     document.getElementById('app')
   );
 });
