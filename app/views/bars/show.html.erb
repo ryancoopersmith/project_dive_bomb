@@ -12,3 +12,12 @@
 <% end %>
 
 <p><a href="<%= @bar.url %>">Website</a></p>
+
+<div class="show_bar_footer"
+  <%= button_to "Back", root_path, method: 'get' %>
+  <% if current_user %>
+    <% if current_user.admin? %>
+      <%= button_to "Edit Bar", edit_bar_path, method: 'get' %>
+    <% end %>
+  <% end %>
+</div>

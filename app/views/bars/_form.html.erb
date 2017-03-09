@@ -21,15 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.text_area(:phone_number, size: "60x10", placeholder: "Business phone number")%>
+    <%= f.text_field(:phone_number, size: 60, placeholder: "Business phone number")%>
   </div>
   <div class="field">
     <%= f.label :image_url %><br />
-    <%= f.text_area(:image_url, size: "60x10", placeholder: "You can optionally enter an image url.")%>
+    <%= f.text_field(:image_url, size: 60, placeholder: "You can optionally enter an image url.")%>
   </div>
   <div class="field">
     <%= f.label :url %><br />
-    <%= f.text_area(:url, size: "60x10", placeholder: "You can optionally enter the bars website.")%>
+    <%= f.text_field(:url, size: 60, placeholder: "You can optionally enter the bars website.")%>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -39,5 +39,4 @@
   <div class="actions">
     <%= f.submit "Add Bar" %>
   </div>
-
-  
+<% end %>

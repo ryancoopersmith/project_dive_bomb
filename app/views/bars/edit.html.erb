@@ -1,0 +1,6 @@
+<h3>Edit <%= @bar.name %></h3>
+
+<%= render "form" %>
+</br>
+<%= button_to "Delete this Bar", @bar, method: :delete %>
+<%= button_to "Back", @bar, method: 'get' %>
