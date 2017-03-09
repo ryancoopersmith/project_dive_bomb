@@ -9,8 +9,4 @@ FactoryGirl.define do
     setting '5'
     description 'What an amazing bar! What an amazing bar! What an amazing bar! What an amazing bar! What an amazing bar!'
   end
-
-  factory :admin_review do
-    user :admin
-  end
 end
