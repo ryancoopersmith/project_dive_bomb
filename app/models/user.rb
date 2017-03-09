@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
   validates :admin, inclusion: { in: [true, false] }
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
