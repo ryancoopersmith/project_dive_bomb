@@ -7,8 +7,10 @@
 <p><%= @bar.city%>, <%=@bar.state%> <%=@bar.zip%></p>
 <p><%= @bar.phone_number %></p>
 
-<% if !@bar.description.blank? %>
+<% if @bar.description %>
   <p><%= @bar.description %></p>
 <% end %>
 
-<p><a href="<%= @bar.url %>">Website</a></p>
+<p><a href=<%= @bar.url %>>Website</a></p>
+
+<%= link_to "Go Back", bars_path %>
