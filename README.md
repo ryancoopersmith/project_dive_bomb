@@ -4,8 +4,20 @@
 
 # Project Dive Bar
 
-## Authors:
+## Description:
+Project Dive Bar is...
+
+## Features:
+1)
+2)
+3)
+...
+
+### Authors:
 Corey Fischer
 Arielle Landau
 Devin Bombay
 Ryan Coopersmith
+
+### Deployed site:
+https://frozen-wave-13196.herokuapp.com
