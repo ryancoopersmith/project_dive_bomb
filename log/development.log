@@ -533,3 +533,85 @@ Processing by BarsController#show as HTML
 Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/bars/1" for ::1 at 2017-03-09 11:25:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 3474ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$grey ": expected ":", was "= #808080;"):
+    4:     <title>Project Dive Bomb</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/maps/google_maps.scss:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1309561607192600958_70347929941620'
+  Rendering /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.9ms)
+  Rendering /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendering /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ryancoopersmith/.gem/ruby/2.2.5/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.1ms)
+Started GET "/bars/1" for ::1 at 2017-03-09 11:25:18 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 747ms (Views: 743.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars" for ::1 at 2017-03-09 11:25:31 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 11:25:52 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 73.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bars/2" for ::1 at 2017-03-09 11:26:17 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 113ms (Views: 110.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars" for ::1 at 2017-03-09 11:26:23 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bars/1" for ::1 at 2017-03-09 11:26:26 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  Rendered bars/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 96ms (Views: 93.3ms | ActiveRecord: 1.0ms)
+
+
