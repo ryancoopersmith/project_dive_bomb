@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170307201440) do
     t.string "zip",          null: false
     t.string "phone_number", null: false
     t.string "image_url"
-    t.float  "rating"
+    t.float  "rating",       null: false
     t.text   "description"
   end
 
