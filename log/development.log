@@ -122,3 +122,60 @@
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-09 10:10:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (2.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (51.7ms)
+Started GET "/" for ::1 at 2017-03-09 10:10:37 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 918ms (Views: 891.7ms | ActiveRecord: 13.8ms)
+
+
+Completed 200 OK in 214ms (Views: 211.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-09 10:11:04 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-09 10:11:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 139ms (Views: 112.5ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-03-09 10:11:58 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-09 10:12:10 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-03-09 10:12:13 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
