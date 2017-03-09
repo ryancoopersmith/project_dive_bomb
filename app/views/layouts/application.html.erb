@@ -10,6 +10,10 @@
 
   <body>
 
+  <div id='app'>
+    <!-- React Stuff -->
+  </div>
+
   <div class="nav_bar">
     <%= form_tag(bars_path, method: :get) do %>
       <%= text_field_tag :term, params[:term] %>
@@ -39,7 +43,7 @@
       <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
     <% end %>
   <% end %>
-  
+
   <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" %>
     <% if user_signed_in? %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
