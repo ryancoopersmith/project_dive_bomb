@@ -7,6 +7,7 @@ FactoryGirl.define do
     entertainment '5'
     vibe '5'
     setting '5'
-    description 'What an amazing bar! What an amazing bar! What an amazing bar! What an amazing bar! What an amazing bar!'
+    description 'What an amazing bar! What an amazing bar! What an amazing bar!
+      What an amazing bar! What an amazing bar!'
   end
 end
