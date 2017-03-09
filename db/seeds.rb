@@ -12,12 +12,29 @@ Bar.create!(name: "Oscar's Tavern", address: '1524 Sansom St.', city: 'Philadelp
 Bar.create!(name: "Dirty Frank's Bar", address: '347 S. 13th St.', city: 'Philadelphia', state: 'PA', zip: '19107', phone_number: '215-732-5010', url: "www.dirtyfranksbar.com", image_url: "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg", rating: 4)
 
 if Rails.env.development? || Rails.env.production?
-  devin = User.create!(username: "dbombay", email: "devin.bombay@gmail.com",
-   password: "dbombay1", password_confirmation: "dbombay1")
-  ryan = User.create!(username: "ryancoopersmith1", email: "ryancoopersmith1@gmail.com",
-   password: "password", password_confirmation: "password")
-  arielle = User.create!(username: "arilandau", email: "ariellelandau360@gmail.com",
-   password: "password1", password_confirmation: "password1")
-  corey = User.create!(username: "fischer0525", email: "fischer0525@gmail.com",
-   password: "admin", password_confirmation: "admin")
+  User.destroy_all
+  User.create!(
+    username: "dbombay",
+    email: "devin.bombay@gmail.com",
+    password: "dbombay1",
+    password_confirmation: "dbombay1"
+  )
+  User.create!(
+    username: "ryancoopersmith1",
+    email: "ryancoopersmith1@gmail.com",
+    password: "password",
+    password_confirmation: "password"
+  )
+  User.create!(
+    username: "arilandau",
+    email: "ariellelandau360@gmail.com",
+    password: "password1",
+    password_confirmation: "password1"
+  )
+  User.create!(
+    username: "fischer0525",
+    email: "fischer0525@gmail.com",
+    password: "password2",
+    password_confirmation: "password2"
+  )
 end
