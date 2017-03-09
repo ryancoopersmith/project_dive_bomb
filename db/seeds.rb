@@ -13,21 +13,28 @@ Bar.create!(name: "Dirty Frank's Bar", address: '347 S. 13th St.', city: 'Philad
 
 if Rails.env.development? || Rails.env.production?
   User.destroy_all
-  devin = User.create!(
+  User.create!(
     username: "dbombay",
     email: "devin.bombay@gmail.com",
     password: "dbombay1",
-    password_confirmation: "dbombay1")
-  ryan = User.create!(username: "ryancoopersmith1",
+    password_confirmation: "dbombay1"
+  )
+  User.create!(
+    username: "ryancoopersmith1",
     email: "ryancoopersmith1@gmail.com",
     password: "password",
-    password_confirmation: "password")
-  arielle = User.create!(username: "arilandau",
+    password_confirmation: "password"
+  )
+  User.create!(
+    username: "arilandau",
     email: "ariellelandau360@gmail.com",
     password: "password1",
-    password_confirmation: "password1")
-  corey = User.create!(username: "fischer0525",
+    password_confirmation: "password1"
+  )
+  User.create!(
+    username: "fischer0525",
     email: "fischer0525@gmail.com",
     password: "password2",
-    password_confirmation: "password2")
+    password_confirmation: "password2"
+  )
 end
