@@ -20,5 +20,5 @@ if Rails.env.development? || Rails.env.production?
   arielle = User.create!(username: "arilandau", email: "ariellelandau360@gmail.com",
    password: "password1", password_confirmation: "password1")
   corey = User.create!(username: "fischer0525", email: "fischer0525@gmail.com",
-   password: "admin", password_confirmation: "admin")
+   password: "password2", password_confirmation: "password2")
 end
