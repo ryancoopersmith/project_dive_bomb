@@ -16,9 +16,15 @@ describe Bar do
   end
 
   it "should have a unique phone number" do
-    expect { FactoryGirl.create(:bar,
-      phone_number: "215-215-2155") }.to_not raise_error
-    expect { FactoryGirl.create(:bar,
-      phone_number: "215-215-2155") }.to raise_error
+    expect {
+      FactoryGirl.create(
+      :bar, phone_number: "215-215-2155"
+      )
+      }.to_not raise_error
+    expect {
+      FactoryGirl.create(
+      :bar, phone_number: "215-215-2155"
+      )
+      }.to raise_error
   end
 end
