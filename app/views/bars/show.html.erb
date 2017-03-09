@@ -10,8 +10,6 @@
   <p><%= @bar.description %></p>
 <% end %>
 
-<p><a href="<%= @bar.url %>">Website</a></p>
-
 <% if @reviews.any? { |review| review.user.admin == true } %>
   <h2> Our Review </h2>
   <% @reviews.each do |review| %>
