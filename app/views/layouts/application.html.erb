@@ -14,7 +14,7 @@
     <div>
       <% if current_user %>
         <% if current_user.admin? %>
-          <%=button_to "Create Bar", new_bar_path, method: 'get' %>
+          <%=link_to "Create Bar", new_bar_path %>
           <% end %>
         <% end %>
     </div>
@@ -30,10 +30,10 @@
       <% end %>
       <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" %>
         <% if user_signed_in? %>
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= button_to "Sign In", new_user_session_path, method: 'get' %>
-          <%= button_to "Sign Up", new_user_registration_path, method: 'get' %>
+          <%= link_to "Sign In", new_user_session_path%>
+          <%= link_to "Sign Up", new_user_registration_path%>
         <% end %>
       <% end %>
     </div>

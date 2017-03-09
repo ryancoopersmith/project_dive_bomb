@@ -1,11 +1,15 @@
 class BarsController < ApplicationController
+  before_action :authorize_user, except: [:index, :show]
+
   def index
     @bars = Bar.search(params[:term])
   end
 
   def show
     @bar = Bar.find(params[:id])
+    @reviews = @bar.reviews
   end
+
   def new
     @bar = Bar.new
   end
@@ -60,5 +64,11 @@ class BarsController < ApplicationController
 
   def bars_params
     params.require(:bar).permit(:name, :address, :phone_number, :url, :image_url, :city, :state, :zip, :term)
+  end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end

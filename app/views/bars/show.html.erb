@@ -1,7 +1,6 @@
 <h1><%= @bar.name %></h1>
 
 <img src="<%=@bar.image_url%>">
-<p><%= @bar.rating %> </p>
 <p><%= @bar.name %> </p>
 <p><%= @bar.address %> </p>
 <p><%= @bar.city%>, <%=@bar.state%> <%=@bar.zip%></p>
@@ -12,8 +11,37 @@
 <% end %>
 
 
-<p><a href="<%= @bar.url %>">Website</a></p>
+<% if @reviews.any? { |review| review.user.admin == true } %>
+  <h2> Our Review </h2>
+  <% @reviews.each do |review| %>
+      <% if review.user.admin == true %>
+      <ul>
+        <li> Drinks: <%= review.drinks %> </li>
+        <li> Food: <%= review.food %> </li>
+        <li> Entertainment: <%= review.entertainment %> </li>
+        <li> Vibe: <%= review.vibe %> </li>
+        <li> Setting: <%= review.setting %> </li>
+      </ul>
+      <p><strong>Description: </strong><%= review.description %></p>
+    <% end %>
+  <% end %>
+<% end %>
 
+<% if @reviews.any? { |review| review.user.admin == false } %>
+  <h2> Your Reviews </h2>
+  <% @reviews.each do |review| %>
+    <% if review.user.admin == false %>
+      <div id = "review">
+        <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
+        <% if !review.description.blank? %>
+          <p><strong>Description: </strong><%= review.description %></p>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p><a href="http://<%= @bar.url %>">Website</a></p>
 
 <div id="map"></div>
 
@@ -52,10 +80,10 @@
 </script>
 
 <div class="show_bar_footer">
-  <%= button_to "Back", root_path, method: 'get' %>
+  <%= link_to "Back", root_path %>
   <% if current_user %>
     <% if current_user.admin? %>
-      <%= button_to "Edit Bar", edit_bar_path, method: 'get' %>
+      <%= link_to "Edit Bar", edit_bar_path %>
     <% end %>
   <% end %>
 </div>
