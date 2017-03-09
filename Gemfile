@@ -12,6 +12,7 @@ gem "carrierwave"
 gem 'dotenv-rails'
 gem 'ransack'
 gem 'foundation-rails'
+gem 'fog-aws'
 
 group :development do
   gem 'listen', '~> 3.0.5'
