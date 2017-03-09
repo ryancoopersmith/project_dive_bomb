@@ -6,7 +6,21 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
   end
+  def new
+    @bar = Bar.new
+  end
+
   def create
+    @bars = Bar.search(params[:term])
+    @bar = Bar.new(bar_params)
+
+    if @bar.save
+      flash[:notice] = "Bar Added Successfully"
+      redirect_to @bar
+    else
+      flash[:notice] = @bar.errors.full_messages
+      render action: "new"
+    end
   end
 
   protected

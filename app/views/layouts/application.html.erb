@@ -11,6 +11,13 @@
   <body>
 
   <div class="nav_bar">
+    <div>
+      <% if current_user %>
+        <% if current_user.admin? %>
+          <%=link_to "Create Bar", new_bar_path %>
+          <% end %>
+        <% end %>
+    </div>
     <div class="search_bar">
       <%= form_tag(bars_path, method: :get) do %>
         <%= text_field_tag :term, params[:term] %>
