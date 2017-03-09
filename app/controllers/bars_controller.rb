@@ -1,6 +1,6 @@
 class BarsController < ApplicationController
   def index
-    @bars = Bar.all
+    @bars = Bar.search(params[:term])
   end
 
   def show
@@ -14,5 +14,11 @@ class BarsController < ApplicationController
     if !user_signed_in? || !current_user.admin?
       raise ActionController::RoutingError.new("Not Found")
     end
+  end
+
+  private
+
+  def bars_params
+    params.require(:bar).permit(:name, :address, :city, :state, :zip, :term)
   end
 end
