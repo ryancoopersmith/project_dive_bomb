@@ -1,31 +1,25 @@
-import ReviewList from 'components/ReviewList';
-import Review from 'components/Review';
-import { mount } from 'enzyme';
-import jasmineEnzyme from 'jasmine-enzyme';
-import React from 'react';
+import Review from '../src/components/Review';
+import ReviewList from '../src/components/ReviewList'
 
 describe('Review', () => {
+  let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <Bar
-        id={bar.id}
-        key={bar.id}
-        name={bar.name}
-        url={bar.url}
-        address={bar.address}
-        city={bar.city}
-        state={bar.state}
-        zip={bar.zip}
-        phone_number={bar.phone_number}
-        image_url={bar.image_url}
-        rating={bar.rating}
-        description={bar.description}
+      <Review
+        id={review.id}
+        key={review.id}
+        drinks={review.drinks}
+        food={review.food}
+        entertainment={review.entertainment}
+        vibe={review.vibe}
+        setting={review.setting}
+        description={review.description}
+        user_id={review.user_id}
+        upvotes={review.upvotes}
+        downvotes={review.downvotes}
+        admin={admin}
       />
     );
-  });
-
-  it('should render a Review Component', () => {
-    expect(wrapper.find(Review)).toBePresent();
   });
 });

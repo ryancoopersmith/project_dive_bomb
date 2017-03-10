@@ -1,5 +1,13 @@
+import BarList from '../src/components/BarList';
+
 describe('BarList', () => {
-  it('should pass', () => {
-    expect(true).toBe(true);
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(<BarList />);
+  });
+
+  it('should render a Bar Component', () => {
+    expect(wrapper.find(Bar)).toBePresent();
   });
 });

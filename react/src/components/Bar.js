@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReviewList from 'ReviewList'
+import ReviewList from './ReviewList'
 
 class Bar extends Component {
   constructor(props) {

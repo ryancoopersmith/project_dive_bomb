@@ -1,10 +1,8 @@
-import BarList from 'components/BarList';
-import Bar from 'components/Bar';
-import { mount } from 'enzyme';
-import jasmineEnzyme from 'jasmine-enzyme';
-import React from 'react';
+import BarList from '../src/components/BarList';
+import Bar from '../src/components/Bar';
 
 describe('Bar', () => {
+  let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
@@ -23,9 +21,5 @@ describe('Bar', () => {
         description={bar.description}
       />
     );
-  });
-
-  it('should render a Bar Component', () => {
-    expect(wrapper.find(Bar)).toBePresent();
   });
 });
