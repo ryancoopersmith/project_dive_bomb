@@ -38,7 +38,7 @@ class ReviewList extends Component {
         return (
           <Review
           id={review.id}
-          key={review.key}
+          key={review.id}
           drinks={review.drinks}
           food={review.food}
           entertainment={review.entertainment}
