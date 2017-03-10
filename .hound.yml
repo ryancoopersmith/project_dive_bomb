@@ -2,4 +2,4 @@ ruby:
   config_file: .rubocop.yml
 
 jshint:
-  config_file: .jshintrc
+  config_file: .eslintrc.js
