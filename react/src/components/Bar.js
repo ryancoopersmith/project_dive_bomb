@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReviewList from 'ReviewList'
 
 class Bar extends Component {
   constructor(props) {
@@ -6,12 +7,13 @@ class Bar extends Component {
   }
 
   render() {
-    let name = this.props.name;
-    return (
-      <div>
-        {name}
-      </div>
-    );
+    if (this.props.reviews) {
+      return (
+        <ReviewList
+        reviews={this.props.reviews}
+        />
+      );
+    }
   }
 }
 

@@ -1,9 +1,9 @@
-class AddVotesToReviews < ActiveRecord::Migration[5.0]
+class AddUpvotesToReviews < ActiveRecord::Migration[5.0]
   def up
-    add_column :reviews, :votes, :integer
+    add_column :reviews, :upvotes, :integer
   end
 
   def down
-    remove_column :reviews, :votes
+    remove_column :reviews, :upvotes
   end
 end
