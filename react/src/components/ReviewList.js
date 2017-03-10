@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Review from 'Review'
+import Review from 'Review';
 
 class ReviewList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [];
-    }
+      reviews: []
+    };
     this.getReviews = this.getReviews.bind(this);
   }
 
@@ -33,7 +33,7 @@ class ReviewList extends Component {
   }
 
   render() {
-    if (!this.state.reviews.empty?) {
+    if (this.state.reviews.length > 0) {
       let reviews = this.state.reviews.map((review) => {
         return (
           <Review
@@ -49,21 +49,21 @@ class ReviewList extends Component {
           bar_id={review.bar_id}
           votes={review.votes}
           />
-        )
+        );
       });
 
       return(
         <div>
           {reviews}
         </div>
-      )
+      );
 
     } else {
       return (
         <div>
           Be the first to review!
         </div>
-      )
+      );
     }
   }
 }

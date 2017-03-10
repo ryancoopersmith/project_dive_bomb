@@ -5,7 +5,7 @@ class BarsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bars: [];
+      bars: []
     }
     this.getBars = this.getBars.bind(this);
   }
@@ -33,7 +33,7 @@ class BarsList extends Component {
   }
 
   render() {
-    if (!this.state.reviews.empty?) {
+    if (this.state.reviews.length > 0) {
       let bars = this.state.bars.map((bar) => {
         return (
           <Bar
@@ -50,21 +50,21 @@ class BarsList extends Component {
           rating={bar.rating}
           description={bar.description}
           />
-        )
-      )};
+        );
+      });
 
       return(
         <div>
           {bars}
         </div>
-      )
+      );
 
-    else {
+    } else {
       return (
         <div>
           Be the first to reccomend a bar!
         </div>
-      )
+      );
     }
   }
 }
