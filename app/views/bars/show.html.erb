@@ -10,7 +10,6 @@
   <p><%= @bar.description %></p>
 <% end %>
 
-<p><a href="<%= @bar.url %>">Website</a></p>
 
 <% if @reviews.any? { |review| review.user.admin == true } %>
   <h2> Our Review </h2>
@@ -80,7 +79,14 @@
   }
 </script>
 
-<%= link_to "Go Back", bars_path %>
+<div class="show_bar_footer">
+  <%= link_to "Back", root_path %>
+  <% if current_user %>
+    <% if current_user.admin? %>
+      <%= link_to "Edit Bar", edit_bar_path %>
+    <% end %>
+  <% end %>
+</div>
 
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap">

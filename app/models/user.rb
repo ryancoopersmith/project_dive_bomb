@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
-  def admin?
+  def self.admin?
     admin == true
   end
 
