@@ -4,55 +4,36 @@ import Review from 'Review';
 class ReviewList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      reviews: []
-    };
-    this.getReviews = this.getReviews.bind(this);
-  }
-
-  getReviews() {
-    fetch('http://localhost:4567/api/v1/reviews.json')
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-              error = new Error(errorMessage);
-          throw(error);
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ reviews: body.reviews });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
-  componentDidMount() {
-    this.getReviews();
   }
 
   render() {
-    if (this.state.reviews.length > 0) {
+    let admin = false;
+    if (this.props.reviews) {
       let reviews = this.state.reviews.map((review) => {
+        if (review.user.admin) {
+          admin = true;
+        } else {
+          admin = false;
+        }
         return (
           <Review
-          id={review.id}
-          key={review.id}
-          drinks={review.drinks}
-          food={review.food}
-          entertainment={review.entertainment}
-          vibe={review.vibe}
-          setting={review.setting}
-          description={review.description}
-          user_id={review.user_id}
-          bar_id={review.bar_id}
-          votes={review.votes}
+            id={review.id}
+            key={review.id}
+            drinks={review.drinks}
+            food={review.food}
+            entertainment={review.entertainment}
+            vibe={review.vibe}
+            setting={review.setting}
+            description={review.description}
+            user_id={review.user_id}
+            upvotes={review.upvotes}
+            downvotes={review.downvotes}
+            admin={admin}
           />
         );
       });
 
-      return(
+      return (
         <div>
           {reviews}
         </div>

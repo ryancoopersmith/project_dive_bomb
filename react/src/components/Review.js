@@ -4,13 +4,21 @@ class Review extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      votes: []
+      upvotes: 0
+      downvotes: 0
     };
     this.setVotes = this.setVotes.bind(this);
   }
 
   componentDidMount() {
     this.setVotes();
+  }
+
+  setVotes() {
+    this.setState({
+      upvotes: this.props.upvotes,
+      downvotes: this.props.downvotes
+     })
   }
 
   render() {
