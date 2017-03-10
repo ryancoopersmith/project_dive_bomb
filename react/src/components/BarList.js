@@ -5,7 +5,7 @@ class BarsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bars: []
+      bars: [];
     }
     this.getBars = this.getBars.bind(this);
   }
@@ -23,7 +23,7 @@ class BarsList extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ bars: body['bars'] });
+        this.setState({ bars: body.bars });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -54,12 +54,16 @@ class BarsList extends Component {
       )};
 
       return(
-        {bars}
+        <div>
+          {bars}
+        </div>
       )
 
     else {
       return (
-        <p>Be the first to reccomend a bar!</p>
+        <div>
+          Be the first to reccomend a bar!
+        </div>
       )
     }
   }

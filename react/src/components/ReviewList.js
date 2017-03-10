@@ -5,7 +5,7 @@ class ReviewList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [];
     }
     this.getReviews = this.getReviews.bind(this);
   }
@@ -23,7 +23,7 @@ class ReviewList extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ reviews: body['reviews'] });
+        this.setState({ reviews: body.reviews });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -53,12 +53,16 @@ class ReviewList extends Component {
       });
 
       return(
-        {reviews}
+        <div>
+          {reviews}
+        </div>
       )
-      
+
     } else {
       return (
-        <p>Be the first to review!</p>
+        <div>
+          Be the first to review!
+        </div>
       )
     }
   }

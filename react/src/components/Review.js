@@ -4,7 +4,7 @@ class Review extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      votes: []
+      votes: [];
     }
     this.setVotes = this.setVotes.bind(this);
   }
@@ -15,7 +15,9 @@ class Review extends Component {
 
   render() {
     return (
-      <p>{this.props.votes}<p>
+      <div>
+        {this.props.votes}
+      <div>
     )
   }
 }

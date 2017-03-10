@@ -7,7 +7,9 @@ class Bar extends Component {
 
   render() {
     return (
-      <p>{this.props.name}</p>
+      <div>
+        {this.props.name}
+      </div>
     )
   }
 }
