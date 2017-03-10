@@ -4,8 +4,8 @@ class Review extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      votes: [];
-    }
+      votes: []
+    };
     this.setVotes = this.setVotes.bind(this);
   }
 
@@ -14,11 +14,10 @@ class Review extends Component {
   }
 
   render() {
+    let votes = this.state.votes;
     return (
-      <div>
-        {this.props.votes}
-      <div>
-    )
+      {votes}
+    );
   }
 }
 

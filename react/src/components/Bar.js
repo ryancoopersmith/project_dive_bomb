@@ -6,11 +6,12 @@ class Bar extends Component {
   }
 
   render() {
+    let name = this.props.name;
     return (
       <div>
-        {this.props.name}
+        {name}
       </div>
-    )
+    );
   }
 }
 
