@@ -7,10 +7,10 @@ class BarsList extends Component {
     this.state = {
       bars: []
     }
-    this.getData = this.getData.bind(this);
+    this.getBars = this.getBars.bind(this);
   }
 
-  getData() {
+  getBars() {
     fetch('http://localhost:4567/api/v1/bars.json')
       .then(response => {
         if (response.ok) {
@@ -23,19 +23,45 @@ class BarsList extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        console.log(body);
+        this.setState({ bars: body['bars'] });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
-    this.getData();
+    this.getBars();
   }
 
   render() {
-    return (
-      <Bar />
-    )
+    if (!this.state.reviews.empty?) {
+      let bars = this.state.bars.map((bar) => {
+        return (
+          <Bar
+          id={bar.id}
+          key={bar.key}
+          name={bar.name}
+          url={bar.url}
+          address={bar.address}
+          city={bar.city}
+          state={bar.state}
+          zip={bar.zip}
+          phone_number={bar.phone_number}
+          image_url={bar.image_url}
+          rating={bar.rating}
+          description={bar.description}
+          />
+        )
+      )};
+
+      return(
+        {bars}
+      )
+
+    else {
+      return (
+        <p>Be the first to reccomend a bar!</p>
+      )
+    }
   }
 }
 
