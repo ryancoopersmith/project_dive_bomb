@@ -38,7 +38,7 @@ class BarsList extends Component {
         return (
           <Bar
           id={bar.id}
-          key={bar.key}
+          key={bar.id}
           name={bar.name}
           url={bar.url}
           address={bar.address}
