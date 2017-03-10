@@ -820,3 +820,530 @@ Processing by BarsController#index as HTML
 Completed 200 OK in 113ms (Views: 110.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2017-03-10 01:43:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (39.1ms)
+Started GET "/" for ::1 at 2017-03-10 01:43:43 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (1.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 1542ms (Views: 1524.7ms | ActiveRecord: 6.9ms)
+
+
+Completed 200 OK in 692ms (Views: 688.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/bars/3" for ::1 at 2017-03-10 01:43:50 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 3]]
+  Rendered bars/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 132ms (Views: 97.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-10 01:44:04 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 215ms (Views: 189.7ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 01:44:07 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XP+uixOVMXOcFaLoQucxpHpCpw9L6LVcCY7AUX5G7dTb5uxl+16KpwhiwKJnFcf4GbJHnqJQBtpRLuqegW0l3Q==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 196ms (ActiveRecord: 3.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XP+uixOVMXOcFaLoQucxpHpCpw9L6LVcCY7AUX5G7dTb5uxl+16KpwhiwKJnFcf4GbJHnqJQBtpRLuqegW0l3Q==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 269ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 01:44:16 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lz/W9l+4cDHA5tPC9F3EbNgJyALcEtcR0chE9FIDQOIQJpQYt3PL5VSRsYjRrzIwu/kokzWqZJeJaG47rSiI6w==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 159ms (ActiveRecord: 2.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lz/W9l+4cDHA5tPC9F3EbNgJyALcEtcR0chE9FIDQOIQJpQYt3PL5VSRsYjRrzIwu/kokzWqZJeJaG47rSiI6w==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 268ms (Views: 101.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 01:44:29 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sYRX3aDIfV9PrjJs3oVq5d8J0akRdSNG5IYO5CNUMGM2nRUzSAPGi9vZUCb7d5y5vPkxOPjNkMC8JiQr3H/4ag==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 167ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sYRX3aDIfV9PrjJs3oVq5d8J0akRdSNG5IYO5CNUMGM2nRUzSAPGi9vZUCb7d5y5vPkxOPjNkMC8JiQr3H/4ag==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 260ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-10 01:44:38 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 107ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (143.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project_dive_bomb_test"[0m
+  [1m[35m (354.5ms)[0m  [1m[35mCREATE DATABASE "project_dive_bomb_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float, "description" text)[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "drinks" integer NOT NULL, "food" integer NOT NULL, "entertainment" integer NOT NULL, "vibe" integer NOT NULL, "setting" integer NOT NULL, "description" text, "user_id" integer, "bar_id" integer)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_bar_id" ON "reviews" USING btree ("bar_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_photo" character varying, "admin" boolean DEFAULT 'f')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170307201440)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170306194004),
+(20170306194415),
+(20170307142603),
+(20170307160002),
+(20170307190338);
+
+[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 18:50:18 UTC], ["updated_at", 2017-03-10 18:50:18 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (137.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project_dive_bomb_test"[0m
+  [1m[35m (343.0ms)[0m  [1m[35mCREATE DATABASE "project_dive_bomb_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float, "description" text)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "drinks" integer NOT NULL, "food" integer NOT NULL, "entertainment" integer NOT NULL, "vibe" integer NOT NULL, "setting" integer NOT NULL, "description" text, "user_id" integer, "bar_id" integer)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_bar_id" ON "reviews" USING btree ("bar_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_photo" character varying, "admin" boolean DEFAULT 'f')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170307201440)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170306194004),
+(20170306194415),
+(20170307142603),
+(20170307160002),
+(20170307190338);
+
+[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 18:55:29 UTC], ["updated_at", 2017-03-10 18:55:29 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (146.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project_dive_bomb_test"[0m
+  [1m[35m (339.5ms)[0m  [1m[35mCREATE DATABASE "project_dive_bomb_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float, "description" text)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "drinks" integer NOT NULL, "food" integer NOT NULL, "entertainment" integer NOT NULL, "vibe" integer NOT NULL, "setting" integer NOT NULL, "description" text, "user_id" integer, "bar_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_bar_id" ON "reviews" USING btree ("bar_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_photo" character varying, "admin" boolean DEFAULT 'f')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170307201440)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170306194004),
+(20170306194415),
+(20170307142603),
+(20170307160002),
+(20170307190338);
+
+[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 19:03:25 UTC], ["updated_at", 2017-03-10 19:03:25 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (135.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project_dive_bomb_test"[0m
+  [1m[35m (344.6ms)[0m  [1m[35mCREATE DATABASE "project_dive_bomb_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "bars" ("id" serial primary key, "name" character varying NOT NULL, "url" character varying, "address" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" character varying NOT NULL, "phone_number" character varying NOT NULL, "image_url" character varying, "rating" float, "description" text)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "drinks" integer NOT NULL, "food" integer NOT NULL, "entertainment" integer NOT NULL, "vibe" integer NOT NULL, "setting" integer NOT NULL, "description" text, "user_id" integer, "bar_id" integer)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_bar_id" ON "reviews" USING btree ("bar_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_photo" character varying, "admin" boolean DEFAULT 'f')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170307201440)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170306194004),
+(20170306194415),
+(20170307142603),
+(20170307160002),
+(20170307190338);
+
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 19:06:43 UTC], ["updated_at", 2017-03-10 19:06:43 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-03-10 14:09:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 1395ms (Views: 1367.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-10 14:09:53 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (74.4ms)
+Completed 200 OK in 206ms (Views: 178.8ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 14:09:56 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kZ5WKQE+XfHhbZVQeZ39V9yzt9dI7yywPMsGD0Il5AwWhxTH6fXmJXUa9xpcbwsLv0NXRqFXnzZkayzAvQ4sBQ==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 184ms (ActiveRecord: 3.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kZ5WKQE+XfHhbZVQeZ39V9yzt9dI7yywPMsGD0Il5AwWhxTH6fXmJXUa9xpcbwsLv0NXRqFXnzZkayzAvQ4sBQ==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 311ms (Views: 150.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 14:10:04 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2ssHpWns4Vm0rtpyqTdd2Uf4EIIyY4rG9kcK8eLWyOccm7wfWwIUfKl2SPvVisrBu8A0+FxPa1DeTbkOKCTKg==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 165ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2ssHpWns4Vm0rtpyqTdd2Uf4EIIyY4rG9kcK8eLWyOccm7wfWwIUfKl2SPvVisrBu8A0+FxPa1DeTbkOKCTKg==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 275ms (Views: 107.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 7]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 3]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 4]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "bars" WHERE "bars"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "1524 Sansom St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-972-9938"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Oscar's Tavern"], ["url", "https://m.facebook.com/Oscars-Tavern-187176721252/"], ["address", "1524 Sansom St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19130"], ["phone_number", "215-972-9938"], ["image_url", "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775"], ["rating", 4.5], ["description", "One of the most storied dives in Center City. Patrons always feel welcome and the drink menu does not disappoint. Neither does the cheeseteak and a half for $7."]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBar Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."address" = $1 LIMIT $2[0m  [["address", "347 S. 13th St."], ["LIMIT", 1]]
+  [1m[36mBar Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bars" WHERE "bars"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "215-732-5010"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bars" ("name", "url", "address", "city", "state", "zip", "phone_number", "image_url", "rating") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Dirty Frank's Bar"], ["url", "www.dirtyfranksbar.com"], ["address", "347 S. 13th St."], ["city", "Philadelphia"], ["state", "PA"], ["zip", "19107"], ["phone_number", "215-732-5010"], ["image_url", "http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg"], ["rating", 4.0]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "devin.bombay@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dbombay"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dbombay"], ["email", "devin.bombay@gmail.com"], ["encrypted_password", "$2a$11$l6DZV5e5AFha7oM213PVRO/Iii9jzb2OoHiETjW2BiQkCvN2coL7a"], ["created_at", 2017-03-10 19:10:16 UTC], ["updated_at", 2017-03-10 19:10:16 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (1.6ms)
+UserMailer#new_user: processed outbound mail in 275.6ms
+Sent mail to devin.bombay@gmail.com (13.6ms)
+Date: Fri, 10 Mar 2017 14:10:16 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: devin.bombay@gmail.com
+Message-ID: <58c2fa18e96bf_b5003fcc5e03fa243159a@Coreys-MacBook-Air.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome dbombay!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ryancoopersmith1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ryancoopersmith1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ryancoopersmith1"], ["email", "ryancoopersmith1@gmail.com"], ["encrypted_password", "$2a$11$6h6OKN8f0I2SbBrrLE/z4Oqg/NhVUYj/hF.dXhsBhwSY6e.J6Odv6"], ["created_at", 2017-03-10 19:10:17 UTC], ["updated_at", 2017-03-10 19:10:17 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.1ms)
+UserMailer#new_user: processed outbound mail in 19.7ms
+Sent mail to ryancoopersmith1@gmail.com (3.0ms)
+Date: Fri, 10 Mar 2017 14:10:17 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: ryancoopersmith1@gmail.com
+Message-ID: <58c2fa192158c_b5003fcc5e03fa2431680@Coreys-MacBook-Air.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome ryancoopersmith1!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ariellelandau360@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "arilandau"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "arilandau"], ["email", "ariellelandau360@gmail.com"], ["encrypted_password", "$2a$11$heMFx3/Pe.a6yRKyuepiZ.Uex7Ezr4/CsH9KwbQ51QROogMFFWIJS"], ["created_at", 2017-03-10 19:10:17 UTC], ["updated_at", 2017-03-10 19:10:17 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.0ms)
+UserMailer#new_user: processed outbound mail in 13.7ms
+Sent mail to ariellelandau360@gmail.com (2.9ms)
+Date: Fri, 10 Mar 2017 14:10:17 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: ariellelandau360@gmail.com
+Message-ID: <58c2fa194cabc_b5003fcc5e03fa243179e@Coreys-MacBook-Air.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome arilandau!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fischer0525"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "fischer0525"], ["email", "fischer0525@gmail.com"], ["encrypted_password", "$2a$11$kM9g0In6QIbLStavNU7HIutBm0.HLbnxblEpGj2rJqdZ5grbm9OdK"], ["created_at", 2017-03-10 19:10:17 UTC], ["updated_at", 2017-03-10 19:10:17 UTC]]
+  Rendering user_mailer/new_user.text.erb
+  Rendered user_mailer/new_user.text.erb (0.0ms)
+UserMailer#new_user: processed outbound mail in 13.8ms
+Sent mail to fischer0525@gmail.com (2.8ms)
+Date: Fri, 10 Mar 2017 14:10:17 -0500
+From: Project Dive Bomb <no-reply@projectdivebomb.com>
+To: fischer0525@gmail.com
+Message-ID: <58c2fa197a2ce_b5003fcc5e03fa2431893@Coreys-MacBook-Air.local.mail>
+Subject: Success
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome fischer0525!
+
+We're very happy to have you join our community!
+
+-Project Dive Bomb
+
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users/sign_in" for ::1 at 2017-03-10 14:10:20 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rbn5KXSPi8SyM8YUgqz/vyYD4eOZ12KWkN4+cJsaTsAqoLvHnEQwECZEpF6nXgnjRfMBcnBv0RDIfhS/ZDGGyQ==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fischer0525@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 168ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rbn5KXSPi8SyM8YUgqz/vyYD4eOZ12KWkN4+cJsaTsAqoLvHnEQwECZEpF6nXgnjRfMBcnBv0RDIfhS/ZDGGyQ==", "user"=>{"email"=>"fischer0525@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 291ms (Views: 129.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-10 14:10:30 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"neLWe7tl2jXy4PaeICAUkIBeYSSgl/x3NsYfug5nn3Ea+5SVU65h4WaXlNQF0uLM466BtUkvT/FuZjV18UxXeA==", "user"=>{"email"=>"devin.bombay@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "devin.bombay@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", 2017-03-10 19:10:30 UTC], ["updated_at", 2017-03-10 19:10:30 UTC], ["id", 9]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-03-10 19:10:30 UTC], ["last_sign_in_at", 2017-03-10 19:10:30 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-03-10 19:10:30 UTC], ["id", 9]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 202ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2017-03-10 14:10:30 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bars/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 113ms (Views: 110.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-10 14:11:30 -0500
+Processing by BarsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2017-03-10 14:11:48 -0500
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 68084ms (Views: 113.4ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-10 14:12:39 -0500
+Processing by BarsController#index as HTML
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bars/index.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 199ms (Views: 140.7ms | ActiveRecord: 49.0ms)
+
+
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 356ms (Views: 136.4ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-10 14:12:42 -0500
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 133ms (Views: 127.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-10 14:12:53 -0500
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered bars/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 116ms (Views: 110.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-10 14:13:12 -0500
+Processing by BarsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering bars/index.html.erb within layouts/application
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+  Rendered bars/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 20923ms (Views: 141.0ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/bars/new" for ::1 at 2017-03-10 14:13:36 -0500
+Processing by BarsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::RoutingError (Not Found):
+  
+app/controllers/bars_controller.rb:72:in `authorize_user'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (12.1ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (91.5ms)
