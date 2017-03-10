@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bar from 'Bar'
+import Bar from './Bar'
 
 class BarsList extends Component {
   constructor(props) {
