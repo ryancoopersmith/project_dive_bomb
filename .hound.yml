@@ -1,6 +1,2 @@
 ruby:
   config_file: .rubocop.yml
-
-eslint:
-  enabled: true
-  config_file: .eslintrc.js
