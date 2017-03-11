@@ -3,11 +3,15 @@ class ReviewsController < ApplicationController
 
   def new
     @bar = Bar.find(params[:bar_id])
-    unless current_user.reviews[0]
-      @review = Review.new
+    if current_user.reviews[0]
+      unless current_user.reviews[0].bar_id == @bar.id
+        @review = Review.new
+      else
+        flash[:notice] = "You cannot submit more than one review"
+        redirect_to @bar
+      end
     else
-      flash[:notice] = "You cannot submit more than one review"
-      redirect_to @bar
+      @review = Review.new
     end
   end
 

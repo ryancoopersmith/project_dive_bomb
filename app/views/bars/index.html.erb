@@ -6,9 +6,15 @@
     <p><%= bar.name %> </p>
     <p><%= bar.address %> </p>
     <p><%= bar.city%>, <%=bar.state%> <%=bar.zip%> </p>
-    <p id="view_bar"><%= link_to "View bar", bar_path(bar) %></p>
+    <p id="view_bar"><%= link_to "View Bar", bar %></p>
   </div>
 <%end%>
+
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%=link_to "Create Bar", new_bar_path %>
+  <% end %>
+<% end %>
 
 <% if user_signed_in? %>
   <img id="profile_photo" src="<%= current_user.profile_photo %>" />
