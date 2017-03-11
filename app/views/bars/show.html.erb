@@ -32,10 +32,12 @@
   <% end %>
 <% end %>
 
-<%= link_to "Create a Review", new_bar_review_path(@bar) %>
+<% unless current_user.reviews[0] %>
+  <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+<% end %>
 
 <% if @reviews.any? { |review| review.user.admin == false } %>
-  <h2> Your Reviews </h2>
+  <h2> User Reviews </h2>
   <% @reviews.each do |review| %>
     <% if review.user.admin == false %>
       <div id = "review">
@@ -43,9 +45,9 @@
         <% if !review.description.blank? %>
           <p><strong>Description: </strong><%= review.description %></p>
         <% end %>
-        <% if review.user = current_user %>
-          <%= link_to "Edit Review", edit_bar_review(@bar) %>
-          <%= link_to "Delete Review", bar_review_path(@bar, review), method: delete %>
+        <% if review.user == current_user %>
+          <%= link_to "Edit Review", edit_bar_review_path(@bar) %>
+          <%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %>
         <% end %>
       </div>
     <% end %>

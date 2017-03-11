@@ -1,44 +1,51 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    unless current_user.reviews
-      @bar = Bar.find(params[:id])
+    @bar = Bar.find(params[:bar_id])
+    unless current_user.reviews[0]
       @review = Review.new
     else
       flash[:notice] = "You cannot submit more than one review"
-      render 'bars/show'
+      redirect_to @bar
     end
   end
 
   def create
-    @review = Review.new(reviews_params)
-    @bar = @review.bar
+    @bar = Bar.find(params[:bar_id])
+    @review = @bar.reviews.new(reviews_params)
+    @review.user = current_user
     if @review.save
       flash[:notice] = "Review added successfully"
     else
       flash[:notice] = @review.errors.messages
     end
-    render 'bars/show'
+    redirect_to @bar
   end
 
   def edit
+    @bar = Bar.find(params[:bar_id])
+    @review = current_user.reviews[0]
   end
 
   def update
-    @review = Review.assign_attributes(reviews_params)
-    @bar = review.bar
+    @review = Review.find(params[:id])
+    @review.assign_attributes(reviews_params)
+    @bar = @review.bar
     if @review.save
       flash[:notice] = "Review updated successfully"
     else
       flash[:notice] = @review.errors.messages
     end
-    render 'bars/show'
+    redirect_to @bar
   end
 
   def destroy
-    @review = Review.find_by(user: current_user)
-    @review.destroy
+    @review = Review.find(params[:id])
+    @bar = @review.bar
+    @review.delete
     flash[:notice] = "Review deleted successfully"
-    render 'bars/show'
+    redirect_to @bar
   end
 
   private
