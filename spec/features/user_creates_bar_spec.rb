@@ -68,8 +68,8 @@ feature 'create a bar link is only available to admin' do
     expect(page).to have_content('State')
     expect(page).to have_content('Zip')
     expect(page).to have_content('Phone Number')
-    expect(page).to have_content('Image Url')
-    expect(page).to have_content('Url')
+    expect(page).to have_content('Image URL')
+    expect(page).to have_content('URL')
     expect(page).to have_content('Description')
   end
 end
