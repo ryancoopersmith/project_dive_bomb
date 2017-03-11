@@ -12,6 +12,13 @@
 
 <p><a href="http://<%= @bar.url %>">Website</a></p>
 
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%= link_to "Edit Bar", edit_bar_path %>
+    <%= link_to "Delete Bar", @bar, method: :delete %>
+  <% end %>
+<% end %>
+
 <div id="map"></div>
 
 <input id="address" type="hidden" value="<%= @bar.address %>">
@@ -20,20 +27,26 @@
   <h2> Our Review </h2>
   <% @reviews.each do |review| %>
       <% if review.user.admin == true %>
-      <ul>
-        <li> Drinks: <%= review.drinks %> </li>
-        <li> Food: <%= review.food %> </li>
-        <li> Entertainment: <%= review.entertainment %> </li>
-        <li> Vibe: <%= review.vibe %> </li>
-        <li> Setting: <%= review.setting %> </li>
-      </ul>
-      <p><strong>Description: </strong><%= review.description %></p>
+        <ul>
+          <li> Drinks: <%= review.drinks %> </li>
+          <li> Food: <%= review.food %> </li>
+          <li> Entertainment: <%= review.entertainment %> </li>
+          <li> Vibe: <%= review.vibe %> </li>
+          <li> Setting: <%= review.setting %> </li>
+        </ul>
+        <p><strong>Description: </strong><%= review.description %></p>
     <% end %>
   <% end %>
 <% end %>
 
-<% unless current_user.reviews[0] %>
-  <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+<% if current_user %>
+  <% if current_user.reviews[0] %>
+    <% unless current_user.reviews[0].bar_id == @bar.id %>
+      <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+    <% end %>
+  <% else %>
+    <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+  <% end %>
 <% end %>
 
 <% if @reviews.any? { |review| review.user.admin == false } %>
