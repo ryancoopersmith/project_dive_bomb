@@ -4,8 +4,8 @@ require 'rails_helper'
 # I would like to be able to delete a bar
 # If it no longer exists
 
-# [] I must be an admin to delete the bar
-# [] I should be redirected to the root page upon deletion
+# [X] I must be an admin to delete the bar
+# [X] I should be redirected to the root page upon deletion
 
 feature 'Admin deletes bar' do
   let!(:admin) { FactoryGirl.create(:user, admin: true) }

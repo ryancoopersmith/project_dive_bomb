@@ -1,6 +1,13 @@
 require 'rails_helper'
 
-# [] Only authorized users can create a new bar
+# As an admin
+# I would like to create a new bar
+# So that the users can see this new bar
+
+# [X] Only authorized users can create a new bar
+# [X] I should see a success message on successful submission
+# [X] I should see the new bar on the index page
+# [X] I should see an error message if I fill out invalid information
 
 feature 'create a bar link is only available to admin' do
   let(:user) {FactoryGirl.create(:user)}
@@ -72,9 +79,45 @@ feature 'create a bar link is only available to admin' do
     expect(page).to have_content('URL')
     expect(page).to have_content('Description')
   end
+
+  scenario "Admin successfully adds new bar" do
+    visit new_user_session_path
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Sign In'
+    visit new_bar_path
+
+    fill_in "Name", with: "NewBar"
+    fill_in "Address", with: "123 free street"
+    fill_in "City", with: "Philly"
+    fill_in "State", with: "PA"
+    fill_in "Zip", with: '12345'
+    fill_in "Phone Number", with: '111-222-3333'
+    fill_in "Description", with: "Great"
+    click_button "Submit"
+
+    expect(page).to have_content("NewBar")
+    expect(page).to have_content("Bar Added Successfully")
+  end
+
+  scenario "Admin fills out invalid information" do
+    visit new_user_session_path
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Sign In'
+    visit new_bar_path
+
+    fill_in "Name", with: "NewBar"
+    fill_in "Address", with: "123 free street"
+    fill_in "City", with: "Philly"
+    fill_in "State", with: "PA"
+    fill_in "Zip", with: '12345'
+    fill_in "Phone Number", with: '111-222-333'
+    fill_in "Description", with: "Great"
+    click_button "Submit"
+
+    expect(page).to_not have_content("NewBar")
+    expect(page).to_not have_content("Bar Added Successfully")
+    expect(page).to have_content("Phone number is invalid")
+  end
 end
-
-
-#Admin creates new bar
-
-#admin creates bars with errors (test flash notices)

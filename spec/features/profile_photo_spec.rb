@@ -5,12 +5,12 @@ feature "profile photo" do
   # I should be able to upload a profile photo when I sign up
   # So that when I post reviews, other users can optionally see my photo
 
-  # * I must provide a first and last name
-  # * I must provide a valid email
-  # * I must provide a password that matches the password confirmation
-  # * I should be sent to the index page on submition and see a success message
-  # * I should see an error message if I enter an invalid email or my password
-  #   and password confirmations do not match
+  # [X] I must provide a first and last name
+  # [X] I must provide a valid email
+  # [X] I must provide a password that matches the password confirmation
+  # [X] I should be sent to the index page on submition and see a success message
+  # [X] I should see an error message if I enter an invalid email or my password and password confirmations do not match
+
   scenario "user uploads a profile photo" do
     visit root_path
     click_link "Sign Up"

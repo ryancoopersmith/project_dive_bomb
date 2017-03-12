@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+# [X] It should have a unique username
+# [X] It should have a unique email
+# [X] It should have a valid email
+
 describe User do
 
   it { should validate_presence_of(:username) }

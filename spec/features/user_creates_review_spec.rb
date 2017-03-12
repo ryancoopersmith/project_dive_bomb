@@ -4,12 +4,12 @@ require 'rails_helper'
 # I should be able to post a review on a bar
 # So that other users can see what I have to say about that bar
 
-# [] I must be signed in
-# [] I must provide valid information
-# [] I must fill out all form fields
-# [] On successful submission I should be redirected to the bar's show page and see my review
-# [] I should see a success message on successful submission
-# [] I should see an error message on unsuccessful submission
+# [X] I must be signed in
+# [X] I must provide valid information
+# [X] I must fill out all form fields
+# [X] On successful submission I should be redirected to the bar's show page and see my review
+# [X] I should see a success message on successful submission
+# [X] I should see an error message on unsuccessful submission
 
 feature 'User creates a review' do
   let!(:user) { FactoryGirl.create(:user) }

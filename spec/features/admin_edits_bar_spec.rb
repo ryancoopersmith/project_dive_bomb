@@ -4,11 +4,11 @@ require 'rails_helper'
 # I would like to edit any bars
 # So that I can provide the most up-to-date information
 
-# [] I should have to fill in all the information on the form
-# [] If I provide any missing or invalid information I should see an error message
-# [] If I successfully post the form I should see a success message
-# [] I should be taken to that bar's show page on submission
-# [] Only admins should be able to edit a bar
+# [X] I should have to fill in all the information on the form
+# [X] If I provide any missing or invalid information I should see an error message
+# [X] If I successfully post the form I should see a success message
+# [X] I should be taken to that bar's show page on submission
+# [X] Only admins should be able to edit a bar
 
 feature 'Admin edits bar' do
   let!(:admin) { FactoryGirl.create(:user, admin: true) }

@@ -5,10 +5,9 @@ feature 'user signs in' do
   # I should be able to sign in using my account information
   # So that I can post reviews about local dive bars
 
-  # * I must provide a valid email
-  # * I must provide a valid password
-  # * I should see an error message if I enter an invalid email or invalid
-  #   password
+  # [X] I must provide a valid email
+  # [X] I must provide a valid password
+  # [X] I should see an error message if I enter an invalid email or invalid password
 
   scenario 'user visits sign in page' do
     visit root_path
