@@ -24,3 +24,7 @@
 <% end %>
 
 <div id="bars"></div>
+
+<% if params['term'] %>
+  <%= link_to "Go Back", root_path %>
+<% end %>
