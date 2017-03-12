@@ -20,8 +20,8 @@ feature "profile photo" do
     fill_in "Password Confirmation", with: "password"
     attach_file "Profile Photo", File.join(Rails.root, 'spec', 'support', 'images', 'golden_retriever_dog_animal.jpg')
     click_button "Sign Up"
+    click_link "My Account"
 
-    expect(page).to have_content("You've successfully signed up!")
     expect(page).to have_css("img[src*='golden_retriever_dog_animal.jpg']")
   end
 end
