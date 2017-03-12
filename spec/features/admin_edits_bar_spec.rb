@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 # As an admin
 # I would like to edit any bars
 # So that I can provide the most up-to-date information
@@ -12,7 +14,6 @@ feature 'Admin edits bar' do
   let!(:admin) { FactoryGirl.create(:user, admin: true) }
   let!(:user) { FactoryGirl.create(:user) }
   let!(:bar) { FactoryGirl.create(:bar) }
-  let!(:review) { FactoryGirl.create(:review, user: user, bar: bar) }
 
   scenario 'admin fills out all valid information' do
     visit root_path

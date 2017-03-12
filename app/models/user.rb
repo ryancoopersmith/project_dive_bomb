@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: true
-  validates :email, format: { with: /\A((\w+)|(\.))+\@[a-z]+\.[a-z]{3}\z/ }
+  validates :email, uniqueness: true, format: { with: /\A((\w+)|(\.))+\@[a-z]+\.[a-z]{3}\z/ }
   validates :password, presence: true
   validates :password_confirmation, presence: true
   validates :admin, inclusion: { in: [true, false] }
