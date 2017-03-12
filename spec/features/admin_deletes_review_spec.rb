@@ -4,8 +4,8 @@ require 'rails_helper'
 # I would like to delete user's reviews
 # So that I can filter any inappropriate content
 
-# [] I should be able to delete any review
-# [] I should see a success message upon successful deletion
+# [X] I should be able to delete any review
+# [X] I should see a success message upon successful deletion
 
 feature "Admin deletes review" do
   let!(:admin) { FactoryGirl.create(:user, admin: true) }

@@ -4,7 +4,7 @@ require 'rails_helper'
 # I want to delete my review
 # So no one can see it anymore
 
-# [] I should see a success message on successful deletion
+# [X] I should see a success message on successful deletion
 
 feature 'User deletes review' do
   let!(:user) { FactoryGirl.create(:user) }

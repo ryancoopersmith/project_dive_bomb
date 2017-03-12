@@ -1,12 +1,11 @@
 require 'rails_helper'
-# User sees reviews on bar show page
-# If there are no user reviews, user only sees critic review
-# Should not see User Reviewss
-# Should see a breakdown of each category
-# If there are user reviews for a bar a user should be able to see them
-# Expect rating to be an average of all the categories
-# Expect to see the username
-# Expect to see a description if one exists
+
+# As a user that loves dive bars
+# I want to see reviews for a particular bar
+# So that I can get more information about this bar
+
+# [X] I don't have to be signed in
+# [X] I should see the critic's reviews and other user's reviews
 
 feature 'visitor sees reviews for individual bar' do
   let!(:bar1) { FactoryGirl.create(:bar) }

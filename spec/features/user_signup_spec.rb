@@ -5,12 +5,11 @@ feature 'user signs up' do
   # I should be able to sign up if I do not have an account
   # So that I can post reviews about local dive bars
 
-  # * I must provide a first and last name
-  # * I must provide a valid email
-  # * I must provide a password that matches the password confirmation
-  # * I should be sent to the index page on submition and see a success message
-  # * I should see an error message if I enter an invalid email or my password
-  #   and password confirmations do not match
+  # [X] I must provide a first and last name
+  # [X] I must provide a valid email
+  # [X] I must provide a password that matches the password confirmation
+  # [X] I should be sent to the index page on submition and see a success message
+  # [X] I should see an error message if I enter an invalid email or my password and password confirmations do not match
 
   scenario 'user visits sign up page' do
     visit root_path

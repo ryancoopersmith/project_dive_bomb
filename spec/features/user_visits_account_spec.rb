@@ -1,15 +1,17 @@
+require 'rails_helper'
+
 # As an authenticated user
 # I would like to see my account information
 # So that I can change any information I don't like
 
-# [] I must be signed in
-# [] I should see my profile pic
-# [] I should be able to change my profile pic
-# [] I should be able to delete my account
-# [] I should be able to change my password
-# [] I should be able to edit my account
-# [] I should see a success message upon successful submission
-# [] I should see an error message if I provide invalid information
+# [X] I must be signed in
+# [X] I should see my profile pic
+# [X] I should be able to change my profile pic
+# [X] I should be able to delete my account
+# [X] I should be able to change my password
+# [X] I should be able to edit my account
+# [X] I should see a success message upon successful submission
+# [X] I should see an error message if I provide invalid information
 
 feature 'user visits account page' do
   let!(:user) { FactoryGirl.create(:user) }
