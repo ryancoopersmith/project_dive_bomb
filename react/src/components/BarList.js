@@ -49,7 +49,6 @@ class BarsList extends Component {
             image_url={bar.image_url}
             rating={bar.rating}
             description={bar.description}
-            reviews={bar.reviews}
           />
         );
       });

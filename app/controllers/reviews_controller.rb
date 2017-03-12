@@ -4,7 +4,13 @@ class ReviewsController < ApplicationController
   def new
     @bar = Bar.find(params[:bar_id])
     if current_user.reviews[0]
-      unless current_user.reviews[0].bar_id == @bar.id
+      can_review = true
+      current_user.reviews.each do |review|
+        if review.bar_id == @bar.id
+          can_review = false
+        end
+      end
+      if can_review == true
         @review = Review.new
       else
         flash[:notice] = "You cannot submit more than one review"

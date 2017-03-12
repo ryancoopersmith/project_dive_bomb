@@ -7,6 +7,9 @@
   <% end %>
 </div>
 
+<div id="bars"></div>
+<!-- React will render here -->
+
 <% @bars.each do |bar| %>
   <div class="bar_card">
     <img src="<%=bar.image_url%>" style="max-height: 175px; max-width: 175px;" >
@@ -22,8 +25,6 @@
     <%=link_to "Create Bar", new_bar_path %>
   <% end %>
 <% end %>
-
-<div id="bars"></div>
 
 <% if params['term'] %>
   <%= link_to "Go Back", root_path %>

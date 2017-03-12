@@ -23,6 +23,9 @@
 
 <input id="address" type="hidden" value="<%= @bar.address %>">
 
+<div id="reviews"></div>
+<!-- React will render here -->
+
 <% if @reviews.any? { |review| review.user.admin == true } %>
   <h2> Our Review </h2>
   <% @reviews.each do |review| %>
@@ -41,7 +44,13 @@
 
 <% if current_user %>
   <% if current_user.reviews[0] %>
-    <% unless current_user.reviews[0].bar_id == @bar.id %>
+    <% can_review = true %>
+    <% current_user.reviews.each do |review| %>
+      <% if review.bar_id == @bar.id %>
+        <% can_review = false %>
+      <% end %>
+    <% end %>
+    <% if can_review == true %>
       <%= link_to "Create a Review", new_bar_review_path(@bar) %>
     <% end %>
   <% else %>
