@@ -12,7 +12,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     end
   else
     def filename
-      "#{model.id}.jpg"
+      "image#{model.id}.jpg"
     end
     storage :fog
   end
