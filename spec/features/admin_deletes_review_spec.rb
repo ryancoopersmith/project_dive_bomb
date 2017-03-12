@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 # As an admin
 # I would like to delete user's reviews
 # So that I can filter any inappropriate content

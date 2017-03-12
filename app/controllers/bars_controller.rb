@@ -49,7 +49,7 @@ class BarsController < ApplicationController
     @bar = Bar.find(params[:id])
     @bar.delete
 
-    flash[:notice] = "#{@bar.name} deleted."
+    flash[:notice] = "Bar Deleted Successfully"
     redirect_to root_path
   end
 
