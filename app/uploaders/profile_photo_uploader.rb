@@ -11,6 +11,9 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     end
   else
+    def filename
+      "#{model.id}.jpg"
+    end
     storage :fog
   end
   # storage :fog
