@@ -1,7 +1,25 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<% if current_user.profile_photo %>
+  <img id="profile_photo" src="<%= current_user.profile_photo %>" height=300 width=300 />
+<% end %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.hidden_field :admin, value: false %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_photo, "Profile Photo" %>
+    <%= f.file_field :profile_photo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -11,18 +29,19 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  
+  <% if @minimum_password_length %>
+  <br />
+  <em><%= @minimum_password_length %> characters minimum</em>
+  <% end %>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
