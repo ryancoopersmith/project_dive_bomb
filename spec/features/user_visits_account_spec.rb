@@ -7,3 +7,7 @@
 # [] I should be able to change my profile pic
 # [] I should be able to delete my account
 # [] I should be able to reset my password
+
+feature 'user visits account page' do
+  
+end

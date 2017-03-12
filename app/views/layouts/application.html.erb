@@ -33,7 +33,7 @@
     <% end %>
   <% end %>
 
-  <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" %>
+  <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" && request.env['PATH_INFO'] != "/users/edit" %>
     <% if user_signed_in? %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       <%= link_to "My Account", edit_user_registration_path %>
