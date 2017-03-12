@@ -4,11 +4,43 @@ import Review from './Review';
 class ReviewList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      reviews: []
+    };
+    this.getReviews = this.getReviews.bind(this);
+  }
+
+  getReviews() {
+    fetch('http://localhost:4567/api/v1/reviews.json')
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        let barReviews = [];
+        body.reviews.foreach((review) => {
+          if (this.props.location.query.bar_id === review.bar_id) {
+            barReviews.push(review);
+          }
+        });
+        this.setState({ reviews: barReviews });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  componentDidMount() {
+    this.getReviews();
   }
 
   render() {
     let admin = false;
-    if (this.props.reviews) {
+    if (this.state.reviews) {
       let reviews = this.state.reviews.map((review) => {
         if (review.user.admin) {
           admin = true;
