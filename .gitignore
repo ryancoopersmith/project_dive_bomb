@@ -27,7 +27,7 @@
 /public/uploads
 
 # Ignore seeds file
-/db/seeds.rb
+#/db/seeds.rb
 
 # Ignore node modules
 /node_modules
