@@ -54,6 +54,9 @@
   <% @reviews.each do |review| %>
     <% if review.user.admin == false %>
       <div id = "review">
+        <% if review.user.profile_photo %>
+          <img id="profile_photo" src="<%= review.user.profile_photo %>" height=50 width=50/>
+        <% end %>
         <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
         <% if !review.description.blank? %>
           <p><strong>Description: </strong><%= review.description %></p>
