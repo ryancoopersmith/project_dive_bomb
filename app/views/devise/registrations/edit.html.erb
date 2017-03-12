@@ -10,10 +10,6 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.hidden_field :admin, value: false %>
-  </div>
-
-  <div class="field">
     <%= f.label :profile_photo, "Profile Photo" %>
     <%= f.file_field :profile_photo %>
   </div>
@@ -38,12 +34,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(leave blank if you want to keep your current password)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Password Confirmation" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password_confirmation, "Password Confirmation" %> <i>(leave blank if you want to keep your current password)</i><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
