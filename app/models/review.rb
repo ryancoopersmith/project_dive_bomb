@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
+  after_create :send_email
+
   validates :user, presence: true
   validates :bar, presence: true
   validates :drinks, presence: true,
@@ -34,4 +36,12 @@ class Review < ApplicationRecord
 
   belongs_to :bar
   belongs_to :user
+
+  def send_email
+    User.all.each do |user|
+      if user.admin?
+        ReviewMailer.new_review(self, user).deliver
+      end
+    end
+  end
 end
