@@ -37,6 +37,7 @@ class BarsController < ApplicationController
 
     if @bar.valid?
       @bar.save
+      flash[:notice] = "Bar Edited Successfully"
       redirect_to @bar
     else
       flash[:notice] = @bar.errors.full_messages
