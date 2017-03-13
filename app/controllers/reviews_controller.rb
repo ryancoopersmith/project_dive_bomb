@@ -10,6 +10,12 @@ class ReviewsController < ApplicationController
           can_review = false
         end
       end
+      reviews = @bar.reviews.all
+      reviews.each do |review|
+        if review.user.admin? && current_user.admin?
+          can_review = false
+        end
+      end
       if can_review == true
         @review = Review.new
       else
@@ -26,6 +32,9 @@ class ReviewsController < ApplicationController
     @review = @bar.reviews.new(reviews_params)
     @review.user = current_user
     if @review.save
+      if current_user.admin?
+        @bar.rating = (@review.drinks + @review.food + @review.entertainment + @review.vibe + @review.setting)/5.0
+      end
       flash[:notice] = "Review added successfully"
     else
       flash[:notice] = @review.errors.messages

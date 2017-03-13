@@ -8,6 +8,17 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
     @reviews = @bar.reviews
+    sum = 0
+    @reviews.each do |review|
+      unless review.user.admin?
+        sum += (review.drinks + review.food + review.entertainment + review.vibe + review.setting)
+      end
+    end
+    if sum < 1
+      @user_avg_rating = "No user has reviewed this dive yet"
+    else
+      @user_avg_rating = sum / 5.0
+    end
   end
 
   def new
