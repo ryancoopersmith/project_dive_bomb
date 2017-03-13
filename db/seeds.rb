@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def rating(review)
+  if review.user.admin?
+    review.bar.rating = (review.drinks + review.food + review.entertainment + review.vibe + review.setting)/5.0
+    review.bar.save
+  end
+end
+
 if Rails.env.development? || Rails.env.production?
   Bar.destroy_all
   oscars = Bar.create!(name: 'Oscar\'s Tavern', address: '1524 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '215-972-9938', url: 'https://m.facebook.com/Oscars-Tavern-187176721252/', image_url: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775', description: 'This Center City staple has a Cheers vibe with a decidedly grittier atmosphere. Its location provides a healthy mix of both locals and visitors, and one of the most eclectic crowds in Philadelphia. Several TV\'s(if you can hear them over the boisterous conversation) are usually tuned to local sports, and if you are hungry make sure to order the \'cheesesteak and a half.')
@@ -100,7 +107,7 @@ if Rails.env.development? || Rails.env.production?
     entertainment: 5,
     vibe: 2,
     setting: 3,
-    description: 'fun',
+    description: 'fun'
   )
   Review.create!(
     bar: franks,
@@ -110,7 +117,7 @@ if Rails.env.development? || Rails.env.production?
     entertainment: 5,
     vibe: 3,
     setting: 4,
-    description: 'great',
+    description: 'great'
   )
   Review.create!(
     bar: franks,
@@ -120,13 +127,10 @@ if Rails.env.development? || Rails.env.production?
     entertainment: 5,
     vibe: 3,
     setting: 4,
-    description: 'so-so',
+    description: 'so-so'
   )
 
   Review.all.each do |review|
-    if review.user.admin?
-      review.bar.rating = (review.drinks + review.food + review.entertainment + review.vibe + review.setting)/5.0
-      review.bar.save
-    end
+    rating(review)
   end
 end
