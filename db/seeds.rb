@@ -8,7 +8,7 @@
 
 def rating(review)
   if review.user.admin?
-    review.bar.rating = (review.drinks + review.food + review.entertainment + review.vibe + review.setting)/5.0
+    review.bar.rating = (review.drinks + review.food + review.entertainment + review.vibe + review.setting) / 5.0
     review.bar.save
   end
 end
@@ -36,7 +36,6 @@ if Rails.env.development? || Rails.env.production?
   Bar.create!(name: 'Republican Club', address: '1734 Snyder Ave', city: 'Philadelphia', state: 'PA', zip: '19145', phone_number: '215-462-0310', image_url: 'https://s3-media1.fl.yelpcdn.com/bphoto/aDHjCbOwV2jG56I-ZHP9yQ/o.jpg', description: 'One of the most unique dives in the city, its nondescript street presence will not prepare for what you are about to experience inside. \'The Republican\' is actually a private after-hours club, therefore staying open until 3:30 many nights. In case you aren\'t quite hooked yet, The Republican is primarily know for offering topless dancing!')
 
   Bar.create!(name: '12 Steps Down', address: '831 Christian St', city: 'Philadelphia', state: 'PA', zip: '19147', phone_number: '215-238-0379', url: 'http://www.12stepsdown.com/', image_url: 'http://media.philly.com/images/12steps5.jpg', description: 'This basement bar quite literally lives up to its name. Another dive that allows smoking, this often packed night spot has a pool table and a banging \'Punk Rock Karaoke\' night. Very sweet down to earth owners who work both the bar and the door. This is a Philly hipster favorite, but is extraordinarily welcoming to anyone.')
-
 
   Bar.create!(name: 'Kellianns', address: '1549 Spring Garden St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '215-563-6990', url: 'https://www.facebook.com/Kellianns-Bar-and-Grill-281261789931/', image_url: 'http://fishtownbeerrunners.com/wp-content/uploads/2013/11/kel1.jpg', description: 'Old school Irish bar, and a dive in the most traditional sense. More of a local bar as opposed to a destination, however its worth the travel. Excellent pub-grub and a solid drink selection make this a good choice during the day or night. Generally an older crowd, but very welcoming to anyone.')
 

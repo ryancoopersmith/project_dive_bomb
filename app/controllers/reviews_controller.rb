@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.save
       if current_user.admin?
-        @bar.rating = (@review.drinks + @review.food + @review.entertainment + @review.vibe + @review.setting)/5.0
+        @bar.rating = (@review.drinks + @review.food + @review.entertainment + @review.vibe + @review.setting) / 5.0
         @bar.save
       end
       flash[:notice] = "Review added successfully"
