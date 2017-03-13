@@ -4,7 +4,6 @@ require 'rails_helper'
 # [X] A review should belong to a bar
 # [X] A review should belong to a user
 
-
 describe Review do
   it { should belong_to(:user) }
   it { should have_valid(:user).when(User.new) }
