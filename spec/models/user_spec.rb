@@ -9,7 +9,6 @@ describe User do
   it { should validate_presence_of(:username) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:password) }
-  it { should validate_presence_of(:password_confirmation) }
 
   it "should have a unique username" do
     expect { FactoryGirl.create(
