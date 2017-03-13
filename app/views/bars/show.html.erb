@@ -10,75 +10,79 @@
   <p><%= @bar.description %></p>
 <% end %>
 
-<p><a href="<%= @bar.url %>">Website</a></p>
-
-<% if @reviews.any? { |review| review.user.admin == true } %>
-  <h2> Our Review </h2>
-  <% @reviews.each do |review| %>
-      <% if review.user.admin == true %>
-      <ul>
-        <li> Drinks: <%= review.drinks %> </li>
-        <li> Food: <%= review.food %> </li>
-        <li> Entertainment: <%= review.entertainment %> </li>
-        <li> Vibe: <%= review.vibe %> </li>
-        <li> Setting: <%= review.setting %> </li>
-      </ul>
-      <p><strong>Description: </strong><%= review.description %></p>
-    <% end %>
-  <% end %>
-<% end %>
-
-<% if @reviews.any? { |review| review.user.admin == false } %>
-  <h2> Your Reviews </h2>
-  <% @reviews.each do |review| %>
-    <% if review.user.admin == false %>
-      <div id = "review">
-        <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
-        <% if !review.description.blank? %>
-          <p><strong>Description: </strong><%= review.description %></p>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
-
 <p><a href="http://<%= @bar.url %>">Website</a></p>
+
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%= link_to "Edit Bar", edit_bar_path %>
+    <%= link_to "Delete Bar", @bar, method: :delete %>
+  <% end %>
+<% end %>
 
 <div id="map"></div>
 
 <input id="address" type="hidden" value="<%= @bar.address %>">
 
-<script>
-  function initMap() {
-    var philly = {lat: 39.9526, lng: -75.1652};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 12,
-      center: philly
-    });
-    var geocoder = new google.maps.Geocoder();
+<div id="reviews"></div>
+<!-- React will render here -->
 
-    window.onload = function() {
-      geocodeAddress(geocoder, map);
-    };
-  }
+<% if @reviews.any? { |review| review.user.admin == true } %>
+  <h2> Our Review </h2>
+  <% @reviews.each do |review| %>
+      <% if review.user.admin == true %>
+        <ul>
+          <li> Drinks: <%= review.drinks %> </li>
+          <li> Food: <%= review.food %> </li>
+          <li> Entertainment: <%= review.entertainment %> </li>
+          <li> Vibe: <%= review.vibe %> </li>
+          <li> Setting: <%= review.setting %> </li>
+        </ul>
+        <p><strong>Description: </strong><%= review.description %></p>
+    <% end %>
+  <% end %>
+<% end %>
 
-  function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('address').value;
-    geocoder.geocode({'address': address}, function(results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-        resultsMap.setZoom(17);
-        resultsMap.panTo(marker.position);
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-</script>
+<% if current_user %>
+  <% if current_user.reviews[0] %>
+    <% can_review = true %>
+    <% current_user.reviews.each do |review| %>
+      <% if review.bar_id == @bar.id %>
+        <% can_review = false %>
+      <% end %>
+    <% end %>
+    <% if can_review == true %>
+      <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+    <% end %>
+  <% else %>
+    <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+  <% end %>
+<% end %>
+
+<% if @reviews.any? { |review| review.user.admin == false } %>
+  <h2> User Reviews </h2>
+  <% @reviews.each do |review| %>
+    <% if review.user.admin == false %>
+      <div id = "review">
+        <% if review.user.profile_photo %>
+          <img id="profile_photo" src="<%= review.user.profile_photo %>" height=50 width=50/>
+        <% end %>
+        <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
+        <% if !review.description.blank? %>
+          <p><strong>Description: </strong><%= review.description %></p>
+        <% end %>
+        <% if review.user == current_user %>
+          <%= link_to "Edit Review", edit_bar_review_path(@bar) %>
+          <%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %>
+        <% end %>
+        <% if current_user %>
+          <% if current_user.admin? %>
+            <%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
 
 <%= link_to "Go Back", bars_path %>
 

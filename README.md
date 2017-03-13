@@ -5,9 +5,9 @@
 # Project Dive Bar
 
 ## Description:
-Project Dive Bar is a chance for users to see reviews of Philadelphia dive bars. Our rating is based on drinks, food, entertainment, setting and vibe, with an overall rating that is an average of those five categories. While we offer an expert review, users can also add their own reviews that are up-voted and down-voted and sorted accordingly. We also incorporated the Google Maps API so users can get directions.
+Project Dive Bar is a chance for users to see reviews of Philadelphia dive bars. Our rating is based on drinks, food, entertainment, setting and vibe, with an overall rating that is an average of those five categories. While we offer an expert review, users can also add their own reviews that are up-voted and down-voted and sorted accordingly. We also incorporated the Google Maps API so users can see exactly where the bar is.
 
-### Features:
+## Features:
 1. Developed with Ruby on Rails
 2. Styled with Foundation
 3. Incorporates React

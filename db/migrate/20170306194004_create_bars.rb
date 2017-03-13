@@ -9,7 +9,7 @@ class CreateBars < ActiveRecord::Migration[5.0]
       t.string :zip, null: false
       t.string :phone_number, null: false
       t.string :image_url
-      t.float :rating
+      t.integer :rating
     end
   end
 end

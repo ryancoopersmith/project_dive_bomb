@@ -8,5 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_photo])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:admin])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:profile_photo])
   end
 end
