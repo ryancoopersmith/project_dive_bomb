@@ -15,10 +15,10 @@ class BarsController < ApplicationController
       end
     end
     @user_avg_rating = if sum < 1
-      "No user has reviewed this dive yet"
-    else
-      sum / 5.0
-    end
+                         "No user has reviewed this dive yet"
+                       else
+                         sum / 5.0
+                       end
   end
 
   def new
