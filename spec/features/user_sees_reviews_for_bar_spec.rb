@@ -1,12 +1,11 @@
 require 'rails_helper'
-# User sees reviews on bar show page
-# If there are no user reviews, user only sees critic review
-# Should not see Your Reviews
-# Should see a breakdown of each category
-# If there are user reviews for a bar a user should be able to see them
-# Expect rating to be an average of all the categories
-# Expect to see the username
-# Expect to see a description if one exists
+
+# As a user that loves dive bars
+# I want to see reviews for a particular bar
+# So that I can get more information about this bar
+
+# [X] I don't have to be signed in
+# [X] I should see the critic's reviews and other user's reviews
 
 feature 'visitor sees reviews for individual bar' do
   let!(:bar1) { FactoryGirl.create(:bar) }
@@ -20,14 +19,14 @@ feature 'visitor sees reviews for individual bar' do
     visit bar_path(bar1)
 
     expect(page).to_not have_content("Our Review")
-    expect(page).to_not have_content("Your Review")
+    expect(page).to_not have_content("User Reviews")
   end
 
   scenario 'If there are no user reviews they only see the critic reviews' do
     visit bar_path(bar2)
 
     expect(page).to have_content("Our Review")
-    expect(page).to_not have_content("Your Review")
+    expect(page).to_not have_content("User Reviews")
     expect(page).to have_content(admin_review.drinks)
     expect(page).to have_content(admin_review.food)
     expect(page).to have_content(admin_review.entertainment)
@@ -39,7 +38,7 @@ feature 'visitor sees reviews for individual bar' do
   scenario 'If there are user reviews, the user can see them' do
     visit bar_path(bar3)
 
-    expect(page).to have_content("Your Review")
+    expect(page).to have_content("User Review")
     expect(page).to have_content(review.user.username)
     expect(page).to have_content((review.drinks + review.food +
       review.entertainment + review.setting + review.vibe) / 5)

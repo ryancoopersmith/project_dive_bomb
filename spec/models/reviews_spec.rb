@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+# [X] All ratings in the review should be present and an integer between 1-5
+# [X] A review should belong to a bar
+# [X] A review should belong to a user
+
 describe Review do
   it { should belong_to(:user) }
   it { should have_valid(:user).when(User.new) }

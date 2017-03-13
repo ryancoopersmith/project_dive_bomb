@@ -1,9 +1,9 @@
 class ReviewMailer < ApplicationMailer
-  def new_review(review)
+  def new_review(review, admin)
     @review = review
-
+    @admin = admin
     mail(
-      to: review.bar.user.email,
+      to: @admin.email,
       subject: "New Review for #{review.bar.name}"
     )
   end

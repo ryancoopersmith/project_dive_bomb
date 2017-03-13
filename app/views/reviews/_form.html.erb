@@ -1,0 +1,35 @@
+<%= form_for [@bar, @review] do |f| %>
+  <div class="field">
+    <%= f.label :drinks %>
+    <%= f.text_field :drinks, placeholder: "1-5 Rating", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :food %>
+    <%= f.text_field :food, placeholder: "1-5 Rating", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :entertainment %>
+    <%= f.text_field :entertainment, placeholder: "1-5 Rating", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vibe %>
+    <%= f.text_field :vibe, placeholder: "1-5 Rating", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :setting %>
+    <%= f.text_field :setting, placeholder: "1-5 Rating", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

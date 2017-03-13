@@ -1,5 +1,13 @@
 require 'rails_helper'
 
+# As a user that loves dive bars
+# I should be able to see all the information about that dive bar
+# So that I can know more about it
+
+# [X] I don't have to be signed in
+# [X] I should see details for the individual bar
+# [X] I should be able to go to the bar's website if I click on the link
+
 feature 'visitor sees details for individual bar' do
   scenario 'sees full information for specific bar' do
     bar = FactoryGirl.create(:bar)
