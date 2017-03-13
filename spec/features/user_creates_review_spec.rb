@@ -10,6 +10,7 @@ require 'rails_helper'
 # [X] On successful submission I should be redirected to the bar's show page and see my review
 # [X] I should see a success message on successful submission
 # [X] I should see an error message on unsuccessful submission
+# [X] I should only be able to post one review per bar
 
 feature 'User creates a review' do
   let!(:user) { FactoryGirl.create(:user) }
@@ -35,6 +36,29 @@ feature 'User creates a review' do
     expect(page).to have_content("Review added successfully")
     expect(page).to have_content("fun")
     expect(page).to have_content(user.username)
+  end
+
+  scenario 'user posts two reviews' do
+    visit root_path
+    click_link "Sign In"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign In"
+
+    visit bar_path(bar)
+    click_link "Create a Review"
+    fill_in "Drinks", with: 2
+    fill_in "Food", with: 3
+    fill_in "Entertainment", with: 4
+    fill_in "Vibe", with: 1
+    fill_in "Setting", with: 4
+    fill_in "Description", with: "fun"
+    click_button "Submit"
+
+    visit new_bar_review_path(bar)
+
+    expect(page).to_not have_content("Submit")
+    expect(page).to have_content("You cannot submit more than one review")
   end
 
   scenario 'user fills out invalid information' do

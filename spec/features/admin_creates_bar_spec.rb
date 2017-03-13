@@ -120,4 +120,16 @@ feature 'create a bar link is only available to admin' do
     expect(page).to_not have_content("Bar Added Successfully")
     expect(page).to have_content("Phone number is invalid")
   end
+
+  scenario "user tries to create bar" do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
+    visit new_bar_path
+
+    visit new_bar_path
+    expect(page).to have_content("This page doesn't exist")
+    expect(page).to_not have_content("Submit")
+  end
 end
