@@ -10,7 +10,29 @@
   <p><%= @bar.description %></p>
 <% end %>
 
-<p><a href="http://<%= @bar.url %>">Website</a></p>
+<% if @bar.rating %>
+  <p>
+    Our Rating: <%= @bar.rating %> / 5
+  </p>
+<% else %>
+  <p>
+    We haven't gotten around to reviewing this just yet. Check back soon!
+  </p>
+<% end %>
+
+<% if @user_avg_rating.class == String%>
+  <p>
+    <%= @user_avg_rating %>
+  </p>
+<% else %>
+  <p>
+    Average User Rating: <%= @user_avg_rating %> / 5
+  </p>
+<% end %>
+
+<% if @bar.url %>
+  <p><a href="<%= @bar.url %>">Website</a></p>
+<% end %>
 
 <% if current_user %>
   <% if current_user.admin? %>
@@ -82,6 +104,8 @@
       </div>
     <% end %>
   <% end %>
+<% else %>
+  <h2>Be the first to review!</h2>
 <% end %>
 
 <%= link_to "Go Back", bars_path %>
