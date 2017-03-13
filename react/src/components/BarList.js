@@ -1,17 +1,42 @@
 import React, { Component } from 'react';
 import Bar from './Bar'
 
-class BarsList extends Component {
+class BarList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bars: []
+      bars: [],
+      // term: ""
     }
     this.getBars = this.getBars.bind(this);
+    // this.searchBars = this.searchBars.bind(this);
   }
 
+  // searchBars(term) {
+  //   fetch('http://localhost:3000/api/v1/bars.json')
+  //     .then(response => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //             error = new Error(errorMessage);
+  //         throw(error);
+  //       }
+  //     })
+  //     .then(response => response.json())
+  //     .then(body => {
+  //       let bars= [];
+  //       body.forEach((bar) => {
+  //         if (bar.name == term) { bars.push(bar) }
+  //       })
+  //     this.setState({ bars: bars });
+  //     })
+  //     .catch(error => console.error(`Error in fetch: ${error.message}`));
+  // }
+
+
   getBars() {
-    fetch('http://localhost:4567/api/v1/bars.json')
+    fetch('http://localhost:3000/api/v1/bars.json')
       .then(response => {
         if (response.ok) {
           return response;
@@ -23,7 +48,7 @@ class BarsList extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ bars: body.bars });
+        this.setState({ bars: body });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -31,6 +56,11 @@ class BarsList extends Component {
   componentDidMount() {
     this.getBars();
   }
+
+  // componentWillUpdate(props, state) {
+  //   this.setState({term: state})
+  //   this.searchBars(state)
+  // }
 
   render() {
     if (this.state.bars) {
@@ -62,7 +92,7 @@ class BarsList extends Component {
     } else {
       return (
         <div>
-          Be the first to reccomend a bar!
+          Be the first to recommend a bar!
         </div>
       );
     }
