@@ -9,6 +9,7 @@ class BarList extends Component {
       search: ''
     };
     this.getBars = this.getBars.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
   updateSearch(event) {
@@ -39,32 +40,25 @@ class BarList extends Component {
 
   render() {
     if (this.state.bars) {
-      let filteredBars = this.state.bars.filter(
-        (bar) => {
-          return bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+      let bars = this.state.bars.map((bar) => {
+        if (bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
+          return (
+            <Bar
+              id={bar.id}
+              key={bar.id}
+              name={bar.name}
+              image_url={bar.image_url}
+              rating={bar.rating}
+            />
+          );
         }
-      );
-      let unfilteredBars = this.state.bars.map((bar) => {
-        return (
-          <Bar
-            id={bar.id}
-            key={bar.id}
-            name={bar.name}
-            image_url={bar.image_url}
-            rating={bar.rating}
-          />
-        );
       });
-
-      let bars = filteredBars.map((bar) => {
-        return bar;
-      })
 
       return(
         <div>
           <input type="text"
           value={this.state.search}
-          onChange={this.updateSearch.bind(this)}/>
+          onChange={this.updateSearch}/>
           {bars}
         </div>
       );
