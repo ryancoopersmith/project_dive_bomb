@@ -1,27 +1,35 @@
-<%= form_for @bar do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field(:name, size: 60, placeholder: "What's the name of the bar?") %>
+<%= form_for @bar, html: {class: "bar_form"} do |f| %>
+  <div class="row">
+    <div class="medium-10 columns">
+      <%= f.label :name %><br />
+      <%= f.text_field(:name, size: 60, placeholder: "What's the name of the bar?") %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field(:address, size: 60, placeholder: "What's the street address?") %>
+  <div class="row">
+    <div class="medium-10 columns">
+      <%= f.label :address %><br />
+      <%= f.text_field(:address, size: 60, placeholder: "What's the street address?") %>
+    </div>
+</div>
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= f.label :city %><br />
+      <%= f.text_field(:city, size: 60, placeholder: "What city is it in?") %>
+    </div>
+    <div class="medium-4 columns">
+      <%= f.label :state %><br />
+      <%= f.text_field :state, placeholder: "Just the abbreviation..." %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :zip %><br />
+      <%= f.text_field :zip, placeholder: "Zipcode?" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field(:city, size: 60, placeholder: "What city is it in?") %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state, placeholder: "Just the abbreviation..." %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip, placeholder: "Zipcode?" %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number, "Phone Number" %><br />
-    <%= f.text_field(:phone_number, size: 60, placeholder: "Business phone number")%>
+  <div class="row">
+    <div class="field">
+      <%= f.label :phone_number, "Phone Number" %><br />
+      <%= f.text_field(:phone_number, size: 60, placeholder: "Business phone number")%>
+    </div>
   </div>
   <div class="field">
     <%= f.label :image_url, "Image URL" %><br />
