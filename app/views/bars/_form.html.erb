@@ -1,50 +1,52 @@
 <%= form_for @bar, html: {class: "bar_form"} do |f| %>
   <div class="row">
-    <div class="medium-10 columns">
-      <%= f.label :name %><br />
+    <div class="medium-12 columns">
+      <%= f.label :name, class: 'input-group-label' %>
       <%= f.text_field(:name, size: 60, placeholder: "What's the name of the bar?") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-10 columns">
-      <%= f.label :address %><br />
-      <%= f.text_field(:address, size: 60, placeholder: "What's the street address?") %>
+    <div class="medium-12 columns">
+      <%= f.label :address, class: 'input-group-label' %>
+      <%= f.text_field(:address, size: 60, placeholder: "Street") %>
     </div>
 </div>
   <div class="row">
-    <div class="medium-4 columns">
-      <%= f.label :city %><br />
-      <%= f.text_field(:city, size: 60, placeholder: "What city is it in?") %>
-    </div>
-    <div class="medium-4 columns">
-      <%= f.label :state %><br />
-      <%= f.text_field :state, placeholder: "Just the abbreviation..." %>
+    <div class="medium-8 columns">
+      <%= f.label :city, class: 'input-group-label' %>
+      <%= f.text_field(:city, size: 60, placeholder: "City") %>
     </div>
     <div class="medium-2 columns">
-      <%= f.label :zip %><br />
-      <%= f.text_field :zip, placeholder: "Zipcode?" %>
+      <%= f.label :state, class: 'input-group-label' %>
+      <%= f.select :state, ['PA', 'NJ', 'NY'], placeholder: "State" %>
+    </div>
+    <div class="medium-2 columns">
+      <%= f.label :zip, class: 'input-group-label' %>
+      <%= f.text_field :zip, placeholder: "Zip" %>
     </div>
   </div>
   <div class="row">
-    <div class="field">
-      <%= f.label :phone_number, "Phone Number" %><br />
-      <%= f.text_field(:phone_number, size: 60, placeholder: "Business phone number")%>
+    <div class="medium-2 columns">
+      <%= f.label :phone_number, "Phone Number", class: 'input-group-label' %>
+      <%= f.telephone_field(:phone_number, size: 60, placeholder: "(###) ### - ####")%>
+    </div>
+    <div class="medium-5 columns">
+      <%= f.label :image_url, "Image URL", class: 'input-group-label' %>
+      <%= f.url_field(:image_url, size: 60, placeholder: "Image URL")%>
+    </div>
+    <div class="medium-5 columns">
+      <%= f.label :url, "URL", class: 'input-group-label' %>
+      <%= f.url_field(:url, size: 60, placeholder: "Website URL")%>
     </div>
   </div>
-  <div class="field">
-    <%= f.label :image_url, "Image URL" %><br />
-    <%= f.text_field(:image_url, size: 60, placeholder: "You can optionally enter an image url.")%>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :description, class: 'input-group-label' %>
+      <%= f.text_area(:description, size: "60x10", placeholder: "You can optionally enter a description here.")%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :url, "URL" %><br />
-    <%= f.text_field(:url, size: 60, placeholder: "You can optionally enter the bars website.")%>
+  <div class="column row">
+    <%= f.submit "Submit", class: 'small-12 hollow button alert' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area(:description, size: "60x10", placeholder: "You can optionally enter a description here.")%>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+</div>
 <% end %>
