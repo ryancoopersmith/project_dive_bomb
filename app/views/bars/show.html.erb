@@ -45,9 +45,6 @@
 
 <input id="address" type="hidden" value="<%= @bar.address %>">
 
-<div id="reviews"></div>
-<!-- React will render here -->
-
 <% if @reviews.any? { |review| review.user.admin == true } %>
   <h2> Our Review </h2>
   <% @reviews.each do |review| %>
