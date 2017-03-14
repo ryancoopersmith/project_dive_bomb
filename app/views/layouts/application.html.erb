@@ -10,54 +10,63 @@
 
   <body>
 
-  <header>
-    <% if flash[:notice] %>
-      <% if flash[:notice].is_a?(String) %>
-        <%= flash[:notice] %>
-      <% else %>
-        <% flash[:notice].each do |key, value| %>
-          <% if value.is_a?(Array) %>
-            <% value.each do |error| %>
-              <%= "#{key.capitalize} #{error}." %>
-            <% end %>
-          <% else %>
-            <%= "#{key.capitalize} #{value}." %>
-          <% end %>
-          <br />
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <h1>Project Dive Bomb</h1>
+    </div>
+    <div class="top-bar-right">
+      <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" && request.env['PATH_INFO'] != "/users/edit" %>
+        <% if user_signed_in? %>
+          <div class="top-bar-link">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </div>
+          <div class="top-bar-link">
+            <%= link_to "My Account", edit_user_registration_path %>
+          </div>
+        <% else %>
+          <div class="top-bar-link">
+            <div class="top-bar-link">
+              <%= link_to "Sign In", new_user_session_path %>
+            </div>
+            <div class="top-bar-link">
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </div>
+          </div>
         <% end %>
       <% end %>
-    <% end %>
 
-    <% unless flash[:notice] %>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% if current_user %>
+        <% if current_user.admin? %>
+          <div class="top-bar-link">
+            <%=link_to "Create Bar", new_bar_path %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if flash[:notice] %>
+    <% if flash[:notice].is_a?(String) %>
+      <%= flash[:notice] %>
+    <% else %>
+      <% flash[:notice].each do |key, value| %>
+        <% if value.is_a?(Array) %>
+          <% value.each do |error| %>
+            <%= "#{key.capitalize} #{error}." %>
+          <% end %>
+        <% else %>
+          <%= "#{key.capitalize} #{value}." %>
+        <% end %>
+        <br />
       <% end %>
     <% end %>
+  <% end %>
 
-    <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" && request.env['PATH_INFO'] != "/users/edit" %>
-      <% if user_signed_in? %>
-        <div class="signedInBar">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          <%= link_to "My Account", edit_user_registration_path %>
-        </div>
-      <% else %>
-        <div class="signedOutBar">
-          <%= link_to "Sign In", new_user_session_path %>
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </div>
-      <% end %>
+  <% unless flash[:notice] %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
     <% end %>
-
-    <% if current_user %>
-      <% if current_user.admin? %>
-        <div class="create">
-          <%=link_to "Create Bar", new_bar_path %>
-        </div>
-      <% end %>
-    <% end %>
-
-    <h1>Project Dive Bomb</h1>
-  </header>
+  <% end %>
 
   <%= yield %>
 
