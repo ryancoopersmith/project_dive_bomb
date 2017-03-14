@@ -1,0 +1,21 @@
+$dark-gray: #8a8a8a;
+$light-gray: #E6E6E6;
+
+.card {
+  width: 300px;
+  height: 400px;
+  margin: 10 auto;
+  background-color: $light-gray;
+}
+
+.image {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.search {
+  width: 300px;
+  margin-left: 150px;
+  top: -20%;
+}

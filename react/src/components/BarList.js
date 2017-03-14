@@ -56,7 +56,7 @@ class BarList extends Component {
 
       return(
         <div>
-          <input type="text"
+          <input type="text" className="search" placeholder="Search"
           value={this.state.search}
           onChange={this.updateSearch}/>
           {bars}
