@@ -36,17 +36,23 @@
 
     <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" && request.env['PATH_INFO'] != "/users/edit" %>
       <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <%= link_to "My Account", edit_user_registration_path %>
+        <div class="signedInBar">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <%= link_to "My Account", edit_user_registration_path %>
+        </div>
       <% else %>
-        <%= link_to "Sign In", new_user_session_path %>
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <div class="signedOutBar">
+          <%= link_to "Sign In", new_user_session_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+        </div>
       <% end %>
     <% end %>
 
     <% if current_user %>
       <% if current_user.admin? %>
-        <%=link_to "Create Bar", new_bar_path %>
+        <div class="create">
+          <%=link_to "Create Bar", new_bar_path %>
+        </div>
       <% end %>
     <% end %>
 
