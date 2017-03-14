@@ -61,75 +61,75 @@ if Rails.env.development? || Rails.env.production?
 
   franks = Bar.create!(name: 'Dirty Frank\'s Bar', address: '347 S. 13th St.', city: 'Philadelphia', state: 'PA', zip: '19107', phone_number: '215-732-5010', url: 'http://www.dirtyfranksbar.com', image_url: 'http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg')
 
-  User.destroy_all
-  devin = User.create!(
-    username: 'dbombay',
-    email: 'devin.bombay@gmail.com',
-    password: 'dbombay1',
-    password_confirmation: 'dbombay1',
-    admin: true
-  )
-  ryan = User.create!(
-    username: 'ryancoopersmith1',
-    email: 'ryancoopersmith1@gmail.com',
-    password: 'password',
-    password_confirmation: 'password',
-    admin: true
-  )
-  User.create!(
-    username: 'arilandau',
-    email: 'ariellelandau360@gmail.com',
-    password: 'password1',
-    password_confirmation: 'password1',
-    admin: true
-  )
-  User.create!(
-    username: 'fischer0525',
-    email: 'fischer0525@gmail.com',
-    password: 'password2',
-    password_confirmation: 'password2',
-    admin: true
-  )
-  typical_user = User.create!(
-    username: 'typicaluser',
-    email: 'typicaluser12345@gmail.com',
-    password: 'typicalpassword',
-    password_confirmation: 'typicalpassword'
-  )
+    User.destroy_all
+    devin = User.create!(
+      username: 'dbombay',
+      email: 'devin.bombay@gmail.com',
+      password: 'dbombay1',
+      password_confirmation: 'dbombay1',
+      admin: true
+    )
+    ryan = User.create!(
+      username: 'ryancoopersmith1',
+      email: 'ryancoopersmith1@gmail.com',
+      password: 'password',
+      password_confirmation: 'password',
+      admin: true
+    )
+    User.create!(
+      username: 'arilandau',
+      email: 'ariellelandau360@gmail.com',
+      password: 'password1',
+      password_confirmation: 'password1',
+      admin: true
+    )
+    User.create!(
+      username: 'fischer0525',
+      email: 'fischer0525@gmail.com',
+      password: 'password2',
+      password_confirmation: 'password2',
+      admin: true
+    )
+    typical_user = User.create!(
+      username: 'typicaluser',
+      email: 'typicaluser12345@gmail.com',
+      password: 'typicalpassword',
+      password_confirmation: 'typicalpassword'
+    )
 
-  Review.destroy_all
-  Review.create!(
-    bar: oscars,
-    user: devin,
-    drinks: 3,
-    food: 4,
-    entertainment: 5,
-    vibe: 2,
-    setting: 3,
-    description: 'fun'
-  )
-  Review.create!(
-    bar: franks,
-    user: ryan,
-    drinks: 2,
-    food: 5,
-    entertainment: 5,
-    vibe: 3,
-    setting: 4,
-    description: 'great'
-  )
-  Review.create!(
-    bar: franks,
-    user: typical_user,
-    drinks: 2,
-    food: 5,
-    entertainment: 5,
-    vibe: 3,
-    setting: 4,
-    description: 'so-so'
-  )
+    Review.destroy_all
+    Review.create!(
+      bar: oscars,
+      user: devin,
+      drinks: 3,
+      food: 4,
+      entertainment: 5,
+      vibe: 2,
+      setting: 3,
+      description: 'fun'
+    )
+    Review.create!(
+      bar: franks,
+      user: ryan,
+      drinks: 2,
+      food: 5,
+      entertainment: 5,
+      vibe: 3,
+      setting: 4,
+      description: 'great'
+    )
+    Review.create!(
+      bar: franks,
+      user: typical_user,
+      drinks: 2,
+      food: 5,
+      entertainment: 5,
+      vibe: 3,
+      setting: 4,
+      description: 'so-so'
+    )
 
-  Review.all.each do |review|
-    rating(review)
+    Review.all.each do |review|
+      rating(review)
+    end
   end
-end

@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import Bar from './Bar'
+import Bar from './Bar';
 
-class BarsList extends Component {
+class BarList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bars: []
-    }
+      bars: [],
+      search: ''
+    };
     this.getBars = this.getBars.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(event) {
+    this.setState({search: event.target.value.substr(0, 20)});
   }
 
   getBars() {
-    fetch('http://localhost:4567/api/v1/bars.json')
+    fetch('http://localhost:3000/api/v1/bars.json')
       .then(response => {
         if (response.ok) {
           return response;
@@ -23,7 +29,7 @@ class BarsList extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ bars: body.bars });
+        this.setState({ bars: body });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -35,26 +41,24 @@ class BarsList extends Component {
   render() {
     if (this.state.bars) {
       let bars = this.state.bars.map((bar) => {
-        return (
-          <Bar
-            id={bar.id}
-            key={bar.id}
-            name={bar.name}
-            url={bar.url}
-            address={bar.address}
-            city={bar.city}
-            state={bar.state}
-            zip={bar.zip}
-            phone_number={bar.phone_number}
-            image_url={bar.image_url}
-            rating={bar.rating}
-            description={bar.description}
-          />
-        );
+        if (bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
+          return (
+            <Bar
+              id={bar.id}
+              key={bar.id}
+              name={bar.name}
+              image_url={bar.image_url}
+              rating={bar.rating}
+            />
+          );
+        }
       });
 
       return(
         <div>
+          <input type="text"
+          value={this.state.search}
+          onChange={this.updateSearch}/>
           {bars}
         </div>
       );
@@ -62,7 +66,7 @@ class BarsList extends Component {
     } else {
       return (
         <div>
-          Be the first to reccomend a bar!
+          Be the first to recommend a bar!
         </div>
       );
     }
