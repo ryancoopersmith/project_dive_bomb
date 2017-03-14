@@ -13,6 +13,7 @@ gem 'dotenv-rails'
 gem 'ransack'
 gem 'foundation-rails'
 gem 'fog'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'listen', '~> 3.0.5'
