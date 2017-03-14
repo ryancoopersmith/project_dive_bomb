@@ -1,34 +1,9 @@
 <h1>Bars</h1>
 
-<div class="nav_bar">
-  <%= form_tag(bars_path, method: :get) do %>
-    <%= text_field_tag :term, params[:term] %>
-    <%= submit_tag 'Search', name: nil %>
-  <% end %>
-</div>
-
 <div id="bars"></div>
-<div id="reviews">
-
-</div>
-<!-- React will render here -->
-
-<!-- <% @bars.each do |bar| %>
-  <div class="bar_card">
-    <img src="<%=bar.image_url%>" style="max-height: 175px; max-width: 175px;" >
-    <p><%= bar.name %> </p>
-    <p><%= bar.address %> </p>
-    <p><%= bar.city%>, <%=bar.state%> <%=bar.zip%> </p>
-    <p id="view_bar"><%= link_to "View Bar", bar %></p>
-  </div>
-<%end%> -->
 
 <% if current_user %>
   <% if current_user.admin? %>
     <%=link_to "Create Bar", new_bar_path %>
   <% end %>
-<% end %>
-
-<% if params['term'] %>
-  <%= link_to "Go Back", root_path %>
 <% end %>
