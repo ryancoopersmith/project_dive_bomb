@@ -17,6 +17,7 @@
  */
 
 
+
  h1 {
  	font-family: "Contrail One";
  	font-size: 24px;
@@ -72,3 +73,11 @@
   font-family: "Contrail One";
   display: list-item;
  }
+
+ $foundation-palette: (
+   flame: #F2552C,
+   gray: #262626,
+   white: #fefefe,
+   error: #cc4b37,
+   success: #3adb76,
+ );

@@ -8,17 +8,10 @@
 </div>
 
 <div id="bars"></div>
-<!-- React will render here -->
+<div id="reviews">
 
-<% @bars.each do |bar| %>
-  <div class="bar_card">
-    <img src="<%=bar.image_url%>" style="max-height: 175px; max-width: 175px;" >
-    <p><%= bar.name %> </p>
-    <p><%= bar.address %> </p>
-    <p><%= bar.city%>, <%=bar.state%> <%=bar.zip%> </p>
-    <p id="view_bar"><%= link_to "View Bar", bar %></p>
-  </div>
-<%end%>
+</div>
+
 
 <% if current_user %>
   <% if current_user.admin? %>
