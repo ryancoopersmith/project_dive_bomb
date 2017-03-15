@@ -40,18 +40,30 @@ class BarList extends Component {
 
   render() {
     if (this.state.bars) {
-      let bars = this.state.bars.map((bar) => {
+      let groupSize = 3;
+      let bars = this.state.bars.map((bar, index) => {
         if (bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
           return (
             <Bar
               id={bar.id}
-              key={bar.id}
+              key={index}
               name={bar.name}
               image_url={bar.image_url}
               rating={bar.rating}
             />
           );
         }
+      }).reduce((r, element, index) => {
+        index % groupSize === 0 && r.push([]);
+        r[r.length - 1].push(element);
+        console.log(r)
+        return r;
+      }, []).map((barContent) => {
+        return(
+          <div className="row">
+            {barContent}
+          </div>
+        );
       });
 
       return(

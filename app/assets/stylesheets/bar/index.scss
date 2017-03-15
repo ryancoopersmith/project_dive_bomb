@@ -2,8 +2,8 @@ $light-gray: #E6E6E6;
 $fiery-red: #F2552C;
 
 .card {
-  max-width: 350px;
-  max-height: 450px;
+  width: 400px;
+  height: 500px;
   margin: 10 auto;
   background-color: $light-gray;
 }
@@ -13,8 +13,8 @@ $fiery-red: #F2552C;
 }
 
 .image {
-  max-width: 225px;
-  max-height: 225px;
+  max-width: 250px;
+  max-height: 200px;
   display: block;
   margin: 0 auto;
 }
