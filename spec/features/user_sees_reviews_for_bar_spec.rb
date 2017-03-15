@@ -18,14 +18,14 @@ feature 'visitor sees reviews for individual bar' do
   scenario 'A user goes to a showpage and there are no reviews or headers' do
     visit bar_path(bar1)
 
-    expect(page).to_not have_content("Our Review")
+    expect(page).to_not have_content("Our Breakdown")
     expect(page).to_not have_content("User Reviews")
   end
 
   scenario 'If there are no user reviews they only see the critic reviews' do
     visit bar_path(bar2)
 
-    expect(page).to have_content("Our Review")
+    expect(page).to have_content("Our Breakdown")
     expect(page).to_not have_content("User Reviews")
     expect(page).to have_content(admin_review.drinks)
     expect(page).to have_content(admin_review.food)
@@ -38,7 +38,7 @@ feature 'visitor sees reviews for individual bar' do
   scenario 'If there are user reviews, the user can see them' do
     visit bar_path(bar3)
 
-    expect(page).to have_content("User Review")
+    expect(page).to have_content("User Reviews")
     expect(page).to have_content(review.user.username)
     expect(page).to have_content((review.drinks + review.food +
       review.entertainment + review.setting + review.vibe) / 5)

@@ -18,7 +18,6 @@ feature 'visitor sees details for individual bar' do
     expect(page).to have_content bar.city
     expect(page).to have_content bar.state
     expect(page).to have_content bar.zip
-    expect(page).to have_link "Website"
     expect(page).to have_content bar.phone_number
     expect(page).to have_css("img[src*='nautilus_shell.jpg']")
   end
