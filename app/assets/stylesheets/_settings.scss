@@ -57,6 +57,7 @@ $foundation-palette: (
   alert: #cc4b37,
   defcon-5: #FEFEFE
 );
+$flame: #f2552c;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
@@ -64,9 +65,9 @@ $heavy-gray: #262626;
 $fiery-red: #F2552C;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $heavy-gray;
-$body-font-color: #FEFEFE;
-$body-font-family: "Contrail One", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$body-background: $white;
+$body-font-color: $black;
+$body-font-family: "Contrail One", Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;

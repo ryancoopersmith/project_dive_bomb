@@ -42,10 +42,11 @@ class ReviewsController < ApplicationController
         @bar.save
       end
       flash[:notice] = "Review added successfully"
+      redirect_to @bar
     else
       flash[:notice] = @review.errors.messages
+      render action: "edit"
     end
-    redirect_to @bar
   end
 
   def edit
