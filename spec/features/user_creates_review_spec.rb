@@ -25,11 +25,11 @@ feature 'User creates a review' do
 
     visit bar_path(bar)
     click_link "Create a Review"
-    fill_in "Drinks", with: 2
-    fill_in "Food", with: 3
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
+    choose "review_drinks_2"
+    choose "review_food_3"
+    choose "review_entertainment_4"
+    choose "review_vibe_1"
+    choose "review_setting_4"
     fill_in "Description", with: "fun"
     click_button "Submit"
 
@@ -47,11 +47,11 @@ feature 'User creates a review' do
 
     visit bar_path(bar)
     click_link "Create a Review"
-    fill_in "Drinks", with: 2
-    fill_in "Food", with: 3
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
+    choose "review_drinks_2"
+    choose "review_food_3"
+    choose "review_entertainment_4"
+    choose "review_vibe_1"
+    choose "review_setting_4"
     fill_in "Description", with: "fun"
     click_button "Submit"
 
@@ -70,15 +70,14 @@ feature 'User creates a review' do
 
     visit bar_path(bar)
     click_link "Create a Review"
-    fill_in "Drinks", with: "great"
-    fill_in "Food", with: 3
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
+    choose "review_food_3"
+    choose "review_entertainment_4"
+    choose "review_vibe_1"
+    choose "review_setting_4"
     fill_in "Description", with: "fun"
     click_button "Submit"
 
-    expect(page).to have_content("Drinks is not a number")
+    expect(page).to have_content("Drinks can't be blank")
     expect(page).to_not have_content("fun")
     expect(page).to_not have_content("Review added successfully")
   end
@@ -92,11 +91,10 @@ feature 'User creates a review' do
 
     visit bar_path(bar)
     click_link "Create a Review"
-    fill_in "Drinks", with: 2
-    fill_in "Food", with: ''
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
+    choose "review_drinks_2"
+    choose "review_entertainment_4"
+    choose "review_vibe_1"
+    choose "review_setting_4"
     fill_in "Description", with: "fun"
     click_button "Submit"
 
