@@ -12,8 +12,8 @@ class BarsController < ApplicationController
     @reviews.each do |review|
       unless review.user.admin?
         review.drinks *= 1.5
-        review.food *= .5
-        review.entertainment *= .5
+        review.food *= 0.5
+        review.entertainment *= 0.5
         review.vibe *= 1.25
         review.setting *= 1.25
         sum += (review.drinks + review.food + review.entertainment + review.vibe + review.setting)

@@ -55,16 +55,17 @@ $foundation-palette: (
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
+  defcon-5: #FEFEFE
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$heavy-gray: #444;
+$heavy-gray: #262626;
 $fiery-red: #F2552C;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $heavy-gray;
-$body-font-color: $black;
+$body-font-color: #FEFEFE;
 $body-font-family: "Contrail One", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -289,7 +290,7 @@ $callout-link-tint: 30%;
 
 $card-background: $heavy-gray;
 $card-font-color: $body-font-color;
-$card-divider-background: $dark-gray;
+$card-divider-background: $fiery-red;
 $card-border: none;
 $card-shadow: none;
 $card-border-radius: $global-radius;

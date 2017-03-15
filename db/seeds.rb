@@ -53,7 +53,7 @@ if Rails.env.development? || Rails.env.production?
     password_confirmation: 'typicalpassword'
   )
 
-  franks = Bar.create!(name: 'Dirty Frank\'s Bar', address: '347 S. 13th St.', city: 'Philadelphia', state: 'PA', zip: '19107', phone_number: '215-732-5010', url: 'http://www.dirtyfranksbar.com', image_url: 'http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg')
+  franks = Bar.create!(name: 'Dirty Frank\'s Bar', address: '347 S. 13th St.', city: 'Philadelphia', state: 'PA', zip: '19107', phone_number: '215-732-5010', url: 'http://www.dirtyfranksbar.com', image_url: 'http://jayfmillercreative.com/wp-content/uploads/2012/01/i_Dirty-Franks-JFMillerCr.jpg', description: 'Cash-only corner bar filled with eclectic knickknacks hanging from the ceiling & local art.')
 
   oscars = Bar.create!(name: 'Oscar\'s Tavern', address: '1524 Sansom St', city: 'Philadelphia', state: 'PA', zip: '19130', phone_number: '215-972-9938', url: 'https://m.facebook.com/Oscars-Tavern-187176721252/', image_url: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/1917917_213451346252_6865044_n.jpg?efg=eyJpIjoidCJ9&oh=9d75e498e46764c1d3f398d8a69c6d1f&oe=596BD775', description: 'This Center City staple has a Cheers vibe with a decidedly grittier atmosphere. Its location provides a healthy mix of both locals and visitors, and one of the most eclectic crowds in Philadelphia. Several TV\'s(if you can hear them over the boisterous conversation) are usually tuned to local sports, and if you are hungry make sure to order the \'cheesesteak and a half.')
 
