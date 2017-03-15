@@ -46,8 +46,10 @@ class BarList extends Component {
           return (
             <Bar
               id={bar.id}
-              key={index}
+              key={index + 1}
               name={bar.name}
+              address={bar.address}
+              description={bar.description}
               image_url={bar.image_url}
               rating={bar.rating}
             />
@@ -56,7 +58,6 @@ class BarList extends Component {
       }).reduce((r, element, index) => {
         index % groupSize === 0 && r.push([]);
         r[r.length - 1].push(element);
-        console.log(r)
         return r;
       }, []).map((barContent) => {
         return(
@@ -72,6 +73,12 @@ class BarList extends Component {
           value={this.state.search}
           onChange={this.updateSearch}/>
           {bars}
+          <div className="numbers">
+            <input type="submit" value="1" className="button" />
+            <input type="submit" value="2" className="button" />
+            <input type="submit" value="3" className="button" />
+            <input type="submit" value="4" className="button" />
+          </div>
         </div>
       );
 
