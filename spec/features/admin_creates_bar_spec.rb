@@ -47,7 +47,6 @@ feature 'create a bar link is only available to admin' do
     visit new_bar_path
 
     expect(page).to have_content("This page doesn't exist")
-    #not passing, rake is bringing up an older format and won't reset to the new
   end
 
   scenario "Authorized user is unable to use direct path to new bar form" do

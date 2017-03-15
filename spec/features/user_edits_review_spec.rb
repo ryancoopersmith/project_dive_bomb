@@ -37,10 +37,4 @@ feature 'User creates a review' do
     expect(page).to have_content("bad")
     expect(page).to have_content(user.username)
   end
-
-  # removed "user edits and puts in invalid information." Since the form was changed to radio buttons,
-  # it's impossible to input incorrect information for ratings through the interface.
-
-  # removed "used fills out missing information." The form was changed to radio buttons, on edit it preselects the old params.
-  # It's impossible to leave a field blank when editing.
 end
