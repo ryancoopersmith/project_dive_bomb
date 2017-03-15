@@ -16,6 +16,64 @@
 
  */
 
+
+
+ h1 {
+ 	font-family: "Contrail One";
+ 	font-size: 24px;
+ 	font-style: normal;
+ 	font-variant: normal;
+ 	font-weight: 500;
+ 	line-height: 26.4px;
+ }
+
+ h2 {
+   font-family: "Contrail One";
+ }
+
+ h3 {
+ 	font-family: "Contrail One";
+ 	font-size: 14px;
+ 	font-style: normal;
+ 	font-variant: normal;
+ 	font-weight: 500;
+ 	line-height: 15.4px;
+ }
+
+ h5 {
+   font-family: "Contrail One";
+ }
+
+ p {
+ 	font-family: "Contrail One";
+ 	font-size: 14px;
+ 	font-style: normal;
+ 	font-variant: normal;
+ 	font-weight: 400;
+ 	line-height: 20px;
+ }
+ blockquote {
+ 	font-family: "Contrail One";
+ 	font-size: 21px;
+ 	font-style: normal;
+ 	font-variant: normal;
+ 	font-weight: 400;
+ 	line-height: 30px;
+ }
+ pre {
+ 	font-family: "Contrail One";
+ 	font-size: 13px;
+ 	font-style: normal;
+ 	font-variant: normal;
+ 	font-weight: 400;
+ 	line-height: 18.5714px;
+ }
+
+ li {
+  font-family: "Contrail One";
+  display: list-item;
+ }
+
  $foundation-palette: (
    flame: #F2552C,
    gray: #262626,
