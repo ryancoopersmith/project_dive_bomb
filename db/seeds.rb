@@ -103,7 +103,7 @@ if Rails.env.development? || Rails.env.production?
 
   Review.create!(bar: oscars, user: corey, drinks: 5, food: 5, entertainment: 1, vibe: 5, setting: 5)
 
-  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5 )
+  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5)
 
   Review.create!(bar: bobs, user: corey, drinks: 5, food: 1, entertainment: 5, vibe: 5, setting: 5)
 
