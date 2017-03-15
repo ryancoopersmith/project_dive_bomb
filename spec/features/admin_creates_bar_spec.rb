@@ -90,7 +90,7 @@ feature 'create a bar link is only available to admin' do
     fill_in "Name", with: "NewBar"
     fill_in "Address", with: "123 free street"
     fill_in "City", with: "Philly"
-    fill_in "State", with: "PA"
+    select "PA", from: "State"
     fill_in "Zip", with: '12345'
     fill_in "Phone Number", with: '111-222-3333'
     fill_in "Description", with: "Great"
@@ -110,7 +110,7 @@ feature 'create a bar link is only available to admin' do
     fill_in "Name", with: "NewBar"
     fill_in "Address", with: "123 free street"
     fill_in "City", with: "Philly"
-    fill_in "State", with: "PA"
+    select "PA", from: "State"
     fill_in "Zip", with: '12345'
     fill_in "Phone Number", with: '111-222-333'
     fill_in "Description", with: "Great"

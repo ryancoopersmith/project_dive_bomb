@@ -3,24 +3,6 @@ $gray: #8a8a8a;
 $white: #fefefe;
 $black: #000000;
 
-.form_button {
-  background: #f0bdb2;
-  background-image: linear-gradient(to bottom, #f0bdb2, #F2552C);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
-
-.form_button:hover {
-  background: #f0c8c0;
-  background-image: linear-gradient(to bottom, #f0c8c0, #f07252);
-  text-decoration: none;
-}
-
 h1 {
   text-align: center;
 }
