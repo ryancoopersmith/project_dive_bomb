@@ -6,14 +6,21 @@ class BarList extends Component {
     super(props);
     this.state = {
       bars: [],
-      search: ''
+      search: '',
+      group: 1
     };
     this.getBars = this.getBars.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
+    this.setBars = this.setBars.bind(this);
   }
 
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0, 20)});
+    if (this.state.search.length > 1) {
+      this.setState({ group: 0 });
+    } else {
+      this.setState({ group: 1 });
+    }
   }
 
   getBars() {
@@ -34,6 +41,10 @@ class BarList extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  setBars(page) {
+    this.setState({ group: page })
+  }
+
   componentDidMount() {
     this.getBars();
   }
@@ -41,6 +52,7 @@ class BarList extends Component {
   render() {
     if (this.state.bars) {
       let groupSize = 3;
+      let pageSize = 4;
       let bars = this.state.bars.map((bar, index) => {
         if (bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
           return (
@@ -59,12 +71,24 @@ class BarList extends Component {
         index % groupSize === 0 && r.push([]);
         r[r.length - 1].push(element);
         return r;
+      }, []).reduce((r, element, index) => {
+        index % pageSize === 0 && r.push([]);
+        r[r.length - 1].push(element);
+        return r;
       }, []).map((barContent) => {
-        return(
-          <div className="row">
-            {barContent}
-          </div>
-        );
+        if (this.state.group) {
+          return(
+            <div className="row">
+              {barContent[this.state.group - 1]}
+            </div>
+          );
+        } else {
+          return(
+            <div className="row">
+              {barContent}
+            </div>
+          );
+        }
       });
 
       return(
@@ -74,10 +98,10 @@ class BarList extends Component {
           onChange={this.updateSearch}/>
           {bars}
           <div className="numbers">
-            <input type="submit" value="1" className="button" />
-            <input type="submit" value="2" className="button" />
-            <input type="submit" value="3" className="button" />
-            <input type="submit" value="4" className="button" />
+            <input type="submit" value="1" className="button" onClick={() => this.setBars(1)} />
+            <input type="submit" value="2" className="button" onClick={() => this.setBars(2)} />
+            <input type="submit" value="3" className="button" onClick={() => this.setBars(3)} />
+            <input type="submit" value="4" className="button" onClick={() => this.setBars(4)} />
           </div>
         </div>
       );
