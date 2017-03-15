@@ -8,7 +8,7 @@ class BarsController < ApplicationController
   def show
     @bar = Bar.find(params[:id])
     @reviews = @bar.reviews
-    admin_review = @reviews.select { |review| review.user.admin == true  }
+    admin_review = @reviews.select { |review| review.user.admin == true }
     @admin_review = admin_review[0]
     @user_reviews = @reviews.select { |review| review.user.admin == false }
     sum = 0
