@@ -1,17 +1,20 @@
 # require 'rails_helper'
 #
-# describe Api::V1::BarsController do
-#   let(:bar) { FactoryGirl.create!(:bar) }
-#   let(:admin) { FactoryGirl.create!(:user, admin: true) }
+# RSpec.describe BarsController do
+#   let(:bar) { FactoryGirl.create(:bar) }
+#   describe "GET 'index'" do
+#     before(:each) do
+#       get 'index', format: :json, id: bar.id
+#     end
 #
-#   it 'should be successful' do
+#     it 'should be successful' do
+#       response.should be_success
+#     end
 #
-#     response.should be_success
-#   end
-# 
-#   it 'responds with JSON' do
-#
-#     body = JSON.parse(response.body)
-#     expect(body[0]['name']).to eq(bar.name)
+#     it 'responds with JSON' do
+#       body = JSON.parse(response.body)
+#       binding.pry
+#       expect(body[0]['name']).to eq(bar.name)
+#     end
 #   end
 # end
