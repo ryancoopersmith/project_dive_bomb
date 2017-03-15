@@ -26,6 +26,6 @@ feature 'admin creates review' do
     fill_in "Description", with: "fun"
     click_button "Submit"
 
-    expect(page).to have_content("Our Rating: 5.0 / 5")
+    expect(page).to have_content("4.6 / 💣💣💣💣💣")
   end
 end
