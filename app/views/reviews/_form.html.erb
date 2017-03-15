@@ -1,35 +1,90 @@
-<%= form_for [@bar, @review] do |f| %>
-  <div class="field">
-    <%= f.label :drinks %>
-    <%= f.text_field :drinks, placeholder: "1-5 Rating", required: true %>
+<%= form_for [@bar, @review], html: {class: "review_form"} do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :drinks, "How would you rate the drinks at #{@bar.name}?" %>
+      <%= f.radio_button :drinks, 1%>
+      <%= f.label :drinks, "💣" %>
+      <%= f.radio_button :drinks, 2%>
+      <%= f.label :drinks, "💣💣" %>
+      <%= f.radio_button :drinks, 3%>
+      <%= f.label :drinks, "💣💣💣" %>
+      <%= f.radio_button :drinks, 4%>
+      <%= f.label :drinks, "💣💣💣💣" %>
+      <%= f.radio_button :drinks, 5%>
+      <%= f.label :drinks, "💣💣💣💣💣" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :food %>
-    <%= f.text_field :food, placeholder: "1-5 Rating", required: true %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :food, "How would you rate the food #{@bar.name} offered?" %>
+      <%= f.radio_button :food, 1%>
+      <%= f.label :food, "💣" %>
+      <%= f.radio_button :food, 2%>
+      <%= f.label :food, "💣💣" %>
+      <%= f.radio_button :food, 3%>
+      <%= f.label :food, "💣💣💣" %>
+      <%= f.radio_button :food, 4%>
+      <%= f.label :food, "💣💣💣💣" %>
+      <%= f.radio_button :food, 5%>
+      <%= f.label :food, "💣💣💣💣💣" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :entertainment %>
-    <%= f.text_field :entertainment, placeholder: "1-5 Rating", required: true %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :entertainment, "How would you rate the available entertainment?" %>
+      <%= f.radio_button :entertainment, 1%>
+      <%= f.label :entertainment, "💣" %>
+      <%= f.radio_button :entertainment, 2%>
+      <%= f.label :entertainment, "💣💣" %>
+      <%= f.radio_button :entertainment, 3%>
+      <%= f.label :entertainment, "💣💣💣" %>
+      <%= f.radio_button :entertainment, 4%>
+      <%= f.label :entertainment, "💣💣💣💣" %>
+      <%= f.radio_button :entertainment, 5%>
+      <%= f.label :entertainment, "💣💣💣💣💣" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :vibe %>
-    <%= f.text_field :vibe, placeholder: "1-5 Rating", required: true %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :vibe, "How would you rate the vibe at #{@bar.name}? Are the other patron's cool? And the staff?" %>
+      <%= f.radio_button :vibe, 1%>
+      <%= f.label :vibe, "💣" %>
+      <%= f.radio_button :vibe, 2%>
+      <%= f.label :vibe, "💣💣" %>
+      <%= f.radio_button :vibe, 3%>
+      <%= f.label :vibe, "💣💣💣" %>
+      <%= f.radio_button :vibe, 4%>
+      <%= f.label :vibe, "💣💣💣💣" %>
+      <%= f.radio_button :vibe, 5%>
+      <%= f.label :vibe, "💣💣💣💣💣" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :setting %>
-    <%= f.text_field :setting, placeholder: "1-5 Rating", required: true %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :setting, "How would you rate the setting? Does #{@bar.name} look cool?" %>
+      <%= f.radio_button :setting, 1%>
+      <%= f.label :setting, "💣" %>
+      <%= f.radio_button :setting, 2%>
+      <%= f.label :setting, "💣💣" %>
+      <%= f.radio_button :setting, 3%>
+      <%= f.label :setting, "💣💣💣" %>
+      <%= f.radio_button :setting, 4%>
+      <%= f.label :setting, "💣💣💣💣" %>
+      <%= f.radio_button :setting, 5%>
+      <%= f.label :setting, "💣💣💣💣💣" %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="column row">
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= f.submit "Submit" %>
+  <div class="column row">
+    <%= f.submit "Submit", class: 'small-12 hollow button alert' %>
   </div>
 <% end %>

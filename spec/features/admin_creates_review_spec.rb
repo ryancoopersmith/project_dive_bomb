@@ -18,11 +18,11 @@ feature 'admin creates review' do
 
     visit bar_path(bar)
     click_link "Create a Review"
-    fill_in "Drinks", with: 5
-    fill_in "Food", with: 5
-    fill_in "Entertainment", with: 5
-    fill_in "Vibe", with: 5
-    fill_in "Setting", with: 5
+    choose "review_drinks_5"
+    choose "review_food_5"
+    choose "review_entertainment_5"
+    choose "review_vibe_5"
+    choose "review_setting_5"
     fill_in "Description", with: "fun"
     click_button "Submit"
 
