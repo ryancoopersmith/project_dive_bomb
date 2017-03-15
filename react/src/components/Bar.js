@@ -7,8 +7,11 @@ class Bar extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Bars</h1>
+      <div className="bar_card">
+        <img src={this.props.image_url} className="BarCardImage" />
+        <p> {this.props.rating} </p>
+        <p> {this.props.name}  </p>
+        <p id="view_bar"><a href={`bars/${this.props.id}`}>View Bar</a></p>
       </div>
     );
   }

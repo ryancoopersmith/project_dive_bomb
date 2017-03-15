@@ -47,7 +47,6 @@ feature 'create a bar link is only available to admin' do
     visit new_bar_path
 
     expect(page).to have_content("This page doesn't exist")
-    #not passing, rake is bringing up an older format and won't reset to the new
   end
 
   scenario "Authorized user is unable to use direct path to new bar form" do
@@ -90,7 +89,7 @@ feature 'create a bar link is only available to admin' do
     fill_in "Name", with: "NewBar"
     fill_in "Address", with: "123 free street"
     fill_in "City", with: "Philly"
-    fill_in "State", with: "PA"
+    select "PA", from: "State"
     fill_in "Zip", with: '12345'
     fill_in "Phone Number", with: '111-222-3333'
     fill_in "Description", with: "Great"
@@ -110,7 +109,7 @@ feature 'create a bar link is only available to admin' do
     fill_in "Name", with: "NewBar"
     fill_in "Address", with: "123 free street"
     fill_in "City", with: "Philly"
-    fill_in "State", with: "PA"
+    select "PA", from: "State"
     fill_in "Zip", with: '12345'
     fill_in "Phone Number", with: '111-222-333'
     fill_in "Description", with: "Great"
