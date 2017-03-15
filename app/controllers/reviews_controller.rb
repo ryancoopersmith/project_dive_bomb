@@ -1,6 +1,20 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
+  def upvote
+    @review = review.find(params[:id])
+    @bar = @review.bar
+    @review.liked_by current_user
+    redirect_to @bar
+  end
+
+  def downvote
+    @review = Review.find(params[:id])
+    @bar = @review.bar
+    @review.downvote_from current_user
+    redirect_to @bar
+  end
+
   def new
     @bar = Bar.find(params[:bar_id])
     if current_user.reviews[0]
