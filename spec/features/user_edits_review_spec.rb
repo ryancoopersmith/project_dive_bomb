@@ -25,11 +25,11 @@ feature 'User creates a review' do
 
     visit bar_path(bar)
     click_link "Edit Review"
-    fill_in "Drinks", with: 2
-    fill_in "Food", with: 3
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
+    choose "review_drinks_2"
+    choose "review_food_3"
+    choose "review_entertainment_4"
+    choose "review_vibe_1"
+    choose "review_setting_4"
     fill_in "Description", with: "bad"
     click_button "Submit"
 
@@ -38,47 +38,9 @@ feature 'User creates a review' do
     expect(page).to have_content(user.username)
   end
 
-  scenario 'user fills out invalid information' do
-    visit root_path
-    click_link "Sign In"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Sign In"
+  #removed "user edits and puts in invalid information." Since the form was changed to radio buttons,
+  #it's impossible to input incorrect information for ratings through the interface.
 
-    visit bar_path(bar)
-    click_link "Edit Review"
-    fill_in "Drinks", with: "horrible"
-    fill_in "Food", with: 3
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
-    fill_in "Description", with: "bad"
-    click_button "Submit"
-
-    expect(page).to have_content("Drinks is not a number")
-    expect(page).to_not have_content("bad")
-    expect(page).to_not have_content("Review updated successfully")
-  end
-
-  scenario 'user fills out missing information' do
-    visit root_path
-    click_link "Sign In"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Sign In"
-
-    visit bar_path(bar)
-    click_link "Edit Review"
-    fill_in "Drinks", with: 2
-    fill_in "Food", with: ''
-    fill_in "Entertainment", with: 4
-    fill_in "Vibe", with: 1
-    fill_in "Setting", with: 4
-    fill_in "Description", with: "bad"
-    click_button "Submit"
-
-    expect(page).to have_content("Food can't be blank")
-    expect(page).to_not have_content("bad")
-    expect(page).to_not have_content("Review updated successfully")
-  end
+  #removed "used fills out missing information." The form was changed to radio buttons, on edit it preselects the old params.
+  #It's impossible to leave a field blank when editing.
 end

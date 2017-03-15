@@ -1,81 +1,81 @@
 <%= form_for [@bar, @review], html: {class: "review_form"} do |f| %>
-  <div class="column row">
-    <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :drinks, "How would you rate the drinks at #{@bar.name}?" %>
-      <%= radio_button_tag(:drinks_1, 1) %>
-      <%= label_tag(:drinks, "💣") %>
-      <%= radio_button_tag(:drinks_2, 2) %>
-      <%= label_tag(:drinks, "💣💣") %>
-      <%= radio_button_tag(:drinks_3, 3) %>
-      <%= label_tag(:drinks, "💣💣💣") %>
-      <%= radio_button_tag(:drinks_4, 4) %>
-      <%= label_tag(:drinks, "💣💣💣💣") %>
-      <%= radio_button_tag(:drinks_5, 5) %>
-      <%= label_tag(:drinks, "💣💣💣💣💣") %>
+      <%= f.radio_button :drinks, 1%>
+      <%= f.label :drinks, "💣" %>
+      <%= f.radio_button :drinks, 2%>
+      <%= f.label :drinks, "💣💣" %>
+      <%= f.radio_button :drinks, 3%>
+      <%= f.label :drinks, "💣💣💣" %>
+      <%= f.radio_button :drinks, 4%>
+      <%= f.label :drinks, "💣💣💣💣" %>
+      <%= f.radio_button :drinks, 5%>
+      <%= f.label :drinks, "💣💣💣💣💣" %>
     </div>
   </div>
 
-  <div class="column row">
-    <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :food, "How would you rate the food #{@bar.name} offered?" %>
-      <%= radio_button_tag(:food, 1) %>
-      <%= label_tag(:food, "💣") %>
-      <%= radio_button_tag(:food, 2) %>
-      <%= label_tag(:food, "💣💣") %>
-      <%= radio_button_tag(:food, 3) %>
-      <%= label_tag(:food, "💣💣💣") %>
-      <%= radio_button_tag(:food, 4) %>
-      <%= label_tag(:food, "💣💣💣💣") %>
-      <%= radio_button_tag(:food, 5) %>
-      <%= label_tag(:food, "💣💣💣💣💣") %>
+      <%= f.radio_button :food, 1%>
+      <%= f.label :food, "💣" %>
+      <%= f.radio_button :food, 2%>
+      <%= f.label :food, "💣💣" %>
+      <%= f.radio_button :food, 3%>
+      <%= f.label :food, "💣💣💣" %>
+      <%= f.radio_button :food, 4%>
+      <%= f.label :food, "💣💣💣💣" %>
+      <%= f.radio_button :food, 5%>
+      <%= f.label :food, "💣💣💣💣💣" %>
     </div>
   </div>
 
-  <div class="column row">
-    <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :entertainment, "How would you rate the available entertainment?" %>
-      <%= radio_button_tag(:entertainment, 1) %>
-      <%= label_tag(:entertainment, "💣") %>
-      <%= radio_button_tag(:entertainment, 2) %>
-      <%= label_tag(:entertainment, "💣💣") %>
-      <%= radio_button_tag(:entertainment, 3) %>
-      <%= label_tag(:entertainment, "💣💣💣") %>
-      <%= radio_button_tag(:entertainment, 4) %>
-      <%= label_tag(:entertainment, "💣💣💣💣") %>
-      <%= radio_button_tag(:entertainment, 5) %>
-      <%= label_tag(:entertainment, "💣💣💣💣💣") %>
+      <%= f.radio_button :entertainment, 1%>
+      <%= f.label :entertainment, "💣" %>
+      <%= f.radio_button :entertainment, 2%>
+      <%= f.label :entertainment, "💣💣" %>
+      <%= f.radio_button :entertainment, 3%>
+      <%= f.label :entertainment, "💣💣💣" %>
+      <%= f.radio_button :entertainment, 4%>
+      <%= f.label :entertainment, "💣💣💣💣" %>
+      <%= f.radio_button :entertainment, 5%>
+      <%= f.label :entertainment, "💣💣💣💣💣" %>
     </div>
   </div>
 
-  <div class="column row">
-    <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :vibe, "How would you rate the vibe at #{@bar.name}? Are the other patron's cool? And the staff?" %>
-      <%= radio_button_tag(:vibe, 1) %>
-      <%= label_tag(:vibe, "💣") %>
-      <%= radio_button_tag(:vibe, 2) %>
-      <%= label_tag(:vibe, "💣💣") %>
-      <%= radio_button_tag(:vibe, 3) %>
-      <%= label_tag(:vibe, "💣💣💣") %>
-      <%= radio_button_tag(:vibe, 4) %>
-      <%= label_tag(:vibe, "💣💣💣💣") %>
-      <%= radio_button_tag(:vibe, 5) %>
-      <%= label_tag(:vibe, "💣💣💣💣💣") %>
+      <%= f.radio_button :vibe, 1%>
+      <%= f.label :vibe, "💣" %>
+      <%= f.radio_button :vibe, 2%>
+      <%= f.label :vibe, "💣💣" %>
+      <%= f.radio_button :vibe, 3%>
+      <%= f.label :vibe, "💣💣💣" %>
+      <%= f.radio_button :vibe, 4%>
+      <%= f.label :vibe, "💣💣💣💣" %>
+      <%= f.radio_button :vibe, 5%>
+      <%= f.label :vibe, "💣💣💣💣💣" %>
     </div>
   </div>
 
-  <div class="column row">
-    <div class="field">
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :setting, "How would you rate the setting? Does #{@bar.name} look cool?" %>
-      <%= radio_button_tag(:setting, 1) %>
-      <%= label_tag(:setting, "💣") %>
-      <%= radio_button_tag(:setting, 2) %>
-      <%= label_tag(:setting, "💣💣") %>
-      <%= radio_button_tag(:setting, 3) %>
-      <%= label_tag(:setting, "💣💣💣") %>
-      <%= radio_button_tag(:setting, 4) %>
-      <%= label_tag(:setting, "💣💣💣💣") %>
-      <%= radio_button_tag(:setting, 5) %>
-      <%= label_tag(:setting, "💣💣💣💣💣") %>
+      <%= f.radio_button :setting, 1%>
+      <%= f.label :setting, "💣" %>
+      <%= f.radio_button :setting, 2%>
+      <%= f.label :setting, "💣💣" %>
+      <%= f.radio_button :setting, 3%>
+      <%= f.label :setting, "💣💣💣" %>
+      <%= f.radio_button :setting, 4%>
+      <%= f.label :setting, "💣💣💣💣" %>
+      <%= f.radio_button :setting, 5%>
+      <%= f.label :setting, "💣💣💣💣💣" %>
     </div>
   </div>
 
