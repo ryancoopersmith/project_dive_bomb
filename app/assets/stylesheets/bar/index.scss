@@ -14,13 +14,19 @@ $heavy-gray: #444;
 .info {
   text-align: center;
   padding: 10px;
+  height: 190px;
 }
 
 .image {
-  max-width: 250px;
+  max-width: 400px;
   max-height: 200px;
   display: block;
   margin: 0 auto;
+}
+
+.imageContainer {
+  height: 200px;
+  width: 400px;
 }
 
 .search {
@@ -49,4 +55,17 @@ $heavy-gray: #444;
 .button:hover {
   background-color: #7F7F7F;
   color: $heavy-gray;
+}
+
+.description {
+  color: $heavy-gray;
+}
+
+.viewContainer {
+  width: 100%;
+}
+
+.view {
+  display: inherit;
+  margin: 0 auto;
 }

@@ -3,14 +3,36 @@ $heavy-gray: #444;
 
 h1 {
   text-align: center;
+  color: white;
 }
 
 a {
   color: white;
 }
 
+p {
+  color: white;
+  font-size: 110%;
+}
+
+label {
+  color: white;
+}
+
 a:hover {
   color: $heavy-gray;
+}
+
+h4 {
+  color: white;
+}
+
+h5 {
+  color: white;
+}
+
+h6 {
+  color: white;
 }
 
 .top-bar-right {
