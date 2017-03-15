@@ -33,6 +33,11 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.save
       if current_user.admin?
+        @review.drinks *= 1.5
+        @review.food *= 0.5
+        @review.entertainment *= 0.5
+        @review.vibe *= 1.25
+        @review.setting *= 1.25
         @bar.rating = (@review.drinks + @review.food + @review.entertainment + @review.vibe + @review.setting) / 5.0
         @bar.save
       end

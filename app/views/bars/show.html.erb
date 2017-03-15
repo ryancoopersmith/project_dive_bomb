@@ -7,7 +7,7 @@
   <% end %>
 
   <% if @bar.rating %>
-    <p><span class="label alert">Our Rating: <%= @bar.rating %> / "💣💣💣💣💣"</span></p>
+    <p><span class="label alert">Our Rating: <%= @bar.rating %> / 💣💣💣💣💣</span></p>
   <% end %>
 
   <h5><%= @bar.address %>, <%= @bar.city%><br>
@@ -19,29 +19,33 @@
 
   <% if current_user %>
     <% if current_user.admin? %>
-      <%= link_to "Edit Bar", edit_bar_path %>
+      <%= link_to "Edit Bar", edit_bar_path(@bar) %>
       <%= link_to "Delete Bar", @bar, method: :delete %>
     <% end %>
   <% end %>
 
-<!-- 1) If there is no admin review and no user review placeholders pop up
-2) If there is an admin review and no user review, it takes up full screen
-3) If there is just a user review and no admin review, it takes up full screen
-4) If there are both an admin review and a user review they split screen -->
-
   <% if @admin_review.blank? %>
     <p>We haven't gotten around to reviewing this just yet. Check back later.</p>
+    <% if current_user %>
+      <% if current_user.admin? %>
+        <div class="hollow button alert"><%= link_to "Create Review", new_bar_review_path(@bar, @admin_review) %>
+      <% end %>
+    <% end %>
   <% else %>
     <h5 class="subheader"><strong>Our Breakdown</strong></h5>
-    <% @admin_review.each do |rating| %>
     <ul>
-      <li> Drinks: <%= rating.drinks %> </li>
-      <li> Food: <%= rating.food %> </li>
-      <li> Entertainment: <%= rating.entertainment %> </li>
-      <li> Vibe: <%= rating.vibe %> </li>
-      <li> Setting: <%= rating.setting %> </li>
+      <li> Drinks: <%= @admin_review.drinks %> </li>
+      <li> Food: <%= @admin_review.food %> </li>
+      <li> Entertainment: <%= @admin_review.entertainment %> </li>
+      <li> Vibe: <%= @admin_review.vibe %> </li>
+      <li> Setting: <%= @admin_review.setting %> </li>
     </ul>
-    <p><strong>Our Review: </strong><span id="review"><%= rating.description %></span></p>
+    <p><strong>Our Review: </strong><span id="review"><%= @admin_review.description %></span></p>
+    <% if current_user %>
+      <% if current_user.admin? %>
+        <div class="hollow button alert"><%= link_to "Edit Review", edit_bar_review_path(@bar) %>
+        <div class="hollow button alert"><%= link_to "Delete Review", bar_review_path(@bar, @admin_review), method: :delete %>
+      <% end %>
     <% end %>
   <% end %>
 
@@ -49,34 +53,35 @@
     <h2> Be the first to leave a review!</h2>
   <% else %>
     <h5 class="subheader"><strong>User Reviews</strong></h5>
-    <p><span class="label alert">Average User Rating: <%= @user_avg_rating %> / 5 </span></p>
+    <p><span class="label alert">Average User Rating: <%= @user_avg_rating %> / 5 💣💣💣💣💣</span></p>
+
     <% @user_reviews.each do |review| %>
       <% if review.user.profile_photo %>
         <img id="profile_photo" src="<%= review.user.profile_photo %>" height=50 width=50/>
       <% end %>
-      <p><strong><%= review.user.username %></strong> : <%= (review.drinks  + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
+      <p><strong><%= review.user.username %></strong> : <%= (review.drinks + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
       <% if review.description.present? %>
         <p><strong>Description:</strong><span id="review"><%= review.description %></span></p>
       <% end %>
-    <% end %>
-    <% if current_user %>
-      <% if review.user == current_user %>
-        <div class="hollow button alert"><%= link_to "Edit Review", {action: :edit}, {style: "color: #F2552C"} %>
-        <div class="hollow button alert"><%= link_to "Delete Review", {action: :delete}, {style: "color: #F2552C"}, method: :delete %>
+      <% if current_user %>
+        <% if review.user == current_user %>
+          <div class="hollow button alert"><%= link_to "Edit Review", edit_bar_review_path(@bar) %>
+          <div class="hollow button alert"><%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %>
+        <% elsif current_user.admin? %>
+          <div class="hollow button alert"><%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
 
-  <div id="map"></div><input id="address" type="hidden" value="<%= @bar.address %>">
+
+
+
+  <%= link_to "Create a Review", new_bar_review_path(@bar) %>
+  <div class="hollow button alert"><div id="map"></div><input id="address" type="hidden" value="<%= @bar.address %>"></div>
 
   <br>
-  <div class="hollow button alert"><%= link_to "See All Dives", {action: :index}, {style: "color: #F2552C"} %></div>
-
-  <% if current_user %>
-    <% if current_user.admin? %>
-      <%= link_to "Delete Review", {action: :delete}, {style: "color: #F2552C"}, method: :delete %>
-    <% end %>
-  <% end %>
+  <div class="hollow button alert"><%= link_to "See All Dives", bars_path %></div>
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap">
