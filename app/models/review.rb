@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   after_create :send_email
+  acts_as_voteable
 
   validates :user, presence: true
   validates :bar, presence: true

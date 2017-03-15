@@ -14,6 +14,7 @@ gem 'ransack'
 gem 'foundation-rails'
 gem 'fog'
 gem 'jquery-turbolinks'
+gem 'thumbs_up'
 
 group :development do
   gem 'listen', '~> 3.0.5'
