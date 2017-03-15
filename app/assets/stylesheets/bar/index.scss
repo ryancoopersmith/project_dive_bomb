@@ -1,11 +1,9 @@
 $light-gray: #E6E6E6;
 $fiery-red: #F2552C;
 
-.card {
+.card-divider {
   width: 400px;
   height: 500px;
-  margin: 10 auto;
-  background-color: $light-gray;
 }
 
 .info {
@@ -22,7 +20,7 @@ $fiery-red: #F2552C;
 .search {
   position: absolute;
   width: 20%;
-  top: 10%;
+  top: 5%;
   right: 30%;
 }
 
