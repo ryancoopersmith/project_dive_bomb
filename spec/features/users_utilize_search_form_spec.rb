@@ -38,5 +38,5 @@ end
 #   end
 # end
 
-#Last feature commented out since it tests populating the index through the database,
-#we need to create new tests for React
+# Last feature commented out since it tests populating the index through the database,
+# we need to create new tests for React
