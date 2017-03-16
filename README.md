@@ -21,4 +21,4 @@ Project Dive Bar is a chance for users to see reviews of Philadelphia dive bars.
 * Ryan Coopersmith
 
 ### Deployed site:
-https://frozen-wave-13196.herokuapp.com
+https://project-dive-bomb.herokuapp.com
