@@ -1,7 +1,7 @@
 function initMap() {
   var philly = {lat: 39.9526, lng: -75.1652};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
+    zoom: 12,
     center: philly
   });
   var geocoder = new google.maps.Geocoder();
@@ -12,7 +12,7 @@ function initMap() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
+  var address = document.getElementById('address').value + document.getElementById('zip');
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       resultsMap.setCenter(results[0].geometry.location);
