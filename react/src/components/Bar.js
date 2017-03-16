@@ -50,7 +50,7 @@ class Bar extends Component {
               <p className="description">{this.state.description} </p>
             </div>
             <div className="viewContainer">
-              <a href={`bars/${this.props.id}`} className={viewClasses}>View Bar</a>
+              <a href={`/bars/${this.props.id}`} className={viewClasses}>View Bar</a>
             </div>
           </div>
         </div>
