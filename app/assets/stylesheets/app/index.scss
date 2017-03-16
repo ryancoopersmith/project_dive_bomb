@@ -1,0 +1,72 @@
+$fiery-red: #F2552C;
+$heavy-gray: #444;
+
+.card-divider {
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.info {
+  text-align: center;
+  padding: 10px;
+  height: 190px;
+}
+
+.image {
+  // max-width: 400px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.imageContainer {
+  height: 200px;
+  width: 400px;
+}
+
+.search {
+  position: absolute;
+  width: 20%;
+  top: 5%;
+  right: 30%;
+}
+
+.button {
+  border-radius: 10px;
+  font-family: "Contrail One";
+}
+
+.numbers {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.button {
+  margin: 5px;
+  background-color: $fiery-red;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #7F7F7F;
+  color: $heavy-gray;
+}
+
+.description {
+  color: $heavy-gray;
+}
+
+.viewContainer {
+  width: 100%;
+}
+
+.view {
+  display: inherit;
+  margin: 0 auto;
+}

@@ -1,0 +1,61 @@
+$fiery-red: #F2552C;
+$heavy-gray: #444;
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+p {
+  color: white;
+  font-size: 110%;
+}
+
+label {
+  color: white;
+}
+
+a:hover {
+  color: $heavy-gray;
+}
+
+h4 {
+  color: white;
+}
+
+h5 {
+  color: white;
+}
+
+h6 {
+  color: white;
+}
+
+.top-bar-right {
+  padding: 15px;
+}
+
+.top-bar-link {
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.top-bar {
+  margin-bottom: 25px;
+  height: 65px;
+}

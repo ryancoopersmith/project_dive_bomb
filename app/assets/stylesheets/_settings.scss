@@ -55,14 +55,17 @@ $foundation-palette: (
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
+  defcon-5: #FEFEFE
 );
 $flame: #f2552c;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
+$heavy-gray: #262626;
+$fiery-red: #F2552C;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+$body-background: $heavy-gray;
 $body-font-color: $black;
 $body-font-family: "Contrail One", Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -249,6 +252,7 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
+$button-font-family: "Contrail One";
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
@@ -286,10 +290,10 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $white;
+$card-background: $heavy-gray;
 $card-font-color: $body-font-color;
-$card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-divider-background: $fiery-red;
+$card-border: none;
 $card-shadow: none;
 $card-border-radius: $global-radius;
 $card-padding: $global-padding;
@@ -614,7 +618,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $fiery-red;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
