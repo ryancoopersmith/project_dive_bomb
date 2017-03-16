@@ -14,7 +14,7 @@
 
   <div class="top-bar">
     <div class="top-bar-title">
-      <h1>PROJECT DIVE BOMB</h1>
+      <h1><%=link_to "PROJECT DIVE BOMB", root_path%></h1>
     </div>
     <div class="top-bar-right">
       <% if request.env['PATH_INFO'] != "/users/sign_up" && request.env['PATH_INFO'] != "/users/sign_in" && request.env['PATH_INFO'] != "/users/edit" %>
@@ -46,30 +46,30 @@
       <% end %>
     </div>
   </div>
-
-  <% if flash[:notice] %>
-    <% if flash[:notice].is_a?(String) %>
-      <%= flash[:notice] %>
-    <% else %>
-      <% flash[:notice].each do |key, value| %>
-        <% if value.is_a?(Array) %>
-          <% value.each do |error| %>
-            <%= "#{key.capitalize} #{error}." %>
+  <div class="flash">
+    <% if flash[:notice] %>
+      <% if flash[:notice].is_a?(String) %>
+        <%= flash[:notice] %>
+      <% else %>
+        <% flash[:notice].each do |key, value| %>
+          <% if value.is_a?(Array) %>
+            <% value.each do |error| %>
+              <%= "#{key.capitalize} #{error}." %>
+            <% end %>
+          <% else %>
+            <%= "#{key.capitalize} #{value}." %>
           <% end %>
-        <% else %>
-          <%= "#{key.capitalize} #{value}." %>
+          <br />
         <% end %>
-        <br />
       <% end %>
     <% end %>
-  <% end %>
 
-  <% unless flash[:notice] %>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <% unless flash[:notice] %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
   <%= yield %>
 
   </body>
