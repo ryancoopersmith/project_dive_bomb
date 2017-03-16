@@ -1,19 +1,50 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
-  def upvote
-    @review = review.find(params[:id])
-    @bar = @review.bar
-    @review.liked_by current_user
-    redirect_to @bar
-  end
-
-  def downvote
-    @review = Review.find(params[:id])
-    @bar = @review.bar
-    @review.downvote_from current_user
-    redirect_to @bar
-  end
+  # def upvote
+  #   @review = Review.find(params[:id])
+  #   @bar = @review.bar
+  #   @vote
+  #   fetch('https://frozen-wave-13196.herokuapp.com/api/v1/bars.json', {
+  #     method: 'post',
+  #     body: jsonStringData
+  #   }).then(response => {
+  #     if (response.ok) {
+  #       return response;
+  #     } else {
+  #       let errorMessage = `${response.status} (${response.statusText})`,
+  #           error = new Error(errorMessage);
+  #       throw(error);
+  #     }
+  #   })
+  #   .then(response => response.json())
+  #   .then(body => {
+  #     @vote = body
+  #   })
+  #   .catch(error => console.error(`Error in fetch: ${error.message}`));
+  # end
+  #
+  # def downvote
+  #   @review = Review.find(params[:id])
+  #   @bar = @review.bar
+  #   fetch('https://frozen-wave-13196.herokuapp.com/api/v1/bars.json', {
+  #     method: 'post',
+  #     body: jsonStringData
+  #   }).then(response => {
+  #     if (response.ok) {
+  #       return response;
+  #     } else {
+  #       let errorMessage = `${response.status} (${response.statusText})`,
+  #           error = new Error(errorMessage);
+  #       throw(error);
+  #     }
+  #   })
+  #   .then(response => response.json())
+  #   .then(body => {
+  #     console.log(body);
+  #   })
+  #   .catch(error => console.error(`Error in fetch: ${error.message}`));
+  # end
 
   def new
     @bar = Bar.find(params[:bar_id])

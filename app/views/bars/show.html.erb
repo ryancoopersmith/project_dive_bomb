@@ -61,8 +61,16 @@
           <img id="profile_photo" src="<%= review.user.profile_photo %>" height=50 width=50/>
         <% end %>
         <p><strong><%= review.user.username %></strong> : <%= (review.drinks + review.food + review.entertainment + review.vibe + review.setting) / 5 %> </p>
-        <%= link_to "Upvote", like_bar_review_path(@bar, review), method: :put %>
-        <%= link_to "Downvote", dislike_bar_review_path(@bar, review), method: :put %>
+        <% if @votes %>
+          <% if @votes >= 0 %>
+            <%= @votes %><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <% else %>
+            <%= @votes %><i class="fa fa-thumbs-down" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+
+        <%= link_to "Upvote", bar_review_upvote_path(@bar, review), method: :post %>
+        <%= link_to "Downvote", bar_review_downvote_path(@bar, review), method: :post %>
         <% if review.description.present? %>
           <p><strong>Description:</strong><span id="review"><%= review.description %></span></p>
         <% end %>
