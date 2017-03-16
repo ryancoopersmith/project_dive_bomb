@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
+<h1>Forgot your password?</h1>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.label :email, class: 'input-group-label' %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Send me reset password instructions", class: 'small-12 hollow button defcon-5' %>
+    </div>
+    <div class = "small-offset-3 columns">
+  </div>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <div class='hollow button defcon-5'>
+        <%= link_to "Go Back", new_user_session_path %>
+      </div>
+    </div>
+    <div class = "small-offset-3 small-6 columns"></div>
   </div>
 <% end %>
-
-<%= link_to "Go Back", root_path %>
