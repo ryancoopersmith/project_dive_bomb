@@ -80,8 +80,7 @@
     <div class="small-12 columns" id="map"></div>
   </div>
     <div class="hollow button defcon-5"><%= link_to "Back to Dives", bars_path %></div>
-    <input id="address" type="hidden" value="<%= @bar.address %>">
-    <input id="zip" type="hidden" value="<%= @bar.zip %>">
+    <input id="address" type="hidden" value="<%= @bar.address%> <%= @bar.city %> <%= @bar.zip %>">
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap">
     </script>
