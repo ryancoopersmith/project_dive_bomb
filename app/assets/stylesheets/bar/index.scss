@@ -31,29 +31,25 @@ $heavy-gray: #444;
 
 .search {
   position: absolute;
-  width: 20%;
+  right: 30%;
   top: 5%;
   right: 30%;
 }
 
-.button {
-  border-radius: 10px;
-}
-
 .numbers {
-  width: 100%;
   padding: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .button {
-  margin: 5px;
   background-color: $fiery-red;
   border-radius: 5px;
+  margin: 5px;
 }
 
 .button:hover {
-  background-color: #7F7F7F;
+  background-color: #7f7f7f;
   color: $heavy-gray;
 }
 
@@ -69,8 +65,4 @@ $heavy-gray: #444;
   display: inherit;
   font-size: 24px;
   margin: 0 auto;
-}
-
-.top-bar-title h1 {
-
 }

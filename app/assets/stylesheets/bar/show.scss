@@ -1,17 +1,17 @@
 $dark-gray: #262626;
-$bright-red: #F2552C;
+$bright-red: #f2552c;
 
 .show {
   background-color: $dark-gray;
 }
 
-.subheader{
-  color: white;
+.subheader {
+  color: #ffffff;
 }
-.row.column.small-12.medium-6.columns{
+.row.column.small-12.medium-6.columns {
   background-color: $bright-red;
 }
 
 .label {
-  font-size: 20px
+  font-size: 20px;
 }
