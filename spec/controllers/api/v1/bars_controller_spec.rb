@@ -12,7 +12,6 @@ RSpec.describe Api::V1::BarsController, type: :controller do
       get :index
       json = JSON.parse(response.body)
 
-      binding.pry
       expect(json["bars"].length).to eq(2)
       expect(json["bars"][0]["name"]).to eq("bar1")
       expect(json["bars"][1]["name"]).to eq("bar2")
