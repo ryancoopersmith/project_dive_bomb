@@ -1,12 +1,19 @@
 .show {
-  background-color: #f2552c;
+  background-color: #262626;
 }
 
+.subheader{
+  color: white;
+}
+.row.column.small-12.medium-6.columns{
+  background-color: #F2552C;
+}
 #white {
   background-color: #f5f5f5;
   padding: 20px;
 }
 
-#review {
-  font-family: sans-serif;
+
+.hollow.button.alert {
+  border-color: white;
 }

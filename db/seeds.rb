@@ -99,53 +99,53 @@ if Rails.env.development? || Rails.env.production?
 
   saint = Bar.create!(name: 'Saint Lazarus', address: '102 W Girard Ave', city: 'Philadelphia', state: 'PA', zip: '19123', phone_number: '215-258-8332', url: 'https://www.facebook.com/saintlazarusbar/', image_url: 'http://philly.thedrinknation.com/images/bars/bar_picture_the_saint_philly.jpg', description: 'Cocktails, Southern pub grub & DJ\'d dance parties offered in a cool nightclub with an edgy vibe.')
 
-  Review.create!(bar: franks, user: corey, drinks: 4, food: 1, entertainment: 1, vibe: 5, setting: 5)
+  Review.create!(bar: franks, user: corey, drinks: 4, food: 1, entertainment: 1, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: oscars, user: corey, drinks: 5, food: 5, entertainment: 1, vibe: 5, setting: 5)
+  Review.create!(bar: oscars, user: corey, drinks: 5, food: 5, entertainment: 1, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5 )
+  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!" )
 
-  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5)
+  Review.create!(bar: mcglincheys, user: corey, drinks: 5, food: 2, entertainment: 1, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: bobs, user: corey, drinks: 5, food: 1, entertainment: 5, vibe: 5, setting: 5)
+  Review.create!(bar: bobs, user: corey, drinks: 5, food: 1, entertainment: 5, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: moms, user: corey, drinks: 4, food: 5, entertainment: 3, vibe: 5, setting: 5)
+  Review.create!(bar: moms, user: corey, drinks: 4, food: 5, entertainment: 3, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: rays, user: corey, drinks: 5, food: 1, entertainment: 3, vibe: 5, setting: 4)
+  Review.create!(bar: rays, user: corey, drinks: 5, food: 1, entertainment: 3, vibe: 5, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: dolphin, user: corey, drinks: 4, food: 1, entertainment: 5, vibe: 5, setting: 5)
+  Review.create!(bar: dolphin, user: corey, drinks: 4, food: 1, entertainment: 5, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: lucky, user: devin, drinks: 4, food: 4, entertainment: 2, vibe: 4, setting: 4)
+  Review.create!(bar: lucky, user: devin, drinks: 4, food: 4, entertainment: 2, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: dive, user: devin, drinks: 5, food: 1, entertainment: 3, vibe: 4, setting: 4)
+  Review.create!(bar: dive, user: devin, drinks: 5, food: 1, entertainment: 3, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: pope, user: devin, drinks: 3, food: 5, entertainment: 2, vibe: 4, setting: 4)
+  Review.create!(bar: pope, user: devin, drinks: 3, food: 5, entertainment: 2, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: republican, user: devin, drinks: 4, food: 1, entertainment: 5, vibe: 4, setting: 5)
+  Review.create!(bar: republican, user: devin, drinks: 4, food: 1, entertainment: 5, vibe: 4, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: twelvesteps, user: devin, drinks: 4, food: 4, entertainment: 3, vibe: 5, setting: 4)
+  Review.create!(bar: twelvesteps, user: devin, drinks: 4, food: 4, entertainment: 3, vibe: 5, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: kellianns, user: arielle, drinks: 4, food: 5, entertainment: 1, vibe: 4, setting: 4)
+  Review.create!(bar: kellianns, user: arielle, drinks: 4, food: 5, entertainment: 1, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: greenroom, user: arielle, drinks: 3, food: 4, entertainment: 2, vibe: 3, setting: 4)
+  Review.create!(bar: greenroom, user: arielle, drinks: 3, food: 4, entertainment: 2, vibe: 3, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: institute, user: arielle, drinks: 4, food: 4, entertainment: 3, vibe: 4, setting: 4)
+  Review.create!(bar: institute, user: arielle, drinks: 4, food: 4, entertainment: 3, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: lorraine, user: arielle, drinks: 4, food: 4, entertainment: 2, vibe: 4, setting: 4)
+  Review.create!(bar: lorraine, user: arielle, drinks: 4, food: 4, entertainment: 2, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: barbary, user: arielle, drinks: 4, food: 1, entertainment: 5, vibe: 5, setting: 4)
+  Review.create!(bar: barbary, user: arielle, drinks: 4, food: 1, entertainment: 5, vibe: 5, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: el, user: ryan, drinks: 5, food: 2, entertainment: 5, vibe: 5, setting: 5)
+  Review.create!(bar: el, user: ryan, drinks: 5, food: 2, entertainment: 5, vibe: 5, setting: 5, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: kfn, user: ryan, drinks: 4, food: 1, entertainment: 5, vibe: 4, setting: 4)
+  Review.create!(bar: kfn, user: ryan, drinks: 4, food: 1, entertainment: 5, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: handle, user: ryan, drinks: 5, food: 1, entertainment: 1, vibe: 3, setting: 3)
+  Review.create!(bar: handle, user: ryan, drinks: 5, food: 1, entertainment: 1, vibe: 3, setting: 3, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: sevenhundred, user: ryan, drinks: 4, food: 1, entertainment: 4, vibe: 5, setting: 4)
+  Review.create!(bar: sevenhundred, user: ryan, drinks: 4, food: 1, entertainment: 4, vibe: 5, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: ortliebs, user: ryan, drinks: 4, food: 4, entertainment: 5, vibe: 4, setting: 4)
+  Review.create!(bar: ortliebs, user: ryan, drinks: 4, food: 4, entertainment: 5, vibe: 4, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
-  Review.create!(bar: saint, user: ryan, drinks: 5, food: 4, entertainment: 4, vibe: 3, setting: 4)
+  Review.create!(bar: saint, user: ryan, drinks: 5, food: 4, entertainment: 4, vibe: 3, setting: 4, description: "Rock and roll baby this place is mayhem!")
 
   Review.all.each do |review|
     rating(review)
