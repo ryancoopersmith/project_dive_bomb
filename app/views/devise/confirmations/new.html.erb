@@ -1,17 +1,23 @@
-<h1>Resend Confirmation Instructions</h1>
+<div class='row'>
+  <h1>Resend Confirmation Instructions</h1>
+</div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "devise_form" }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :email, class: 'input-group-label' %>
       <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
-  <div class="column row">
-    <%= f.submit "Resend confirmation instructions", class: 'small-12 hollow button defcon-5' %>
-    <%= render "devise/shared/links" %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Resend confirmation instructions", class: 'small-12 hollow button defcon-5' %>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div class = "small-offset-3 small-6 columns"></div>
   </div>
 <% end %>

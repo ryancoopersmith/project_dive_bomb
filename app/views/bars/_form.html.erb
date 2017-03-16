@@ -1,52 +1,59 @@
 <%= form_for @bar, html: {class: "bar_form"} do |f| %>
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :name, class: 'input-group-label' %>
       <%= f.text_field(:name, size: 60, placeholder: "What's the name of the bar?") %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :address, class: 'input-group-label' %>
       <%= f.text_field(:address, size: 60, placeholder: "Street") %>
     </div>
+    <div class = "small-offset-3 columns"></div>
 </div>
   <div class="row">
-    <div class="medium-8 columns">
+    <div class = "small-offset-3 small-4 columns">
       <%= f.label :city, class: 'input-group-label' %>
       <%= f.text_field(:city, size: 60, placeholder: "City") %>
     </div>
-    <div class="medium-2 columns">
+    <div class="small-1 columns">
       <%= f.label :state, class: 'input-group-label' %>
       <%= f.select :state, ['PA', 'NJ', 'NY'], placeholder: "State" %>
     </div>
-    <div class="medium-2 columns">
+    <div class="small-1 columns">
       <%= f.label :zip, class: 'input-group-label' %>
       <%= f.text_field :zip, placeholder: "Zip" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
   <div class="row">
-    <div class="medium-2 columns">
+    <div class = "small-offset-3 small-2 columns">
       <%= f.label :phone_number, "Phone Number", class: 'input-group-label' %>
       <%= f.telephone_field(:phone_number, size: 60, placeholder: "(###) ### - ####")%>
     </div>
-    <div class="medium-5 columns">
+    <div class="small-2 columns">
       <%= f.label :image_url, "Image URL", class: 'input-group-label' %>
       <%= f.url_field(:image_url, size: 60, placeholder: "Image URL")%>
     </div>
-    <div class="medium-5 columns">
+    <div class="small-2 columns">
       <%= f.label :url, "URL", class: 'input-group-label' %>
       <%= f.url_field(:url, size: 60, placeholder: "Website URL")%>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :description, class: 'input-group-label' %>
       <%= f.text_area(:description, size: "60x10", placeholder: "You can optionally enter a description here.")%>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
-  <div class="column row">
-    <%= f.submit "Submit", class: 'small-12 hollow button defcon-5' %>
-  </div>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Submit", class: 'small-12 hollow button defcon-5' %>
+    </div>
+    <div class = "small-offset-3 columns"></div>
 </div>
 <% end %>

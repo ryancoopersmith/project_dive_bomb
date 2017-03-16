@@ -1,36 +1,47 @@
-<h1>Sign In</h1>
+<div class="row">
+  <h1 class="text-center">Sign In</h1>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="row">
-    <div class= "medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :email, class: 'input-group-label' %>
       <%= f.email_field :email, autofocus: true %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :password, class: 'input-group-label' %>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
     <% if devise_mapping.rememberable? -%>
-    <div class="medium-2 columns">
+    <div class="small-offset-3 small-6 columns">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
+    <div class = "small-offset-3 columns">
     <% end -%>
   </div>
 
 
-  <div class="column row">
-    <%= f.submit "Sign In", class: "hollow button defcon-5" %>
-    <%= render "devise/shared/links" %>
-  </div>
-  <div class="column row">
-    <div class='hollow button defcon-5'>
-      <%= link_to "Go Back", bars_path %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Sign In", class: "hollow button defcon-5" %>
+      <%= render "devise/shared/links" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
+  </div>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <div class='hollow button defcon-5'>
+        <%= link_to "Go Back", bars_path %>
+      </div>
+    </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 <% end %>

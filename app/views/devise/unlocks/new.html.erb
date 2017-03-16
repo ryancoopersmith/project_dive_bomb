@@ -1,17 +1,23 @@
-<h1>Resend unlock instructions</h1>
+<div class = "small-offset-3 small-6 columns">
+  <h1>Resend unlock instructions</h1>
+<div class = "small-offset-3 small-6 columns">
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="row">
-    <div class="medium-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :email, class: 'input-group-label' %>
       <%= f.email_field :email, autofocus: true %>
     </div>
+    <div class = "small-offset-3 columns">
   </div>
 
   <div class="row">
-    <%= f.submit "Resend unlock instructions", class: "small-12 hollow button defcon-5" %>
-    <%= render "devise/shared/links" %>
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Resend unlock instructions", class: "small-12 hollow button defcon-5" %>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 <% end %>
