@@ -1,37 +1,38 @@
 $fiery-red: #F2552C;
 $heavy-gray: #444;
+$white: #ffffff;
 
 blockquote {
-  color: white;
-  font-size: 90%
+  color: $white;
+  font-size: 90%;
 }
 
 h2 {
-  color: white;
+  color: $white;
 }
 h1 {
   text-align: center;
-  color: white;
+  color: $white;
 }
 
 li {
-  color: white;
-  font-size: 20px
+  color: $white;
+  font-size: 20px;
 }
 
 a {
-  color: white;
-  font-size: 120%
+  color: $white;
+  font-size: 120%;
 }
 
 p {
-  color: white;
+  color: $white;
   font-size: 110%;
 }
 
 label {
-  color: white;
-  font-size: 20px
+  color: $white;
+  font-size: 20px;
 }
 
 a:hover {
@@ -39,15 +40,15 @@ a:hover {
 }
 
 h4 {
-  color: #ffffff;
+  color: $white;
 }
 
 h5 {
-  color: #ffffff;
+  color: $white;
 }
 
 h6 {
-  color: #ffffff;
+  color: $white;
 }
 
 .top-bar-right {
