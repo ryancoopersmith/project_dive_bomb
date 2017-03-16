@@ -12,7 +12,7 @@ function initMap() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value + document.getElementById('zip');
+  var address = document.getElementById('address').value;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       resultsMap.setCenter(results[0].geometry.location);
