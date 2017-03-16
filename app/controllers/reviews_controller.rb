@@ -1,50 +1,83 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
-  # def upvote
-  #   @review = Review.find(params[:id])
-  #   @bar = @review.bar
-  #   @vote
-  #   fetch('https://frozen-wave-13196.herokuapp.com/api/v1/bars.json', {
-  #     method: 'post',
-  #     body: jsonStringData
-  #   }).then(response => {
-  #     if (response.ok) {
-  #       return response;
-  #     } else {
-  #       let errorMessage = `${response.status} (${response.statusText})`,
-  #           error = new Error(errorMessage);
-  #       throw(error);
-  #     }
-  #   })
-  #   .then(response => response.json())
-  #   .then(body => {
-  #     @vote = body
-  #   })
-  #   .catch(error => console.error(`Error in fetch: ${error.message}`));
-  # end
-  #
-  # def downvote
-  #   @review = Review.find(params[:id])
-  #   @bar = @review.bar
-  #   fetch('https://frozen-wave-13196.herokuapp.com/api/v1/bars.json', {
-  #     method: 'post',
-  #     body: jsonStringData
-  #   }).then(response => {
-  #     if (response.ok) {
-  #       return response;
-  #     } else {
-  #       let errorMessage = `${response.status} (${response.statusText})`,
-  #           error = new Error(errorMessage);
-  #       throw(error);
-  #     }
-  #   })
-  #   .then(response => response.json())
-  #   .then(body => {
-  #     console.log(body);
-  #   })
-  #   .catch(error => console.error(`Error in fetch: ${error.message}`));
-  # end
+  def upvote
+    @review = Review.find(params[:id])
+    @bar = @review.bar
+    unless @review.upvotes
+      @review.upvotes = 0
+    end
+    @review.upvotes += 1
+    @review.save
+
+    admin_review = @reviews.select { |review| review.user.admin == true }
+    @admin_review = admin_review[0]
+    @user_reviews = @reviews.select { |review| review.user.admin == false }
+    sum = 0
+    @reviews.each do |review|
+      unless review.user.admin?
+        if review.downvotes && review.upvotes
+          @votes = review.downvotes + review.upvotes
+        elsif review.downvotes
+          @votes = review.downvotes
+        elsif review.upvotes
+          @votes = review.upvotes
+        end
+        review.drinks *= 1.5
+        review.food *= 0.5
+        review.entertainment *= 0.5
+        review.vibe *= 1.25
+        review.setting *= 1.25
+        sum += (review.drinks + review.food + review.entertainment + review.vibe + review.setting)
+      end
+    end
+
+    @user_avg_rating = if sum < 1
+                         "No user has reviewed this dive yet"
+                       else
+                         sum / 5.0
+                       end
+    redirect_to @bar
+  end
+
+  def downvote
+    @review = Review.find(params[:id])
+    @bar = @review.bar
+    unless @review.downvotes
+      @review.downvotes = 0
+    end
+    @review.downvotes += 1
+    @review.save
+
+    admin_review = @reviews.select { |review| review.user.admin == true }
+    @admin_review = admin_review[0]
+    @user_reviews = @reviews.select { |review| review.user.admin == false }
+    sum = 0
+    @reviews.each do |review|
+      unless review.user.admin?
+        if review.downvotes && review.upvotes
+          @votes = review.downvotes + review.upvotes
+        elsif review.downvotes
+          @votes = review.downvotes
+        elsif review.upvotes
+          @votes = review.upvotes
+        end
+        review.drinks *= 1.5
+        review.food *= 0.5
+        review.entertainment *= 0.5
+        review.vibe *= 1.25
+        review.setting *= 1.25
+        sum += (review.drinks + review.food + review.entertainment + review.vibe + review.setting)
+      end
+    end
+
+    @user_avg_rating = if sum < 1
+                         "No user has reviewed this dive yet"
+                       else
+                         sum / 5.0
+                       end
+    redirect_to @bar
+  end
 
   def new
     @bar = Bar.find(params[:bar_id])
