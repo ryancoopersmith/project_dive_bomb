@@ -1,22 +1,23 @@
 <%= form_for [@bar, @review], html: {class: "review_form"} do |f| %>
   <div class="row">
-    <div class="small-12 columns">
-      <%= f.label :drinks, "How would you rate the drinks at #{@bar.name}?" %>
-      <%= f.radio_button :drinks, 1%>
-      <%= f.label :drinks, "💣" %>
-      <%= f.radio_button :drinks, 2%>
-      <%= f.label :drinks, "💣💣" %>
-      <%= f.radio_button :drinks, 3%>
-      <%= f.label :drinks, "💣💣💣" %>
-      <%= f.radio_button :drinks, 4%>
-      <%= f.label :drinks, "💣💣💣💣" %>
-      <%= f.radio_button :drinks, 5%>
-      <%= f.label :drinks, "💣💣💣💣💣" %>
+    <div class = "small-offset-3 small-6 columns">
+        <%= f.label :drinks, "How would you rate the drinks at #{@bar.name}?" %>
+        <%= f.radio_button :drinks, 1%>
+        <%= f.label :drinks, "💣" %>
+        <%= f.radio_button :drinks, 2%>
+        <%= f.label :drinks, "💣💣" %>
+        <%= f.radio_button :drinks, 3%>
+        <%= f.label :drinks, "💣💣💣" %>
+        <%= f.radio_button :drinks, 4%>
+        <%= f.label :drinks, "💣💣💣💣" %>
+        <%= f.radio_button :drinks, 5%>
+        <%= f.label :drinks, "💣💣💣💣💣" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :food, "How would you rate the food #{@bar.name} offered?" %>
       <%= f.radio_button :food, 1%>
       <%= f.label :food, "💣" %>
@@ -29,10 +30,11 @@
       <%= f.radio_button :food, 5%>
       <%= f.label :food, "💣💣💣💣💣" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :entertainment, "How would you rate the available entertainment?" %>
       <%= f.radio_button :entertainment, 1%>
       <%= f.label :entertainment, "💣" %>
@@ -45,10 +47,11 @@
       <%= f.radio_button :entertainment, 5%>
       <%= f.label :entertainment, "💣💣💣💣💣" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :vibe, "How would you rate the vibe at #{@bar.name}? Are the other patron's cool? And the staff?" %>
       <%= f.radio_button :vibe, 1%>
       <%= f.label :vibe, "💣" %>
@@ -61,10 +64,11 @@
       <%= f.radio_button :vibe, 5%>
       <%= f.label :vibe, "💣💣💣💣💣" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class = "small-offset-3 small-6 columns">
       <%= f.label :setting, "How would you rate the setting? Does #{@bar.name} look cool?" %>
       <%= f.radio_button :setting, 1%>
       <%= f.label :setting, "💣" %>
@@ -77,14 +81,21 @@
       <%= f.radio_button :setting, 5%>
       <%= f.label :setting, "💣💣💣💣💣" %>
     </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
-  <div class="column row">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 
-  <div class="column row">
-    <%= f.submit "Submit", class: 'small-12 hollow button defcon-5' %>
+  <div class="row">
+    <div class = "small-offset-3 small-6 columns">
+      <%= f.submit "Submit", class: 'small-12 hollow button defcon-5' %>
+    </div>
+    <div class = "small-offset-3 columns"></div>
   </div>
 <% end %>

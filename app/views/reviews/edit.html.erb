@@ -1,5 +1,14 @@
-<h1>Edit Review for <%=@bar.name%></h1>
+<div class="row">
+  <h1>Edit Review for <%=@bar.name%></h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to "Go Back", @bar %>
+<div class="row">
+  <div class = "small-offset-3 small-6 columns">
+    <div class='hollow button defcon-5'>
+        <%= link_to "Go Back", @bar %>
+    </div>
+  </div>
+  <div class = "small-offset-3 columns"></div>
+</div>
