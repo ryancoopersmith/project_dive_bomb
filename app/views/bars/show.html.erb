@@ -29,10 +29,11 @@
       <p>We haven't gotten around to reviewing this just yet. Check back later.</p>
       <% if current_user %>
         <% if current_user.admin? %>
-          <div class="hollow button defcon-5 small-6 columns"><%= link_to "Create Review", new_bar_review_path(@bar, @admin_review) %></div><br />
+          <div class="hollow button defcon-5"><%= link_to "Create Review", new_bar_review_path(@bar, @admin_review), id: 'admin_create' %></div>
         <% end %>
       <% end %>
     <% else %>
+    <br>
       <p><strong><u>OUR BREAKDOWN</strong></u></p>
       <ul>
         <li> Drinks: <%= @admin_review.drinks %> </li>
@@ -52,7 +53,6 @@
     <% if @user_reviews.blank? %>
       <h2> Be the first to leave a review!</h2>
     <% else %>
-
       <p class="subheader"><strong><u>USER REVIEWS</strong></u></p>
       <p><span class="label alert">Average User Rating: <%= @user_avg_rating %> / 5 💣</span></p>
 

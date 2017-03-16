@@ -36,11 +36,6 @@ $heavy-gray: #444;
   right: 30%;
 }
 
-.button {
-  border-radius: 10px;
-  font-family: "Contrail One";
-}
-
 .numbers {
   width: 100%;
   padding: 10px;
@@ -51,6 +46,7 @@ $heavy-gray: #444;
   margin: 5px;
   background-color: $fiery-red;
   border-radius: 5px;
+  font-family: "Contrail One";
 }
 
 .button:hover {
