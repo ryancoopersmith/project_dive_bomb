@@ -24,7 +24,7 @@ feature 'User creates a review' do
     click_button "Sign In"
 
     visit bar_path(bar)
-    click_link "Create a Review"
+    click_link "Create User Review"
     choose "review_drinks_2"
     choose "review_food_3"
     choose "review_entertainment_4"
@@ -46,7 +46,7 @@ feature 'User creates a review' do
     click_button "Sign In"
 
     visit bar_path(bar)
-    click_link "Create a Review"
+    click_link "Create User Review"
     choose "review_drinks_2"
     choose "review_food_3"
     choose "review_entertainment_4"
@@ -69,7 +69,7 @@ feature 'User creates a review' do
     click_button "Sign In"
 
     visit bar_path(bar)
-    click_link "Create a Review"
+    click_link "Create User Review"
     choose "review_food_3"
     choose "review_entertainment_4"
     choose "review_vibe_1"
@@ -90,7 +90,7 @@ feature 'User creates a review' do
     click_button "Sign In"
 
     visit bar_path(bar)
-    click_link "Create a Review"
+    click_link "Create User Review"
     choose "review_drinks_2"
     choose "review_entertainment_4"
     choose "review_vibe_1"

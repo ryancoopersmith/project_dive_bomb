@@ -17,7 +17,7 @@ feature 'admin creates review' do
     click_button "Sign In"
 
     visit bar_path(bar)
-    click_link "Create a Review"
+    click_link "Create Review"
     choose "review_drinks_5"
     choose "review_food_5"
     choose "review_entertainment_5"
@@ -26,6 +26,6 @@ feature 'admin creates review' do
     fill_in "Description", with: "fun"
     click_button "Submit"
 
-    expect(page).to have_content("4.6 / 💣💣💣💣💣")
+    expect(page).to have_content("4.6 / 💣")
   end
 end

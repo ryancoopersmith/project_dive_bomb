@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/models/user.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/user.rb": [
         1,
         null,
         null,
@@ -21,20 +21,20 @@
         1,
         null,
         1,
-        144,
+        174,
         null,
         null,
         1,
-        46,
+        44,
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/models/application_record.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/uploaders/profile_photo_uploader.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/uploaders/profile_photo_uploader.rb": [
         1,
         null,
         null,
@@ -95,11 +95,11 @@
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/helpers/application_helper.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/models/bar.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/bar.rb": [
         1,
         1,
         1,
@@ -109,17 +109,9 @@
         1,
         null,
         1,
-        null,
-        1,
-        67,
-        1,
-        null,
-        66,
-        null,
-        null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/models/review.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/models/review.rb": [
         1,
         1,
         null,
@@ -160,44 +152,44 @@
         1,
         null,
         1,
-        14,
-        18,
+        12,
+        16,
         8,
         null,
         null,
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/bars_controller.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/bars_controller.rb": [
         1,
         1,
         null,
         1,
-        65,
+        56,
         null,
         null,
         1,
-        32,
-        32,
-        46,
-        32,
-        46,
-        32,
-        32,
-        14,
-        12,
-        12,
-        12,
-        12,
-        12,
-        12,
+        26,
+        26,
+        36,
+        26,
+        36,
+        26,
+        26,
+        10,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
         null,
         null,
         null,
-        32,
-        20,
+        26,
+        18,
         null,
-        12,
+        8,
         null,
         null,
         null,
@@ -267,7 +259,7 @@
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/application_controller.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -275,31 +267,31 @@
         1,
         null,
         1,
-        83,
-        83,
-        83,
-        83,
-        83,
-        null,
-        null
-      ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/mailers/user_mailer.rb": [
-        1,
-        1,
-        46,
-        46,
-        null,
-        null,
-        null,
+        79,
+        79,
+        79,
+        79,
+        79,
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/mailers/application_mailer.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/mailers/user_mailer.rb": [
+        1,
+        1,
+        44,
+        44,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/mailers/application_mailer.rb": [
         1,
         1,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/reviews_controller.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/reviews_controller.rb": [
         1,
         1,
         null,
@@ -344,45 +336,47 @@
         1,
         null,
         3,
+        3,
         null,
         2,
+        2,
         null,
-        5,
         null,
         null,
         1,
-        3,
-        3,
+        1,
+        1,
         null,
         null,
         1,
-        3,
-        3,
-        3,
-        3,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
-        2,
+        0,
+        0,
         null,
-        3,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
         null,
         null,
         1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
         null,
         1,
-        8,
+        null,
+        1,
+        6,
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/mailers/review_mailer.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/mailers/review_mailer.rb": [
         1,
         1,
         8,
@@ -394,21 +388,14 @@
         null,
         null
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/api/v1/bars_controller.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/api/v1/bars_controller.rb": [
         0,
         0,
         0,
         0,
         0
       ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/api/v1/reviews_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/arilandau/challenges/Launch/project_dive_bomb/app/controllers/api_controller.rb": [
+      "/Users/coreyfischer/challenges/project_dive_bomb/app/controllers/api_controller.rb": [
         0,
         0,
         0,
@@ -416,6 +403,6 @@
         0
       ]
     },
-    "timestamp": 1489609061
+    "timestamp": 1489682819
   }
 }
