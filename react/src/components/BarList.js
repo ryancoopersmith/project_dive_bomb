@@ -24,7 +24,7 @@ class BarList extends Component {
   }
 
   getBars() {
-    fetch('https://project-dive-bomb.herokuapp.com/') //https://frozen-wave-13196.herokuapp.com/api/v1/bars.json for heroku
+    fetch('https://project-dive-bomb.herokuapp.com/api/v1/bars.json') //https://project-dive-bomb.herokuapp.com/api/v1/bars.json for heroku
       .then(response => {
         if (response.ok) {
           return response;
