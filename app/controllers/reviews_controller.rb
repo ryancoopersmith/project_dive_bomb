@@ -51,19 +51,20 @@ class ReviewsController < ApplicationController
 
   def edit
     @bar = Bar.find(params[:bar_id])
-    @review = current_user.reviews[0]
+    @review = current_user.reviews.find_by(bar_id: @bar.id)
   end
 
   def update
-    @review = Review.find(params[:id])
+    @bar = Bar.find(params[:bar_id])
+    @review = @bar.reviews.find(params[:id])
     @review.assign_attributes(reviews_params)
-    @bar = @review.bar
     if @review.save
       flash[:notice] = "Review updated successfully"
+      redirect_to @bar
     else
       flash[:notice] = @review.errors.messages
+      render action: "edit"
     end
-    redirect_to @bar
   end
 
   def destroy
