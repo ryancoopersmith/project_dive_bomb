@@ -34,9 +34,6 @@ class BarList extends Component {
           throw(error);
         }
       })
-      .then(response => {
-        response.addHeader("Access-Control-Allow-Origin", "*");
-      })
       .then(response => response.json())
       .then(body => {
         this.setState({ bars: body });
