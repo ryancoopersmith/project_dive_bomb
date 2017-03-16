@@ -1,5 +1,9 @@
-<p>Welcome <%= @email %>!</p>
+<h1>Welcome <%= @email %>!</h1>
 
-<p>You can confirm your account email through the link below:</p>
+<div class="column row">
+  <p>You can confirm your account email through the link below:</p>
+</div>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<div class="hollow button alert">
+  <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+</div>
