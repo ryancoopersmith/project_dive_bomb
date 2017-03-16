@@ -1,19 +1,17 @@
+$dark-gray: #262626;
+$bright-red: #F2552C;
+
 .show {
-  background-color: #262626;
+  background-color: $dark-gray;
 }
 
 .subheader{
   color: white;
 }
 .row.column.small-12.medium-6.columns{
-  background-color: #F2552C;
-}
-#white {
-  background-color: #f5f5f5;
-  padding: 20px;
+  background-color: $bright-red;
 }
 
-
-.hollow.button.alert {
-  border-color: white;
+.label {
+  font-size: 20px
 }

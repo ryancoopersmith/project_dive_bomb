@@ -13374,3 +13374,498 @@ Processing by BarsController#show as HTML
 Completed 200 OK in 164ms (Views: 153.9ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/bars/5" for ::1 at 2017-03-16 11:00:07 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$": expected identifier, was ".show {"):
+    4:     <title>Project Dive Bomb</title>
+    5:     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Contrail+One" />
+    6:     <%= csrf_meta_tags %>
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Contrail+One" />
+   10:   </head>
+  
+app/assets/stylesheets/bar/show.scss:3
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1393578379781162479_70256279768960'
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/coreyfischer/.gem/ruby/2.3.3/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.5ms)
+Started GET "/bars/5" for ::1 at 2017-03-16 11:00:19 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 303ms (Views: 290.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:03:16 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 223ms (Views: 211.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:09:35 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 612ms (Views: 563.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:09:54 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 299ms (Views: 283.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:10:27 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 236ms (Views: 222.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:10:59 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 207ms (Views: 192.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:11:39 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (2.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 194ms (Views: 175.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:12:00 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 245ms (Views: 236.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:12:16 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (2.1ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 250ms (Views: 232.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/bars/5/reviews/5/edit" for ::1 at 2017-03-16 11:13:47 -0400
+Processing by ReviewsController#edit as HTML
+  Parameters: {"bar_id"=>"5", "id"=>"5"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."bar_id" = $2 LIMIT $3[0m  [["user_id", 5], ["bar_id", 5], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (10.7ms)
+  Rendered reviews/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 296ms (Views: 280.0ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/bars/5/reviews/28" for ::1 at 2017-03-16 11:13:56 -0400
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NCkoVVME7h0Eb6DJH1MQOe7mYL3rghp6Y9C+V9lpGQ6vBbKACSxbcoYnwhiFHLJHtzOlsnKLToc1OTGclnr2ag==", "review"=>{"drinks"=>"4", "food"=>"4", "entertainment"=>"4", "vibe"=>"4", "setting"=>"4", "description"=>"You betcha buckaroo i aint never seen nothing like this here bar its a real treat full of the freakies and the geekies i aint never had me more fun!"}, "commit"=>"Submit", "bar_id"=>"5", "id"=>"28"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1 AND "reviews"."id" = $2 LIMIT $3[0m  [["bar_id", 5], ["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "reviews" SET "food" = $1, "vibe" = $2, "setting" = $3 WHERE "reviews"."id" = $4[0m  [["food", 4], ["vibe", 4], ["setting", 4], ["id", 28]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/bars/5
+Completed 302 Found in 27ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:13:56 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 180ms (Views: 167.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:15:03 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 240ms (Views: 226.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:15:20 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (3.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 273ms (Views: 251.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:16:30 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 221ms (Views: 209.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bars/5" for ::1 at 2017-03-16 11:20:14 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 400ms (Views: 345.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:20:38 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 195ms (Views: 188.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:20:39 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (1.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:21:36 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 289ms (Views: 285.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:21:37 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (2.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:25:29 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (53.3ms)
+Completed 200 OK in 476ms (Views: 389.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:26:00 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 265ms (Views: 252.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/bars" for ::1 at 2017-03-16 11:26:40 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 214ms (Views: 208.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:26:41 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:26:52 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 153.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:26:52 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (2.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/bars/6" for ::1 at 2017-03-16 11:32:18 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 6]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 566ms (Views: 525.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bars/6/reviews/new" for ::1 at 2017-03-16 11:32:28 -0400
+Processing by ReviewsController#new as HTML
+  Parameters: {"bar_id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (14.9ms)
+  Rendered reviews/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 247ms (Views: 225.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:32:40 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 155ms (Views: 149.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:32:40 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (3.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:32:42 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (2.2ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 139ms (Views: 122.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/bars/18/reviews/new" for ::1 at 2017-03-16 11:32:45 -0400
+Processing by ReviewsController#new as HTML
+  Parameters: {"bar_id"=>"18"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/bars/18
+Completed 302 Found in 17ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:32:46 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (1.3ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 164ms (Views: 150.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:33:16 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 194ms (Views: 190.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:33:17 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bars/6" for ::1 at 2017-03-16 11:33:46 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 6]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 151ms (Views: 133.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:33:53 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 156.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:33:54 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (1.3ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:33:55 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 137ms (Views: 123.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-16 11:34:00 -0400
+Processing by BarsController#index as HTML
+  Rendering bars/index.html.erb within layouts/application
+  Rendered bars/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 139.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/bars.json" for ::1 at 2017-03-16 11:34:01 -0400
+Processing by Api::V1::BarsController#index as JSON
+  [1m[36mBar Load (1.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars" ORDER BY "bars"."rating" DESC[0m
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:34:08 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 171ms (Views: 159.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bars/18" for ::1 at 2017-03-16 11:35:18 -0400
+Processing by BarsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."bar_id" = $1[0m  [["bar_id", 18]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering bars/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered bars/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 312ms (Views: 294.9ms | ActiveRecord: 4.2ms)
+
+
