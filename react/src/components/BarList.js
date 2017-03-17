@@ -16,7 +16,7 @@ class BarList extends Component {
 
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0, 20)});
-    if (this.state.search.length > 0) {
+    if (this.state.search.length > 1) {
       this.setState({ group: 0 });
     } else {
       this.setState({ group: 1 });
