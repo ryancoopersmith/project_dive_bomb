@@ -52,7 +52,7 @@ class BarList extends Component {
   render() {
     if (this.state.bars) {
       let groupSize = 3;
-      let pageSize = 4;
+      let pageSize = 5;
       let bars = this.state.bars.map((bar, index) => {
         if (bar.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
           return (
