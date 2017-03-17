@@ -102,7 +102,7 @@ class BarList extends Component {
             <input type="submit" value="2" className="button" onClick={() => this.setBars(2)} />
             <input type="submit" value="3" className="button" onClick={() => this.setBars(3)} />
             <input type="submit" value="4" className="button" onClick={() => this.setBars(4)} />
-            <input type="submit" value="4" className="button" onClick={() => this.setBars(5)} />
+            <input type="submit" value="5" className="button" onClick={() => this.setBars(5)} />
           </div>
         </div>
       );
