@@ -16,7 +16,7 @@ class BarList extends Component {
 
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0, 20)});
-    if (this.state.search.length > 1) {
+    if (this.state.search.length > 0) {
       this.setState({ group: 0 });
     } else {
       this.setState({ group: 1 });
@@ -24,7 +24,7 @@ class BarList extends Component {
   }
 
   getBars() {
-    fetch('https://project-dive-bomb.herokuapp.com/api/v1/bars.json')
+    fetch('https://project-dive-bomb.herokuapp/api/v1/bars.json')
       .then(response => {
         if (response.ok) {
           return response;
