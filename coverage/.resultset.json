@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/models/user.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/models/user.rb": [
         1,
         null,
         null,
@@ -29,12 +29,12 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/models/application_record.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/uploaders/profile_photo_uploader.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/uploaders/profile_photo_uploader.rb": [
         1,
         null,
         null,
@@ -95,25 +95,25 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/helpers/application_helper.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/controllers/api/v1/bars_controller.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/controllers/api/v1/bars_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/controllers/api_controller.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/controllers/api_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/controllers/application_controller.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -129,7 +129,7 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/models/bar.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/models/bar.rb": [
         1,
         1,
         1,
@@ -141,7 +141,7 @@
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/models/review.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/models/review.rb": [
         1,
         1,
         null,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/controllers/bars_controller.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/controllers/bars_controller.rb": [
         1,
         1,
         null,
@@ -291,7 +291,7 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/mailers/user_mailer.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/mailers/user_mailer.rb": [
         1,
         1,
         44,
@@ -302,12 +302,12 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/mailers/application_mailer.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/mailers/application_mailer.rb": [
         1,
         1,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/controllers/reviews_controller.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/controllers/reviews_controller.rb": [
         1,
         1,
         null,
@@ -391,7 +391,7 @@
         null,
         null
       ],
-      "/Users/ryancoopersmith/challenges/project-dive-bomb/app/mailers/review_mailer.rb": [
+      "/Users/devinbombay/sandbox/project_dive_bomb/app/mailers/review_mailer.rb": [
         1,
         1,
         8,
@@ -404,6 +404,6 @@
         null
       ]
     },
-    "timestamp": 1489765554
+    "timestamp": 1489766096
   }
 }
