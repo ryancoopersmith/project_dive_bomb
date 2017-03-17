@@ -57,8 +57,7 @@ class ReviewsController < ApplicationController
   def update
     @bar = Bar.find(params[:bar_id])
     @review = @bar.reviews.find(params[:id])
-    @review.assign_attributes(reviews_params)
-    if @review.save
+    if @review.update_attributes(reviews_params)
       flash[:notice] = "Review updated successfully"
       redirect_to @bar
     else
