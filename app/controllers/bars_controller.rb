@@ -54,9 +54,7 @@ class BarsController < ApplicationController
 
   def update
     @bar = Bar.find(params[:id])
-    @bar.assign_attributes(bars_params)
-
-    if @bar.valid?
+    if @bar.update_attributes(bars_params)
       @bar.save
       flash[:notice] = "Bar Edited Successfully"
       redirect_to @bar

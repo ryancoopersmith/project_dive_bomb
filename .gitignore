@@ -26,7 +26,8 @@
 # Ignore uploaded files in test/development
 /public/uploads
 
-# Ignore seeds file
+# Ignore secrets
+/config/secrets.yml
 
 
 # Ignore node modules
