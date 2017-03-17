@@ -36,8 +36,7 @@ class Review < ApplicationRecord
 
   belongs_to :bar
   belongs_to :user
-  has_many :votes, dependent: :destroy
-  has_many :users, through: :votes
+  has_many :users
 
   def send_email
     User.all.each do |user|

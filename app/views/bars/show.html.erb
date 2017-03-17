@@ -60,28 +60,6 @@
         <% if review.user.profile_photo %>
           <img id="profile_photo" src="<%= review.user.profile_photo %>" height=50 width=50/>
         <% end %>
-        <% if !review.upvotes && !review.downvotes %>
-          <% review.upvotes = 0 %>
-          <% review.downvotes = 0 %>
-        <% end %>
-        <p>Upvotes</p>
-        <% if review.upvotes %>
-          <%= review.upvotes %>
-        <% else %>
-          <p>0</p>
-        <% end %>
-        <% if current_user %>
-          <input type="button" value="Upvote" onclick="upvote(<%=review.upvotes%>, <%=review.downvotes%>, <%=review.voter_id%>, <%=current_user.id%>)">
-        <% end %>
-        <p>Downvotes</p>
-        <% if review.downvotes %>
-          <%= review.downvotes %>
-        <% else %>
-          <p>0</p>
-        <% end %>
-        <% if current_user %>
-          <input type="button" value="Downvote" onclick="downvote(<%=review.upvotes%>, <%=review.downvotes%>, <%=review.voter_id%>, <%=current_user.id%>)">
-        <% end %>
         <p><strong><%= review.user.username %>:</strong><small> rates this dive </small><%= (review.drinks + review.food + review.entertainment + review.vibe + review.setting) / 5.0 %> / 5 💣 </p>
         <% if review.description.present? %>
           <p><strong>Description: </strong><span id="review"><%= review.description %></span></p>
