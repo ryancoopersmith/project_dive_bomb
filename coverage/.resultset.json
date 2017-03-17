@@ -144,7 +144,6 @@
       "/Users/ryancoopersmith/challenges/project-dive-bomb/app/models/review.rb": [
         1,
         1,
-        1,
         null,
         1,
         1,
@@ -179,6 +178,7 @@
         null,
         null,
         null,
+        1,
         1,
         1,
         null,
@@ -208,6 +208,7 @@
         26,
         26,
         10,
+        8,
         8,
         8,
         8,
@@ -369,7 +370,6 @@
         1,
         1,
         1,
-        1,
         null,
         0,
         0,
@@ -404,6 +404,6 @@
         null
       ]
     },
-    "timestamp": 1489714680
+    "timestamp": 1489765554
   }
 }
