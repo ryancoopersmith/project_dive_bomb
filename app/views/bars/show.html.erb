@@ -68,9 +68,11 @@
           <% if review.user == current_user %>
             <div class="hollow button defcon-5"><%= link_to "Edit Review", edit_bar_review_path(@bar) %></div>
             <div class="hollow button defcon-5"><%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %></div>
+            </br>
           <% elsif current_user.admin? %>
             <div class="hollow button defcon-5"><%= link_to "Delete Review", bar_review_path(@bar, review), method: :delete %><br />
           </div>
+          </br>
           <% end %>
         <% end %>
       <% end %>
