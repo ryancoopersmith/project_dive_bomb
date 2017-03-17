@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   after_create :send_email
+  serialize :voter_id,Array
 
   validates :user, presence: true
   validates :bar, presence: true
