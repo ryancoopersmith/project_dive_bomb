@@ -14,8 +14,8 @@ feature 'visitor sees details for individual bar' do
     visit bar_path(bar)
 
     expect(page).to have_content bar.name
-    expect(page).to have_content bar.address
-    expect(page).to have_content bar.city
+    expect(page).to have_content bar.address.upcase
+    expect(page).to have_content bar.city.upcase
     expect(page).to have_content bar.state
     expect(page).to have_content bar.zip
     expect(page).to have_content bar.phone_number
