@@ -1,6 +1,5 @@
 class Review < ApplicationRecord
   after_create :send_email
-  serialize :voter_id,Array
 
   validates :user, presence: true
   validates :bar, presence: true
@@ -37,6 +36,8 @@ class Review < ApplicationRecord
 
   belongs_to :bar
   belongs_to :user
+  has_many :votes, dependent: :destroy
+  has_many :users, through: :votes
 
   def send_email
     User.all.each do |user|

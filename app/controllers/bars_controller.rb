@@ -19,6 +19,7 @@ class BarsController < ApplicationController
         review.entertainment *= 0.5
         review.vibe *= 1.25
         review.setting *= 1.25
+        review.save
         sum += (review.drinks + review.food + review.entertainment + review.vibe + review.setting)
       end
     end
