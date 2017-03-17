@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20170317140702) do
     t.integer "bar_id"
     t.integer "downvotes"
     t.integer "upvotes"
-    t.text    "voter_id"
     t.index ["bar_id"], name: "index_reviews_on_bar_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end

@@ -1,7 +1,7 @@
 <%= form_for [@bar, @review], html: {class: "review_form"} do |f| %>
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
-        <%= f.label :drinks, "How would you rate the drinks at #{@bar.name}?" %>
+        <%= f.label :drinks, "Were the drinks decent? Did they leave your wallet hurting?" %>
         <%= f.radio_button :drinks, 1%>
         <%= f.label :drinks, "💣" %>
         <%= f.radio_button :drinks, 2%>
@@ -18,7 +18,7 @@
 
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
-      <%= f.label :food, "How would you rate the food #{@bar.name} offered?" %>
+      <%= f.label :food, "Would you eat the food?" %>
       <%= f.radio_button :food, 1%>
       <%= f.label :food, "💣" %>
       <%= f.radio_button :food, 2%>
@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
-      <%= f.label :entertainment, "How would you rate the available entertainment?" %>
+      <%= f.label :entertainment, "Was the music on point? What about pool tables, darts, and stuff?" %>
       <%= f.radio_button :entertainment, 1%>
       <%= f.label :entertainment, "💣" %>
       <%= f.radio_button :entertainment, 2%>
@@ -52,7 +52,7 @@
 
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
-      <%= f.label :vibe, "How would you rate the vibe at #{@bar.name}? Are the other patron's cool? And the staff?" %>
+      <%= f.label :vibe, "Were you digging the vibe?" %>
       <%= f.radio_button :vibe, 1%>
       <%= f.label :vibe, "💣" %>
       <%= f.radio_button :vibe, 2%>
@@ -69,7 +69,7 @@
 
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
-      <%= f.label :setting, "How would you rate the setting? Does #{@bar.name} look cool?" %>
+      <%= f.label :setting, "Does #{@bar.name} look grungy in a good or bad way?" %>
       <%= f.radio_button :setting, 1%>
       <%= f.label :setting, "💣" %>
       <%= f.radio_button :setting, 2%>
@@ -87,7 +87,7 @@
   <div class="row">
     <div class = "small-offset-3 small-6 columns">
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_field :description, placeholder: "Tell us more!" %>
     </div>
     <div class = "small-offset-3 columns"></div>
   </div>
