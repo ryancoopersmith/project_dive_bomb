@@ -2,7 +2,7 @@
   <div class="row column small-12 medium-6 columns">
     <h1><%= @bar.name %></h1>
     <% if @bar.url %>
-      <a href="<%= @bar.url %>"><img src="<%=@bar.image_url%>"></a>
+      <a href="<%= @bar.url %>"><img src="<%=@bar.image_url%>" target'"_blank"></a>
     <% else %>
       <img src="<%= @bar.image_url %>">
     <% end %>
