@@ -7,6 +7,7 @@ class BarList extends Component {
     this.state = {
       bars: [],
       search: '',
+      prevSearch: '',
       group: 1
     };
     this.getBars = this.getBars.bind(this);
@@ -15,11 +16,13 @@ class BarList extends Component {
   }
 
   updateSearch(event) {
+    let prevSearch = this.state.search;
+    this.setState({ prevSearch: prevSearch });
     this.setState({search: event.target.value.substr(0, 20)});
-    if (this.state.search.length > 1) {
-      this.setState({ group: 0 });
-    } else {
+    if(this.state.search.length === 1 && this.state.prevSearch > this.state.search) {
       this.setState({ group: 1 });
+    } else if(this.state.search.length > -1){
+      this.setState({ group: 0 });
     }
   }
 
